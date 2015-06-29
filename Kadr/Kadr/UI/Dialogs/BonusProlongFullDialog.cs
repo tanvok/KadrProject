@@ -28,11 +28,11 @@ namespace Kadr.UI.Dialogs
         {
             financingSourceBindingSource.DataSource = KadrController.Instance.Model.FinancingSources.OrderBy(fnS => fnS.FinancingSourceName).ToArray();
             IEnumerable<BonusType> bonusTypes = KadrController.Instance.Model.BonusTypes.OrderBy(bnT => bnT.BonusTypeName).ToArray();
+            prikazBindingSource.DataSource = KadrController.Instance.Model.Prikazs.OrderByDescending(prik => prik.DatePrikaz);
             foreach (BonusType bonType in bonusTypes)
             {
                 cbBonusType.Items.Add(bonType);
             }
-            cbBonusType.SelectedItem = bonusTypes.FirstOrDefault();
 
             cbFinancingSource.Enabled = false;
             chbWithFinSource.Checked = false;
@@ -41,71 +41,37 @@ namespace Kadr.UI.Dialogs
         private void cbBonusType_SelectedIndexChanged(object sender, EventArgs e)
         {
             //загружаем список надбавок указанного типа
-            /*IEnumerable<BonusFactStaff> bonusFactStaff = KadrController.Instance.Model.Bonus.Where(bon => (bon.DateEnd < DateTime.Today) || (bon.DateEnd == null)).
-                Where(bon => bon.BonusType == (cbBonusType.SelectedItem as BonusType)).Where(bon => bon.BonusFactStaff != null).Select(bon => bon.BonusFactStaff);
-                    //IEnumerable<FactStaff> bonusFactStaff = KadrController.Instance.Model.FactStaffs.Where(fcSt => bonus.Select(bon => bon.BonusFactStaff.idFactStaff).Contains(fcSt.id)).ToArray();
             
-            var factStaffs = KadrController.Instance.Model.FactStaffs.Join(bonusFactStaff, fcSt => fcSt.id, bon => bon.idFactStaff,
-                (fcSt, bon) => new
-                {
-                    id = fcSt.id,
-                    BonusCount = bon.Bonus.BonusCount,
-                    Department = fcSt.Department,
-                    Post = fcSt.Post,
-                    Employee = fcSt.Employee,
-                    StaffCount = fcSt.StaffCount,
-                    WorkType = fcSt.WorkType,
-                    FinSource = fcSt.FinSource,
-                    DateBegin = fcSt.DateBegin,
-                    DateEnd = fcSt.DateEnd,
-                    BonusDateBegin = bon.Bonus.DateBegin,
-                    BonusFinancingSourceName = bon.Bonus.FinancingSourceName
-                });
-            factStaffBindingSource.DataSource = factStaffs;*/
             bonus = KadrController.Instance.Model.GetBonusByBonusTypeForProlong((cbBonusType.SelectedItem as BonusType).id, DateTime.Today, DateTime.Today.AddMonths(1).AddDays(1 - DateTime.Today.Day)).ToArray();
             getBonusByBonusTypeForProlongResultBindingSource.DataSource = bonus;
+            cbProlongForAll.Checked = true;
         }
 
         protected override void DoApply()
         {
-            if ((dtNewDate.Value == null)
+            if ((dtNewDate == null)
                 || (cbBonusType.SelectedItem == null)
                 || (cbNewPrikaz.SelectedItem == null))
             {
                 MessageBox.Show("Внесите все данные!");
+                OKClicked = false;
                 return;
             }
-
-            //var deps = KadrController.Instance.Model.GetSubDepartmentsWithPeriod(1, dtNewDate.Value, dtNewDate.Value).ToArray();
 
             //выбираем все надбавки указанного типа, которые еще действующие
 
             //для каждой подходящей по условиям надбавки создаем запись истории
             IEnumerable<GetBonusByBonusTypeForProlongResult> CheckedBonus = bonus.Where(bon => bon.Prolong.Value).ToArray();
-            //IEnumerable<Bonus> targetBonus = KadrController.Instance.Model.Bonus.Where(bon => CheckedBonus.Select(prolBon => prolBon.idBonus).Contains(bon.id)).ToArray();
             foreach (GetBonusByBonusTypeForProlongResult curBonus in CheckedBonus)
             {
                 Bonus bon = KadrController.Instance.Model.Bonus.Where(bn => bn.id == curBonus.idBonus).FirstOrDefault();
-                if (curBonus == null)
+                if (bon == null)
                     continue;
                 BonusHistory bonHist = new BonusHistory();
                 bonHist.BonusCount = curBonus.BonusCount.Value;
+                bonHist.FinancingSource = FinancingSource.GetFinancingSourceByName(curBonus.BonusFinancingSourceName);
                 bonHist.DateBegin = dtNewDate.Value;
                 bonHist.Prikaz = cbNewPrikaz.SelectedItem as Prikaz;
-                if ((chbWithFinSource.Checked) && (cbFinancingSource.SelectedItem != null))
-                {
-                    //если источник финансирования <не указано> 
-                    if ((cbFinancingSource.SelectedItem as FinancingSource).id == 0)
-                    {
-                        bonHist.FinancingSource = bon.ObjectFinancingSource;
-                    }
-                    else
-                        bonHist.FinancingSource = cbFinancingSource.SelectedItem as FinancingSource;
-                }
-                else //если источник просто не указан, то берем источник надбавки
-                {
-                    bonHist.FinancingSource = bon.LastFinancingSource;
-                }
                 bonHist.Bonus = bon;
             }
             KadrController.Instance.SubmitChanges();
@@ -120,15 +86,21 @@ namespace Kadr.UI.Dialogs
         {
             foreach (GetBonusByBonusTypeForProlongResult bon in bonus)
             {
-                bon.Prolong = cbBonRepWithSubDeps.Checked;
+                bon.Prolong = cbProlongForAll.Checked;
             }
             getBonusByBonusTypeForProlongResultBindingSource.DataSource = null;
             getBonusByBonusTypeForProlongResultBindingSource.DataSource = bonus;
         }
 
-        private void dtNewDate_ValueChanged(object sender, EventArgs e)
-        {
+        
 
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (getBonusByBonusTypeForProlongResultBindingSource.Current as GetBonusByBonusTypeForProlongResult).Prolong = true;
         }
+
+        
+
+        
     }
 }

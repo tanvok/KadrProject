@@ -91,7 +91,8 @@ namespace Kadr.UI.Common
             try
             {
                 Apply();
-                this.Close();
+                if (OKclicked)
+                    this.Close();
             }
             catch (Exception exp)
             {

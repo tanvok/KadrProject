@@ -33,6 +33,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.chbWithFinSource = new System.Windows.Forms.CheckBox();
             this.cbNewPrikaz = new System.Windows.Forms.ComboBox();
+            this.prikazBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtNewDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,11 +57,12 @@
             this.cbBonusType = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.factStaffBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cbBonRepWithSubDeps = new System.Windows.Forms.CheckBox();
+            this.cbProlongForAll = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prikazBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.financingSourceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getBonusByBonusTypeForProlongResultBindingSource)).BeginInit();
@@ -70,7 +72,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.cbBonRepWithSubDeps);
+            this.panel1.Controls.Add(this.cbProlongForAll);
             this.panel1.Controls.Add(this.tableLayoutPanel8);
             this.helpProvider1.SetShowHelp(this.panel1, true);
             this.panel1.Size = new System.Drawing.Size(1046, 507);
@@ -96,6 +98,7 @@
             // 
             // OKBtn
             // 
+            this.OKBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.helpProvider1.SetHelpString(this.OKBtn, "Вносит изменения в базу данных и закрывает окно.");
             this.OKBtn.Location = new System.Drawing.Point(784, 2);
             this.helpProvider1.SetShowHelp(this.OKBtn, true);
@@ -115,10 +118,10 @@
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 4;
+            this.tableLayoutPanel8.RowCount = 3;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(1046, 507);
             this.tableLayoutPanel8.TabIndex = 3;
@@ -133,9 +136,9 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.cbFinancingSource);
-            this.panel3.Location = new System.Drawing.Point(3, 410);
+            this.panel3.Location = new System.Drawing.Point(3, 458);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1040, 74);
+            this.panel3.Size = new System.Drawing.Size(1040, 46);
             this.panel3.TabIndex = 5;
             // 
             // chbWithFinSource
@@ -147,30 +150,35 @@
             this.chbWithFinSource.TabIndex = 16;
             this.chbWithFinSource.Text = "Назначить всем источник финансирования";
             this.chbWithFinSource.UseVisualStyleBackColor = true;
+            this.chbWithFinSource.Visible = false;
             this.chbWithFinSource.CheckedChanged += new System.EventHandler(this.chbWithFinSource_CheckedChanged);
             // 
             // cbNewPrikaz
             // 
             this.cbNewPrikaz.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbNewPrikaz.DataSource = this.prikazBindingSource;
             this.cbNewPrikaz.FormattingEnabled = true;
-            this.cbNewPrikaz.Location = new System.Drawing.Point(702, 36);
+            this.cbNewPrikaz.Location = new System.Drawing.Point(335, 19);
             this.cbNewPrikaz.Name = "cbNewPrikaz";
-            this.cbNewPrikaz.Size = new System.Drawing.Size(331, 21);
+            this.cbNewPrikaz.Size = new System.Drawing.Size(698, 21);
             this.cbNewPrikaz.TabIndex = 15;
+            // 
+            // prikazBindingSource
+            // 
+            this.prikazBindingSource.DataSource = typeof(Kadr.Data.Prikaz);
             // 
             // dtNewDate
             // 
-            this.dtNewDate.Location = new System.Drawing.Point(555, 37);
+            this.dtNewDate.Location = new System.Drawing.Point(4, 20);
             this.dtNewDate.Name = "dtNewDate";
-            this.dtNewDate.Size = new System.Drawing.Size(141, 20);
+            this.dtNewDate.Size = new System.Drawing.Size(314, 20);
             this.dtNewDate.TabIndex = 12;
-            this.dtNewDate.ValueChanged += new System.EventHandler(this.dtNewDate_ValueChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(553, 21);
+            this.label5.Location = new System.Drawing.Point(2, 4);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 13);
             this.label5.TabIndex = 13;
@@ -179,7 +187,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(699, 20);
+            this.label4.Location = new System.Drawing.Point(332, 4);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 13);
             this.label4.TabIndex = 14;
@@ -189,10 +197,11 @@
             // 
             this.cbFinancingSource.DataSource = this.financingSourceBindingSource;
             this.cbFinancingSource.FormattingEnabled = true;
-            this.cbFinancingSource.Location = new System.Drawing.Point(3, 36);
+            this.cbFinancingSource.Location = new System.Drawing.Point(3, 19);
             this.cbFinancingSource.Name = "cbFinancingSource";
             this.cbFinancingSource.Size = new System.Drawing.Size(540, 21);
             this.cbFinancingSource.TabIndex = 17;
+            this.cbFinancingSource.Visible = false;
             // 
             // financingSourceBindingSource
             // 
@@ -224,8 +233,9 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1040, 377);
+            this.dataGridView1.Size = new System.Drawing.Size(1040, 425);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // Department
             // 
@@ -312,7 +322,7 @@
             this.BonusFinancingSourceName.DataPropertyName = "BonusFinancingSourceName";
             this.BonusFinancingSourceName.DataSource = this.financingSourceBindingSource;
             this.BonusFinancingSourceName.DisplayMember = "FinancingSourceName";
-            this.BonusFinancingSourceName.HeaderText = "Источник финанс";
+            this.BonusFinancingSourceName.HeaderText = "Источник финанс надбавки";
             this.BonusFinancingSourceName.Name = "BonusFinancingSourceName";
             this.BonusFinancingSourceName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.BonusFinancingSourceName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -359,19 +369,19 @@
             // 
             this.factStaffBindingSource.DataSource = typeof(Kadr.Data.FactStaff);
             // 
-            // cbBonRepWithSubDeps
+            // cbProlongForAll
             // 
-            this.cbBonRepWithSubDeps.AutoSize = true;
-            this.cbBonRepWithSubDeps.BackColor = System.Drawing.SystemColors.Control;
-            this.cbBonRepWithSubDeps.Checked = true;
-            this.cbBonRepWithSubDeps.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbBonRepWithSubDeps.Location = new System.Drawing.Point(470, 2);
-            this.cbBonRepWithSubDeps.Name = "cbBonRepWithSubDeps";
-            this.cbBonRepWithSubDeps.Size = new System.Drawing.Size(116, 17);
-            this.cbBonRepWithSubDeps.TabIndex = 17;
-            this.cbBonRepWithSubDeps.Text = "Продлевать всем";
-            this.cbBonRepWithSubDeps.UseVisualStyleBackColor = false;
-            this.cbBonRepWithSubDeps.CheckedChanged += new System.EventHandler(this.cbBonRepWithSubDeps_CheckedChanged);
+            this.cbProlongForAll.AutoSize = true;
+            this.cbProlongForAll.BackColor = System.Drawing.SystemColors.Control;
+            this.cbProlongForAll.Checked = true;
+            this.cbProlongForAll.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbProlongForAll.Location = new System.Drawing.Point(470, 2);
+            this.cbProlongForAll.Name = "cbProlongForAll";
+            this.cbProlongForAll.Size = new System.Drawing.Size(116, 17);
+            this.cbProlongForAll.TabIndex = 17;
+            this.cbProlongForAll.Text = "Продлевать всем";
+            this.cbProlongForAll.UseVisualStyleBackColor = false;
+            this.cbProlongForAll.CheckedChanged += new System.EventHandler(this.cbBonRepWithSubDeps_CheckedChanged);
             // 
             // BonusProlongFullDialog
             // 
@@ -390,6 +400,7 @@
             this.tableLayoutPanel8.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prikazBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.financingSourceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getBonusByBonusTypeForProlongResultBindingSource)).EndInit();
@@ -417,6 +428,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbFinancingSource;
+        private System.Windows.Forms.CheckBox cbProlongForAll;
         private System.Windows.Forms.DataGridViewTextBoxColumn Department;
         private System.Windows.Forms.DataGridViewTextBoxColumn Post;
         private System.Windows.Forms.DataGridViewTextBoxColumn Employee;
@@ -429,7 +441,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BonusCount;
         private System.Windows.Forms.DataGridViewComboBoxColumn BonusFinancingSourceName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Prolong;
-        private System.Windows.Forms.CheckBox cbBonRepWithSubDeps;
+        private System.Windows.Forms.BindingSource prikazBindingSource;
 
     }
 }

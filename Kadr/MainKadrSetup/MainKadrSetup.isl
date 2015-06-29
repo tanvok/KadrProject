@@ -2403,7 +2403,7 @@
 		<row><td>DVD-18</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>Default</td><td>3</td><td>1033</td><td>0</td><td>2</td><td>Intel</td><td/><td>1033</td><td>0</td><td>15.83</td><td>1</td><td>2048</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>75805</td><td/><td/><td/><td>3</td></row>
 		<row><td>DVD-5</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>Default</td><td>3</td><td>1049</td><td>0</td><td>2</td><td>Intel</td><td/><td>1049</td><td>0</td><td>4.38</td><td>1</td><td>2048</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>75805</td><td/><td/><td/><td>3</td></row>
 		<row><td>DVD-9</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>Default</td><td>3</td><td>1033</td><td>0</td><td>2</td><td>Intel</td><td/><td>1033</td><td>0</td><td>7.95</td><td>1</td><td>2048</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>75805</td><td/><td/><td/><td>3</td></row>
-		<row><td>SingleImage</td><td>Express</td><td>G:\tanvok\Основные проекты\kadr\Kadr\MainKadrSetup</td><td>PackageName</td><td>1</td><td>1049</td><td>0</td><td>1</td><td>Intel</td><td/><td>1049</td><td>0</td><td>0</td><td>0</td><td>0</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>108573</td><td/><td/><td/><td>3</td></row>
+		<row><td>SingleImage</td><td>Express</td><td>G:\tanvok\kadr\KadrProject\Kadr\MainKadrSetup</td><td>PackageName</td><td>1</td><td>1049</td><td>0</td><td>1</td><td>Intel</td><td/><td>1049</td><td>0</td><td>0</td><td>0</td><td>0</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>108573</td><td/><td/><td/><td>3</td></row>
 		<row><td>WebDeployment</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>PackageName</td><td>4</td><td>1033</td><td>2</td><td>1</td><td>Intel</td><td/><td>1033</td><td>0</td><td>0</td><td>0</td><td>0</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>124941</td><td/><td/><td/><td>3</td></row>
 	</table>
 
@@ -2652,7 +2652,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1049</td><td>УГТУ</td><td>0</td><td/><td>1126383309</td></row>
+		<row><td>COMPANY_NAME</td><td>1049</td><td>УГТУ</td><td>0</td><td/><td>-349967123</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1049</td><td>Всегда устанавливать</td><td>0</td><td/><td>-970946898</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1049</td><td>Настройки цвета системы не подходят для работы [ProductName].</td><td>0</td><td/><td>-970946898</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION35</td><td>1049</td><td>Microsoft .NET Framework 3.5 needs to be installed for this installation to continue.</td><td>0</td><td/><td>1126403789</td></row>
@@ -3757,18 +3757,18 @@
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1049</td><td>Объем памяти ОЗУ не достаточен для работы [ProductName].</td><td>0</td><td/><td>-970946898</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1049</td><td>Разрешение экрана не подходит для работы [ProductName].</td><td>0</td><td/><td>-970946898</td></row>
 		<row><td>ID_STRING1</td><td>1049</td><td/><td>0</td><td/><td>-970946898</td></row>
-		<row><td>ID_STRING2</td><td>1049</td><td>http://www.УГТУ.com</td><td>0</td><td/><td>1126383309</td></row>
+		<row><td>ID_STRING2</td><td>1049</td><td>http://www.УГТУ.com</td><td>0</td><td/><td>-349967123</td></row>
 		<row><td>ID_STRING3</td><td>1049</td><td>УГТУ</td><td>0</td><td/><td>-970946898</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>0</td><td>0</td><td/><td>-970980177</td></row>
 		<row><td>ID_STRING4</td><td>1049</td><td>Отдел разработки и сопровождения совместно с кафедрой ИСТ</td><td>0</td><td/><td>-970980177</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>0</td><td>0</td><td/><td>-970980177</td></row>
-		<row><td>ID_STRING5</td><td>1049</td><td>http://support.ist.ugtu.net</td><td>0</td><td/><td>1126383309</td></row>
+		<row><td>ID_STRING5</td><td>1049</td><td>http://support.ist.ugtu.net</td><td>0</td><td/><td>-349967123</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>0</td><td>0</td><td/><td>-970980177</td></row>
 		<row><td>ID_STRING6</td><td>1049</td><td>+78214774567</td><td>0</td><td/><td>-970980177</td></row>
 		<row><td>ID_STRING7</td><td>1033</td><td>0</td><td>0</td><td/><td>-970980177</td></row>
 		<row><td>ID_STRING7</td><td>1049</td><td>Штатное расписание</td><td>0</td><td/><td>-970980177</td></row>
 		<row><td>ID_STRING8</td><td>1033</td><td>УГТУ</td><td>0</td><td/><td>1126384810</td></row>
-		<row><td>ID_STRING8</td><td>1049</td><td>УГТУ</td><td>0</td><td/><td>1126383309</td></row>
+		<row><td>ID_STRING8</td><td>1049</td><td>УГТУ</td><td>0</td><td/><td>-349967123</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1049</td><td>Данный компонент не будет удален.</td><td>0</td><td/><td>-970946898</td></row>
 	</table>
 
@@ -3993,8 +3993,8 @@
 		<col def="S0">Value</col>
 		<row><td>ActiveLanguage</td><td>1049</td></row>
 		<row><td>Comments</td><td/></row>
-		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="de9f554a3bc05c12be9c31b998217995">
-UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
+		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="6d78a46bf2c52ee27034bbcad20f7f95">
+QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 			</td></row>
 		<row><td>DefaultProductConfiguration</td><td>Express</td></row>
 		<row><td>EnableSwidtag</td><td>1</td></row>

@@ -183,8 +183,9 @@ namespace Kadr.Controllers
                 bonus = KadrController.Instance.Model.Bonus.Where(bon =>
                     bon.BonusPost != null).Where(bon => bon.BonusPost.Post == (bonusObject as Post));
             }
-
-            return bonus.OrderBy(bon => bon.BonusType.BonusTypeName).ThenBy(bon => bon.DateEnd).ThenBy(bon => bon.LastDateBegin);
+            if (bonus != null)
+                return bonus.OrderBy(bon => bon.BonusType.BonusTypeName).ThenBy(bon => bon.DateEnd).ThenBy(bon => bon.LastDateBegin);
+            return null;
         }
 
         public IEnumerable<Bonus> GetAllEmployeeBonus(Employee employee)

@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categorySmallNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -44,23 +44,30 @@
             // 
             this.panel1.Controls.Add(this.dataGridView1);
             this.helpProvider1.SetShowHelp(this.panel1, true);
+            this.panel1.Size = new System.Drawing.Size(600, 264);
             this.panel1.Controls.SetChildIndex(this.dataGridView1, 0);
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(12, 279);
+            this.panel2.Size = new System.Drawing.Size(601, 30);
             // 
             // ApplyBtn
             // 
             this.helpProvider1.SetHelpString(this.ApplyBtn, "Вносит изменения в базу данных, не закрывая окно.");
-            this.ApplyBtn.Location = new System.Drawing.Point(459, 2);
+            this.ApplyBtn.Location = new System.Drawing.Point(509, 2);
             this.helpProvider1.SetShowHelp(this.ApplyBtn, true);
             // 
             // CancelBtn
             // 
             this.helpProvider1.SetHelpString(this.CancelBtn, "Отменяет все изменения с момента последноего сохранения и закрывает окно.");
-            this.CancelBtn.Location = new System.Drawing.Point(367, 2);
+            this.CancelBtn.Location = new System.Drawing.Point(417, 2);
             this.helpProvider1.SetShowHelp(this.CancelBtn, true);
             // 
             // OKBtn
             // 
             this.helpProvider1.SetHelpString(this.OKBtn, "Вносит изменения в базу данных и закрывает окно.");
+            this.OKBtn.Location = new System.Drawing.Point(325, 2);
             this.helpProvider1.SetShowHelp(this.OKBtn, true);
             // 
             // HelpBtn
@@ -80,13 +87,9 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(550, 185);
+            this.dataGridView1.Size = new System.Drawing.Size(600, 239);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
-            // 
-            // categoryBindingSource
-            // 
-            this.categoryBindingSource.DataSource = typeof(Kadr.Data.Category);
             // 
             // categoryNameDataGridViewTextBoxColumn
             // 
@@ -111,12 +114,16 @@
             this.OrderBy.Name = "OrderBy";
             this.OrderBy.Width = 126;
             // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataSource = typeof(Kadr.Data.Category);
+            // 
             // CategoryDialog
             // 
             this.ApplyButtonVisible = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 263);
+            this.ClientSize = new System.Drawing.Size(625, 317);
             this.Name = "CategoryDialog";
             this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Категории персонала";

@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Kadr.Controllers;
 using Kadr.Data;
@@ -49,7 +45,7 @@ namespace Kadr.UI.Forms
                 {
                     bon.Add(bn);
                 }*/
-            bonusBindingSource.DataSource = Kadr.Controllers.BonusController.Instance.GetBonus(bonusObject).Where(bn => BonusFilters.Contains((bn as IObjectState).State()));
+            bonusBindingSource.DataSource = BonusController.Instance.GetBonus(bonusObject).Where(bn => BonusFilters.Contains((bn as IObjectState).State()));
 
 
             //bonusBindingSource.DataSource = BonusController.Instance.GetBonus((this.FrameNodeObject as KadrEmployeeObject).Employee);
@@ -105,8 +101,8 @@ namespace Kadr.UI.Forms
                 return;
             }
 
-            using (Kadr.UI.Forms.BonusHistoryForm HistForm =
-                           new Kadr.UI.Forms.BonusHistoryForm())
+            using (BonusHistoryForm HistForm =
+                           new BonusHistoryForm())
             {
                 HistForm.Bonus = currentBonus;
                 HistForm.ShowDialog();

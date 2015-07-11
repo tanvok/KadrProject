@@ -34,6 +34,8 @@ namespace Kadr.UI.Dialogs
                 cbBonusType.Items.Add(bonType);
             }
 
+            cbBonusType.SelectedIndex = 0;
+
             cbFinancingSource.Enabled = false;
             chbWithFinSource.Checked = false;
         }
@@ -41,8 +43,7 @@ namespace Kadr.UI.Dialogs
         private void cbBonusType_SelectedIndexChanged(object sender, EventArgs e)
         {
             //загружаем список надбавок указанного типа
-            
-            bonus = KadrController.Instance.Model.GetBonusByBonusTypeForProlong((cbBonusType.SelectedItem as BonusType).id, DateTime.Today, DateTime.Today.AddMonths(1).AddDays(1 - DateTime.Today.Day)).ToArray();
+            bonus = KadrController.Instance.Model.GetBonusByBonusTypeForProlong((cbBonusType.SelectedItem as BonusType).id, dtNewDate.Value.AddDays(1-dtNewDate.Value.Day), dtNewDate.Value).ToArray();
             getBonusByBonusTypeForProlongResultBindingSource.DataSource = bonus;
             cbProlongForAll.Checked = true;
         }
@@ -69,6 +70,22 @@ namespace Kadr.UI.Dialogs
                     continue;
                 BonusHistory bonHist = new BonusHistory();
                 bonHist.BonusCount = curBonus.BonusCount.Value;
+
+                if ((chbWithFinSource.Checked) && (cbFinancingSource.SelectedItem != null))
+                {
+                    //если источник финансирования <не указано> 
+                    /*if ((cbFinancingSource.SelectedItem as FinancingSource).id == 0)
+                    {
+                        bonHist.FinancingSource = bon.ObjectFinancingSource;
+                    }
+                    else*/
+                        bonHist.FinancingSource = cbFinancingSource.SelectedItem as FinancingSource;
+                }
+                else //если источник просто не указан, то берем источник надбавки
+                {
+                    bonHist.FinancingSource = bon.LastFinancingSource;
+                }
+
                 bonHist.FinancingSource = FinancingSource.GetFinancingSourceByName(curBonus.BonusFinancingSourceName);
                 bonHist.DateBegin = dtNewDate.Value;
                 bonHist.Prikaz = cbNewPrikaz.SelectedItem as Prikaz;

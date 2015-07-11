@@ -940,13 +940,13 @@ namespace Kadr.UI.Forms
             this.причинаСовмещенияToolStripMenuItem});
             this.совмещенияToolStripMenuItem.Name = "совмещенияToolStripMenuItem";
             this.совмещенияToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.совмещенияToolStripMenuItem.Text = "Совмещения";
+            this.совмещенияToolStripMenuItem.Text = "Замещения";
             // 
             // причинаСовмещенияToolStripMenuItem
             // 
             this.причинаСовмещенияToolStripMenuItem.Name = "причинаСовмещенияToolStripMenuItem";
-            this.причинаСовмещенияToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.причинаСовмещенияToolStripMenuItem.Text = "Причины совмещения";
+            this.причинаСовмещенияToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.причинаСовмещенияToolStripMenuItem.Text = "Причины замещения";
             this.причинаСовмещенияToolStripMenuItem.Click += new System.EventHandler(this.причинаСовмещенияToolStripMenuItem_Click);
             // 
             // табельToolStripMenuItem

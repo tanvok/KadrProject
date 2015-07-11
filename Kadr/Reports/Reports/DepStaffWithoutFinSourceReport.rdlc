@@ -952,6 +952,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -2160,17 +2161,6 @@
                           <GroupExpression>=Fields!CategoryName.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
-                      <SortExpressions>
-                        <SortExpression>
-                          <Value>=Fields!CategoryName.Value</Value>
-                        </SortExpression>
-                        <SortExpression>
-                          <Value>=Fields!PKCategoryName.Value</Value>
-                        </SortExpression>
-                        <SortExpression>
-                          <Value>=Fields!PostName.Value</Value>
-                        </SortExpression>
-                      </SortExpressions>
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
@@ -2208,6 +2198,27 @@
                           <TablixMembers>
                             <TablixMember>
                               <Group Name="Details" />
+                              <SortExpressions>
+                                <SortExpression>
+                                  <Value>=Fields!FinancingSourceName.Value</Value>
+                                </SortExpression>
+                                <SortExpression>
+                                  <Value>=Fields!CategoryName.Value</Value>
+                                </SortExpression>
+                                <SortExpression>
+                                  <Value>=Fields!PKCategoryName.Value</Value>
+                                  <Direction>Descending</Direction>
+                                </SortExpression>
+                                <SortExpression>
+                                  <Value>=Fields!PostName.Value</Value>
+                                </SortExpression>
+                                <SortExpression>
+                                  <Value>=Fields!EmplFullName.Value</Value>
+                                </SortExpression>
+                                <SortExpression>
+                                  <Value>=Fields!EmplName.Value</Value>
+                                </SortExpression>
+                              </SortExpressions>
                             </TablixMember>
                             <TablixMember>
                               <KeepWithGroup>Before</KeepWithGroup>

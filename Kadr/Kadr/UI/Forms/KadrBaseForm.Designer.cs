@@ -1002,28 +1002,29 @@ namespace Kadr.UI.Forms
             // параметрыToolStripMenuItem
             // 
             this.параметрыToolStripMenuItem.Name = "параметрыToolStripMenuItem";
-            this.параметрыToolStripMenuItem.Size = new System.Drawing.Size(309, 22);
+            this.параметрыToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.параметрыToolStripMenuItem.Text = "Назначить надбавки";
             this.параметрыToolStripMenuItem.Click += new System.EventHandler(this.назначитьНадбавкиToolStripMenuItem_Click);
             // 
             // продлитьНадбавкуToolStripMenuItem
             // 
             this.продлитьНадбавкуToolStripMenuItem.Name = "продлитьНадбавкуToolStripMenuItem";
-            this.продлитьНадбавкуToolStripMenuItem.Size = new System.Drawing.Size(309, 22);
+            this.продлитьНадбавкуToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.продлитьНадбавкуToolStripMenuItem.Text = "Продлить надбавку";
+            this.продлитьНадбавкуToolStripMenuItem.Visible = false;
             this.продлитьНадбавкуToolStripMenuItem.Click += new System.EventHandler(this.продлитьНадбавкуToolStripMenuItem_Click);
             // 
             // продлитьНадбавкурасширеннаяФормаToolStripMenuItem
             // 
             this.продлитьНадбавкурасширеннаяФормаToolStripMenuItem.Name = "продлитьНадбавкурасширеннаяФормаToolStripMenuItem";
-            this.продлитьНадбавкурасширеннаяФормаToolStripMenuItem.Size = new System.Drawing.Size(309, 22);
-            this.продлитьНадбавкурасширеннаяФормаToolStripMenuItem.Text = "Продлить надбавку (расширенная форма)";
+            this.продлитьНадбавкурасширеннаяФормаToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.продлитьНадбавкурасширеннаяФормаToolStripMenuItem.Text = "Продлить надбавку";
             this.продлитьНадбавкурасширеннаяФормаToolStripMenuItem.Click += new System.EventHandler(this.продлитьНадбавкурасширеннаяФормаToolStripMenuItem_Click);
             // 
             // назначитьЧасыToolStripMenuItem
             // 
             this.назначитьЧасыToolStripMenuItem.Name = "назначитьЧасыToolStripMenuItem";
-            this.назначитьЧасыToolStripMenuItem.Size = new System.Drawing.Size(309, 22);
+            this.назначитьЧасыToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.назначитьЧасыToolStripMenuItem.Text = "Назначить часы";
             this.назначитьЧасыToolStripMenuItem.Click += new System.EventHandler(this.назначитьЧасыToolStripMenuItem_Click);
             // 

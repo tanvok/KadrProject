@@ -74,19 +74,15 @@ namespace Kadr.UI.Dialogs
                 if ((chbWithFinSource.Checked) && (cbFinancingSource.SelectedItem != null))
                 {
                     //если источник финансирования <не указано> 
-                    /*if ((cbFinancingSource.SelectedItem as FinancingSource).id == 0)
+                    if ((cbFinancingSource.SelectedItem as FinancingSource).id == 0)
                     {
                         bonHist.FinancingSource = bon.ObjectFinancingSource;
                     }
-                    else*/
+                    else
                         bonHist.FinancingSource = cbFinancingSource.SelectedItem as FinancingSource;
                 }
                 else //если источник просто не указан, то берем источник надбавки
-                {
-                    bonHist.FinancingSource = bon.LastFinancingSource;
-                }
-
-                bonHist.FinancingSource = FinancingSource.GetFinancingSourceByName(curBonus.BonusFinancingSourceName);
+                    bonHist.FinancingSource = FinancingSource.GetFinancingSourceByName(curBonus.BonusFinancingSourceName);
                 bonHist.DateBegin = dtNewDate.Value;
                 bonHist.Prikaz = cbNewPrikaz.SelectedItem as Prikaz;
                 bonHist.Bonus = bon;

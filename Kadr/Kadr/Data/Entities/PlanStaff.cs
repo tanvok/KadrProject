@@ -13,11 +13,11 @@ namespace Kadr.Data
     {
         public override string ToString()
         {
-            string depStr = Dep.DepartmentName + ", " + Post.PostName + " (" + Post.PKCategory.ToString() + ")";
+            string depStr = Dep.DepartmentName + ", " + Post.PostName + " (" + Post.PKCategory + ")";
             if (FinancingSource != null)
-                depStr = Dep.DepartmentName + ", " + Post.PostName + " (" + Post.PKCategory.ToString() + "), " + FinancingSource.ToString();                 
+                depStr = Dep.DepartmentName + ", " + Post.PostName + " (" + Post.PKCategory + "), " + FinancingSource;                 
             if (PrikazBegin != null)
-                depStr += ", " + PrikazBegin.ToString();
+                depStr += ", " + PrikazBegin;
             return depStr;
         }
 

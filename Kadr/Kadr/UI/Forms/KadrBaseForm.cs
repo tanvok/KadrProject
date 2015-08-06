@@ -411,6 +411,7 @@ namespace Kadr.UI.Forms
         private void KadrBaseForm_Load(object sender, EventArgs e)
         {
 
+
             //ImportDailyReportFiles();
             kadrTreeView1.CreateRootNodes();
             CreateNodeContextItems();

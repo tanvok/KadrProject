@@ -15,7 +15,6 @@ namespace Kadr.Controllers
 
     class KadrController: UIX.Controllers.GenericController<Kadr.Data.dckadrDataContext>
     {
-
         
         
         public event EventHandler<SubmitModelChangesArgs> SubmitingModelChanges;
@@ -112,7 +111,7 @@ namespace Kadr.Controllers
 
         }
 
-        
+
 
 
         private string GetCurrentUser()
@@ -325,7 +324,7 @@ namespace Kadr.Controllers
 
 
 
-            /// <summary>
+           
 
  
 }

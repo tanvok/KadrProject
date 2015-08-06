@@ -69,13 +69,8 @@ namespace Kadr.UI.Frames
         private ToolStripSeparator toolStripSeparator3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private TabPage tpOtpusk;
         private BindingSource oKOtpuskBindingSource;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn idOtpuskVidDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn idOtpuskPrikazDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn OtpDateBegin;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private TableLayoutPanel tableLayoutPanel5;
         private Panel panel1;
         private TableLayoutPanel tableLayoutPanel6;
@@ -113,6 +108,11 @@ namespace Kadr.UI.Frames
         private DataGridViewTextBoxColumn Prikaz;
         private TabPage tpEmplBonus;
         private BonusFrame bonusFrame1;
+        private SplitContainer splitContainer1;
+        private DataGridViewTextBoxColumn idOtpuskVidDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn idOtpuskPrikazDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn OtpDateBegin;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         #region Properties
 
         /// <summary>
@@ -241,14 +241,12 @@ namespace Kadr.UI.Frames
 
         private void LoadOtpusk()
         {
-            //IEnumerable<OK_Otpusk>
-            oKOtpuskBindingSource.DataSource =                
-               KadrController.Instance.Model.OK_Otpusks.Where(otp => otp.FactStaff.Employee == Employee).Where(
-                    otp => otp.DateBegin >= DateTime.Today.AddYears(-2)).OrderByDescending(otp => otp.DateBegin);
+            FactStaff currentFactStaff = factStaffBindingSource.Current as FactStaff;
+            if (currentFactStaff != null)
+                oKOtpuskBindingSource.DataSource =
+                    KadrController.Instance.Model.OK_Otpusks.Where(otp => otp.FactStaff == currentFactStaff).Where(
+                         otp => otp.DateBegin >= DateTime.Today.AddYears(-2)).OrderByDescending(otp => otp.DateBegin);
 
-            //foreach ()
-            /* KadrController.Instance.Model.OK_Otpusks.Where(otp => otp.FactStaff.Employee == Employee).Where(
-                    otp => otp.DateBegin >= DateTime.Today.AddYears(-2)).OrderByDescending(otp => otp.DateBegin);*/
         }
 
         #endregion
@@ -408,6 +406,7 @@ namespace Kadr.UI.Frames
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.tpEmpPost = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvEmplPosts = new System.Windows.Forms.DataGridView();
             this.Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Post = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -423,6 +422,12 @@ namespace Kadr.UI.Frames
             this.dateEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prikaz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factStaffBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idOtpuskVidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idOtpuskPrikazDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OtpDateBegin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oKOtpuskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tpBonus = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvAllBonus = new System.Windows.Forms.DataGridView();
@@ -471,13 +476,6 @@ namespace Kadr.UI.Frames
             this.AddRankBtn = new System.Windows.Forms.ToolStripButton();
             this.EditRankBtn = new System.Windows.Forms.ToolStripButton();
             this.DelRankBtn = new System.Windows.Forms.ToolStripButton();
-            this.tpOtpusk = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idOtpuskVidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idOtpuskPrikazDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OtpDateBegin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oKOtpuskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tpEmplBonusReport = new System.Windows.Forms.TabPage();
             this.btnBonusRepLoad = new System.Windows.Forms.Button();
             this.dtpBonRepPeriodEnd = new System.Windows.Forms.DateTimePicker();
@@ -495,8 +493,13 @@ namespace Kadr.UI.Frames
             this.tableLayoutPanel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tpEmpPost.SuspendLayout();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmplPosts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.factStaffBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oKOtpuskBindingSource)).BeginInit();
             this.tpBonus.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllBonus)).BeginInit();
@@ -516,9 +519,6 @@ namespace Kadr.UI.Frames
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeRankBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
-            this.tpOtpusk.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oKOtpuskBindingSource)).BeginInit();
             this.tpEmplBonusReport.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.toolStrip6.SuspendLayout();
@@ -536,7 +536,6 @@ namespace Kadr.UI.Frames
             this.tcEmployee.Controls.Add(this.tpEmpPost);
             this.tcEmployee.Controls.Add(this.tpBonus);
             this.tcEmployee.Controls.Add(this.tpEducation);
-            this.tcEmployee.Controls.Add(this.tpOtpusk);
             this.tcEmployee.Controls.Add(this.tpEmplBonusReport);
             this.tcEmployee.Controls.Add(this.tpEmplBonus);
             this.tcEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -620,14 +619,32 @@ namespace Kadr.UI.Frames
             // tpEmpPost
             // 
             this.tpEmpPost.AutoScroll = true;
-            this.tpEmpPost.Controls.Add(this.dgvEmplPosts);
+            this.tpEmpPost.Controls.Add(this.splitContainer1);
             this.tpEmpPost.Location = new System.Drawing.Point(4, 22);
             this.tpEmpPost.Name = "tpEmpPost";
             this.tpEmpPost.Padding = new System.Windows.Forms.Padding(3);
-            this.tpEmpPost.Size = new System.Drawing.Size(802, 533);
+            this.tpEmpPost.Size = new System.Drawing.Size(895, 342);
             this.tpEmpPost.TabIndex = 1;
             this.tpEmpPost.Text = "Занимаемые должности";
             this.tpEmpPost.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.dgvEmplPosts);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Size = new System.Drawing.Size(889, 336);
+            this.splitContainer1.SplitterDistance = 168;
+            this.splitContainer1.TabIndex = 2;
             // 
             // dgvEmplPosts
             // 
@@ -651,12 +668,12 @@ namespace Kadr.UI.Frames
             this.Prikaz});
             this.dgvEmplPosts.DataSource = this.factStaffBindingSource;
             this.dgvEmplPosts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEmplPosts.Location = new System.Drawing.Point(3, 3);
+            this.dgvEmplPosts.Location = new System.Drawing.Point(0, 0);
             this.dgvEmplPosts.Name = "dgvEmplPosts";
             this.dgvEmplPosts.ReadOnly = true;
             this.dgvEmplPosts.RowHeadersVisible = false;
             this.dgvEmplPosts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmplPosts.Size = new System.Drawing.Size(796, 527);
+            this.dgvEmplPosts.Size = new System.Drawing.Size(889, 168);
             this.dgvEmplPosts.TabIndex = 0;
             // 
             // Department
@@ -766,6 +783,62 @@ namespace Kadr.UI.Frames
             // factStaffBindingSource
             // 
             this.factStaffBindingSource.DataSource = typeof(Kadr.Data.FactStaff);
+            this.factStaffBindingSource.PositionChanged += new System.EventHandler(this.factStaffBindingSource_PositionChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idOtpuskVidDataGridViewTextBoxColumn,
+            this.idOtpuskPrikazDataGridViewTextBoxColumn,
+            this.OtpDateBegin,
+            this.dataGridViewTextBoxColumn8});
+            this.dataGridView1.DataSource = this.oKOtpuskBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(889, 164);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // idOtpuskVidDataGridViewTextBoxColumn
+            // 
+            this.idOtpuskVidDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idOtpuskVidDataGridViewTextBoxColumn.DataPropertyName = "OK_Otpuskvid";
+            this.idOtpuskVidDataGridViewTextBoxColumn.HeaderText = "Вид отпуска";
+            this.idOtpuskVidDataGridViewTextBoxColumn.Name = "idOtpuskVidDataGridViewTextBoxColumn";
+            this.idOtpuskVidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idOtpuskPrikazDataGridViewTextBoxColumn
+            // 
+            this.idOtpuskPrikazDataGridViewTextBoxColumn.DataPropertyName = "Prikaz";
+            this.idOtpuskPrikazDataGridViewTextBoxColumn.HeaderText = "Приказ";
+            this.idOtpuskPrikazDataGridViewTextBoxColumn.Name = "idOtpuskPrikazDataGridViewTextBoxColumn";
+            this.idOtpuskPrikazDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idOtpuskPrikazDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // OtpDateBegin
+            // 
+            this.OtpDateBegin.DataPropertyName = "DateBegin";
+            this.OtpDateBegin.HeaderText = "Дата начала";
+            this.OtpDateBegin.Name = "OtpDateBegin";
+            this.OtpDateBegin.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "DateEnd";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Дата окончания";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // oKOtpuskBindingSource
+            // 
+            this.oKOtpuskBindingSource.DataSource = typeof(Kadr.Data.OK_Otpusk);
             // 
             // tpBonus
             // 
@@ -1002,7 +1075,7 @@ namespace Kadr.UI.Frames
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox5);
             this.splitContainer2.Size = new System.Drawing.Size(796, 527);
-            this.splitContainer2.SplitterDistance = 268;
+            this.splitContainer2.SplitterDistance = 265;
             this.splitContainer2.TabIndex = 2;
             // 
             // groupBox4
@@ -1011,7 +1084,7 @@ namespace Kadr.UI.Frames
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(796, 268);
+            this.groupBox4.Size = new System.Drawing.Size(796, 265);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ученые степени";
@@ -1029,7 +1102,7 @@ namespace Kadr.UI.Frames
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(790, 249);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(790, 246);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // dataGridView2
@@ -1150,7 +1223,7 @@ namespace Kadr.UI.Frames
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(796, 255);
+            this.groupBox5.Size = new System.Drawing.Size(796, 258);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Научные звания";
@@ -1168,7 +1241,7 @@ namespace Kadr.UI.Frames
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(790, 236);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(790, 239);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // dataGridView3
@@ -1189,7 +1262,7 @@ namespace Kadr.UI.Frames
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(877, 204);
+            this.dataGridView3.Size = new System.Drawing.Size(877, 208);
             this.dataGridView3.TabIndex = 8;
             this.dataGridView3.DoubleClick += new System.EventHandler(this.EditRankBtn_Click);
             // 
@@ -1263,73 +1336,6 @@ namespace Kadr.UI.Frames
             this.DelRankBtn.Text = "Удалить";
             this.DelRankBtn.ToolTipText = "Удалить звание";
             this.DelRankBtn.Click += new System.EventHandler(this.DelRankBtn_Click);
-            // 
-            // tpOtpusk
-            // 
-            this.tpOtpusk.AutoScroll = true;
-            this.tpOtpusk.Controls.Add(this.dataGridView1);
-            this.tpOtpusk.Location = new System.Drawing.Point(4, 22);
-            this.tpOtpusk.Name = "tpOtpusk";
-            this.tpOtpusk.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOtpusk.Size = new System.Drawing.Size(802, 533);
-            this.tpOtpusk.TabIndex = 5;
-            this.tpOtpusk.Text = "Отпуска";
-            this.tpOtpusk.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idOtpuskVidDataGridViewTextBoxColumn,
-            this.idOtpuskPrikazDataGridViewTextBoxColumn,
-            this.OtpDateBegin,
-            this.dataGridViewTextBoxColumn8});
-            this.dataGridView1.DataSource = this.oKOtpuskBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(796, 527);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // idOtpuskVidDataGridViewTextBoxColumn
-            // 
-            this.idOtpuskVidDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idOtpuskVidDataGridViewTextBoxColumn.DataPropertyName = "OK_Otpuskvid";
-            this.idOtpuskVidDataGridViewTextBoxColumn.HeaderText = "Вид отпуска";
-            this.idOtpuskVidDataGridViewTextBoxColumn.Name = "idOtpuskVidDataGridViewTextBoxColumn";
-            this.idOtpuskVidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idOtpuskPrikazDataGridViewTextBoxColumn
-            // 
-            this.idOtpuskPrikazDataGridViewTextBoxColumn.DataPropertyName = "idOtpuskPrikaz";
-            this.idOtpuskPrikazDataGridViewTextBoxColumn.HeaderText = "Приказ";
-            this.idOtpuskPrikazDataGridViewTextBoxColumn.Name = "idOtpuskPrikazDataGridViewTextBoxColumn";
-            this.idOtpuskPrikazDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idOtpuskPrikazDataGridViewTextBoxColumn.Width = 140;
-            // 
-            // OtpDateBegin
-            // 
-            this.OtpDateBegin.DataPropertyName = "DateBegin";
-            this.OtpDateBegin.HeaderText = "Дата начала";
-            this.OtpDateBegin.Name = "OtpDateBegin";
-            this.OtpDateBegin.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "DateEnd";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Дата окончания";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // oKOtpuskBindingSource
-            // 
-            this.oKOtpuskBindingSource.DataSource = typeof(Kadr.Data.OK_Otpusk);
             // 
             // tpEmplBonusReport
             // 
@@ -1431,7 +1437,7 @@ namespace Kadr.UI.Frames
             this.tpEmplBonus.Location = new System.Drawing.Point(4, 22);
             this.tpEmplBonus.Name = "tpEmplBonus";
             this.tpEmplBonus.Padding = new System.Windows.Forms.Padding(3);
-            this.tpEmplBonus.Size = new System.Drawing.Size(895, 342);
+            this.tpEmplBonus.Size = new System.Drawing.Size(802, 533);
             this.tpEmplBonus.TabIndex = 6;
             this.tpEmplBonus.Text = "Надбавки";
             this.tpEmplBonus.UseVisualStyleBackColor = true;
@@ -1442,7 +1448,7 @@ namespace Kadr.UI.Frames
             this.bonusFrame1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bonusFrame1.Location = new System.Drawing.Point(3, 3);
             this.bonusFrame1.Name = "bonusFrame1";
-            this.bonusFrame1.Size = new System.Drawing.Size(889, 336);
+            this.bonusFrame1.Size = new System.Drawing.Size(796, 527);
             this.bonusFrame1.TabIndex = 0;
             // 
             // KadrEmployeeFrame
@@ -1457,8 +1463,13 @@ namespace Kadr.UI.Frames
             this.tableLayoutPanel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tpEmpPost.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmplPosts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.factStaffBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oKOtpuskBindingSource)).EndInit();
             this.tpBonus.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -1484,9 +1495,6 @@ namespace Kadr.UI.Frames
             ((System.ComponentModel.ISupportInitialize)(this.employeeRankBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.tpOtpusk.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oKOtpuskBindingSource)).EndInit();
             this.tpEmplBonusReport.ResumeLayout(false);
             this.tpEmplBonusReport.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
@@ -1550,9 +1558,6 @@ namespace Kadr.UI.Frames
             if (tcEmployee.SelectedTab == tpEmpPost)
                 LoadPostList();
 
-            if (tcEmployee.SelectedTab == tpOtpusk)
-                LoadOtpusk();
-
             if (tcEmployee.SelectedTab == tpEmployee)
                 LoadEmployee();
 
@@ -1583,6 +1588,11 @@ namespace Kadr.UI.Frames
         private void dgvAllBonus_DoubleClick(object sender, EventArgs e)
         {
             tsbBonusHistory_Click(null, null);
+        }
+
+        private void factStaffBindingSource_PositionChanged(object sender, EventArgs e)
+        {
+            LoadOtpusk();
         }
 
     }

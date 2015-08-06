@@ -139,12 +139,6 @@ namespace Reports
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetEmployeesSum", IsComposable=true)]
-		public IQueryable<GetEmployeesSumResult> GetEmployeesSum([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idEmployee, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodBegin", DbType="Date")] System.Nullable<System.DateTime> periodBegin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodEnd", DbType="Date")] System.Nullable<System.DateTime> periodEnd)
-		{
-			return this.CreateMethodCallQuery<GetEmployeesSumResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idEmployee, periodBegin, periodEnd);
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetAllPosts", IsComposable=true)]
 		public IQueryable<GetAllPostsResult> GetAllPosts([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idDepartment, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodBegin", DbType="Date")] System.Nullable<System.DateTime> periodBegin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodEnd", DbType="Date")] System.Nullable<System.DateTime> periodEnd, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WithSubDeps", DbType="Bit")] System.Nullable<bool> withSubDeps)
 		{
@@ -227,6 +221,12 @@ namespace Reports
 		public IQueryable<GetPPSDepartmentBonusResult> GetPPSDepartmentBonus([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idDepartment, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodBegin", DbType="Date")] System.Nullable<System.DateTime> periodBegin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodEnd", DbType="Date")] System.Nullable<System.DateTime> periodEnd, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WithSubDeps", DbType="Bit")] System.Nullable<bool> withSubDeps)
 		{
 			return this.CreateMethodCallQuery<GetPPSDepartmentBonusResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDepartment, periodBegin, periodEnd, withSubDeps);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetEmployeesSum", IsComposable=true)]
+		public IQueryable<GetEmployeesSumResult> GetEmployeesSum([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idEmployee, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodBegin", DbType="Date")] System.Nullable<System.DateTime> periodBegin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodEnd", DbType="Date")] System.Nullable<System.DateTime> periodEnd)
+		{
+			return this.CreateMethodCallQuery<GetEmployeesSumResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idEmployee, periodBegin, periodEnd);
 		}
 	}
 	
@@ -1518,734 +1518,6 @@ namespace Reports
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	public partial class GetEmployeesSumResult
-	{
-		
-		private string _ReportMainObjectName;
-		
-		private string _TypeWorkName;
-		
-		private string _PKCategoryName;
-		
-		private string _FinancingSourceName;
-		
-		private string _BonusTypeName;
-		
-		private string _PostName;
-		
-		private string _EmployeeName;
-		
-		private string _BonusLevel;
-		
-		private string _BonusCount;
-		
-		private System.Nullable<decimal> _BonusSum;
-		
-		private System.Nullable<decimal> _AllBonusSum;
-		
-		private System.Nullable<decimal> _StaffCount;
-		
-		private System.Nullable<decimal> _Salary;
-		
-		private System.Nullable<int> _idFactStaff;
-		
-		private System.Nullable<int> _idPlanStaff;
-		
-		private System.Nullable<int> _SeverKoeff;
-		
-		private System.Nullable<int> _RayonKoeff;
-		
-		private System.Nullable<int> _NDFLKoeff;
-		
-		private string _DepartmentName;
-		
-		private System.Nullable<int> _idBonusType;
-		
-		private System.Nullable<System.DateTime> _PeriodBegin;
-		
-		private System.Nullable<System.DateTime> _PeriodEnd;
-		
-		private System.Nullable<decimal> _StaffCountWithoutReplacement;
-		
-		private System.Nullable<int> _idReplacementReason;
-		
-		private System.Nullable<bool> _HasEnvironmentBonus;
-		
-		private string _CategoryName;
-		
-		private string _PostFullName;
-		
-		private string _DepartmentFullName;
-		
-		private System.Nullable<bool> _ForEmployee;
-		
-		private string _MatOtpusk;
-		
-		private System.Nullable<decimal> _SalaryKoeff;
-		
-		private System.Nullable<int> _idBonusMeasure;
-		
-		private System.Nullable<bool> _IsStaffRateable;
-		
-		private System.Nullable<bool> _IsCalcStaffRateable;
-		
-		private System.Nullable<decimal> _CalcStaffCount;
-		
-		private string _ReplacedEmployeeName;
-		
-		private System.Nullable<decimal> _HourCount;
-		
-		private System.Nullable<decimal> _CalcStaffCountWithoutReplacement;
-		
-		private System.Nullable<System.DateTime> _DateBegin;
-		
-		private System.Nullable<System.DateTime> _DateEnd;
-		
-		public GetEmployeesSumResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportMainObjectName", DbType="VarChar(50)")]
-		public string ReportMainObjectName
-		{
-			get
-			{
-				return this._ReportMainObjectName;
-			}
-			set
-			{
-				if ((this._ReportMainObjectName != value))
-				{
-					this._ReportMainObjectName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeWorkName", DbType="VarChar(50)")]
-		public string TypeWorkName
-		{
-			get
-			{
-				return this._TypeWorkName;
-			}
-			set
-			{
-				if ((this._TypeWorkName != value))
-				{
-					this._TypeWorkName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PKCategoryName", DbType="VarChar(50)")]
-		public string PKCategoryName
-		{
-			get
-			{
-				return this._PKCategoryName;
-			}
-			set
-			{
-				if ((this._PKCategoryName != value))
-				{
-					this._PKCategoryName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FinancingSourceName", DbType="VarChar(50)")]
-		public string FinancingSourceName
-		{
-			get
-			{
-				return this._FinancingSourceName;
-			}
-			set
-			{
-				if ((this._FinancingSourceName != value))
-				{
-					this._FinancingSourceName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusTypeName", DbType="VarChar(50)")]
-		public string BonusTypeName
-		{
-			get
-			{
-				return this._BonusTypeName;
-			}
-			set
-			{
-				if ((this._BonusTypeName != value))
-				{
-					this._BonusTypeName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostName", DbType="VarChar(150)")]
-		public string PostName
-		{
-			get
-			{
-				return this._PostName;
-			}
-			set
-			{
-				if ((this._PostName != value))
-				{
-					this._PostName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeName", DbType="VarChar(150)")]
-		public string EmployeeName
-		{
-			get
-			{
-				return this._EmployeeName;
-			}
-			set
-			{
-				if ((this._EmployeeName != value))
-				{
-					this._EmployeeName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusLevel", DbType="VarChar(50)")]
-		public string BonusLevel
-		{
-			get
-			{
-				return this._BonusLevel;
-			}
-			set
-			{
-				if ((this._BonusLevel != value))
-				{
-					this._BonusLevel = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusCount", DbType="VarChar(50)")]
-		public string BonusCount
-		{
-			get
-			{
-				return this._BonusCount;
-			}
-			set
-			{
-				if ((this._BonusCount != value))
-				{
-					this._BonusCount = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusSum", DbType="Decimal(14,4)")]
-		public System.Nullable<decimal> BonusSum
-		{
-			get
-			{
-				return this._BonusSum;
-			}
-			set
-			{
-				if ((this._BonusSum != value))
-				{
-					this._BonusSum = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllBonusSum", DbType="Decimal(14,4)")]
-		public System.Nullable<decimal> AllBonusSum
-		{
-			get
-			{
-				return this._AllBonusSum;
-			}
-			set
-			{
-				if ((this._AllBonusSum != value))
-				{
-					this._AllBonusSum = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StaffCount", DbType="Decimal(14,4)")]
-		public System.Nullable<decimal> StaffCount
-		{
-			get
-			{
-				return this._StaffCount;
-			}
-			set
-			{
-				if ((this._StaffCount != value))
-				{
-					this._StaffCount = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Salary", DbType="Decimal(14,4)")]
-		public System.Nullable<decimal> Salary
-		{
-			get
-			{
-				return this._Salary;
-			}
-			set
-			{
-				if ((this._Salary != value))
-				{
-					this._Salary = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idFactStaff", DbType="Int")]
-		public System.Nullable<int> idFactStaff
-		{
-			get
-			{
-				return this._idFactStaff;
-			}
-			set
-			{
-				if ((this._idFactStaff != value))
-				{
-					this._idFactStaff = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPlanStaff", DbType="Int")]
-		public System.Nullable<int> idPlanStaff
-		{
-			get
-			{
-				return this._idPlanStaff;
-			}
-			set
-			{
-				if ((this._idPlanStaff != value))
-				{
-					this._idPlanStaff = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SeverKoeff", DbType="Int")]
-		public System.Nullable<int> SeverKoeff
-		{
-			get
-			{
-				return this._SeverKoeff;
-			}
-			set
-			{
-				if ((this._SeverKoeff != value))
-				{
-					this._SeverKoeff = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RayonKoeff", DbType="Int")]
-		public System.Nullable<int> RayonKoeff
-		{
-			get
-			{
-				return this._RayonKoeff;
-			}
-			set
-			{
-				if ((this._RayonKoeff != value))
-				{
-					this._RayonKoeff = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NDFLKoeff", DbType="Int")]
-		public System.Nullable<int> NDFLKoeff
-		{
-			get
-			{
-				return this._NDFLKoeff;
-			}
-			set
-			{
-				if ((this._NDFLKoeff != value))
-				{
-					this._NDFLKoeff = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentName", DbType="VarChar(50)")]
-		public string DepartmentName
-		{
-			get
-			{
-				return this._DepartmentName;
-			}
-			set
-			{
-				if ((this._DepartmentName != value))
-				{
-					this._DepartmentName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBonusType", DbType="Int")]
-		public System.Nullable<int> idBonusType
-		{
-			get
-			{
-				return this._idBonusType;
-			}
-			set
-			{
-				if ((this._idBonusType != value))
-				{
-					this._idBonusType = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodBegin", DbType="DateTime")]
-		public System.Nullable<System.DateTime> PeriodBegin
-		{
-			get
-			{
-				return this._PeriodBegin;
-			}
-			set
-			{
-				if ((this._PeriodBegin != value))
-				{
-					this._PeriodBegin = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodEnd", DbType="DateTime")]
-		public System.Nullable<System.DateTime> PeriodEnd
-		{
-			get
-			{
-				return this._PeriodEnd;
-			}
-			set
-			{
-				if ((this._PeriodEnd != value))
-				{
-					this._PeriodEnd = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StaffCountWithoutReplacement", DbType="Decimal(8,2)")]
-		public System.Nullable<decimal> StaffCountWithoutReplacement
-		{
-			get
-			{
-				return this._StaffCountWithoutReplacement;
-			}
-			set
-			{
-				if ((this._StaffCountWithoutReplacement != value))
-				{
-					this._StaffCountWithoutReplacement = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idReplacementReason", DbType="Int")]
-		public System.Nullable<int> idReplacementReason
-		{
-			get
-			{
-				return this._idReplacementReason;
-			}
-			set
-			{
-				if ((this._idReplacementReason != value))
-				{
-					this._idReplacementReason = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasEnvironmentBonus", DbType="Bit")]
-		public System.Nullable<bool> HasEnvironmentBonus
-		{
-			get
-			{
-				return this._HasEnvironmentBonus;
-			}
-			set
-			{
-				if ((this._HasEnvironmentBonus != value))
-				{
-					this._HasEnvironmentBonus = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="VarChar(50)")]
-		public string CategoryName
-		{
-			get
-			{
-				return this._CategoryName;
-			}
-			set
-			{
-				if ((this._CategoryName != value))
-				{
-					this._CategoryName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostFullName", DbType="VarChar(150)")]
-		public string PostFullName
-		{
-			get
-			{
-				return this._PostFullName;
-			}
-			set
-			{
-				if ((this._PostFullName != value))
-				{
-					this._PostFullName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentFullName", DbType="VarChar(150)")]
-		public string DepartmentFullName
-		{
-			get
-			{
-				return this._DepartmentFullName;
-			}
-			set
-			{
-				if ((this._DepartmentFullName != value))
-				{
-					this._DepartmentFullName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForEmployee", DbType="Bit")]
-		public System.Nullable<bool> ForEmployee
-		{
-			get
-			{
-				return this._ForEmployee;
-			}
-			set
-			{
-				if ((this._ForEmployee != value))
-				{
-					this._ForEmployee = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatOtpusk", DbType="VarChar(10)")]
-		public string MatOtpusk
-		{
-			get
-			{
-				return this._MatOtpusk;
-			}
-			set
-			{
-				if ((this._MatOtpusk != value))
-				{
-					this._MatOtpusk = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalaryKoeff", DbType="Decimal(6,2)")]
-		public System.Nullable<decimal> SalaryKoeff
-		{
-			get
-			{
-				return this._SalaryKoeff;
-			}
-			set
-			{
-				if ((this._SalaryKoeff != value))
-				{
-					this._SalaryKoeff = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBonusMeasure", DbType="Int")]
-		public System.Nullable<int> idBonusMeasure
-		{
-			get
-			{
-				return this._idBonusMeasure;
-			}
-			set
-			{
-				if ((this._idBonusMeasure != value))
-				{
-					this._idBonusMeasure = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsStaffRateable", DbType="Bit")]
-		public System.Nullable<bool> IsStaffRateable
-		{
-			get
-			{
-				return this._IsStaffRateable;
-			}
-			set
-			{
-				if ((this._IsStaffRateable != value))
-				{
-					this._IsStaffRateable = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsCalcStaffRateable", DbType="Bit")]
-		public System.Nullable<bool> IsCalcStaffRateable
-		{
-			get
-			{
-				return this._IsCalcStaffRateable;
-			}
-			set
-			{
-				if ((this._IsCalcStaffRateable != value))
-				{
-					this._IsCalcStaffRateable = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CalcStaffCount", DbType="Decimal(14,4)")]
-		public System.Nullable<decimal> CalcStaffCount
-		{
-			get
-			{
-				return this._CalcStaffCount;
-			}
-			set
-			{
-				if ((this._CalcStaffCount != value))
-				{
-					this._CalcStaffCount = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReplacedEmployeeName", DbType="VarChar(150)")]
-		public string ReplacedEmployeeName
-		{
-			get
-			{
-				return this._ReplacedEmployeeName;
-			}
-			set
-			{
-				if ((this._ReplacedEmployeeName != value))
-				{
-					this._ReplacedEmployeeName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HourCount", DbType="Decimal(14,2)")]
-		public System.Nullable<decimal> HourCount
-		{
-			get
-			{
-				return this._HourCount;
-			}
-			set
-			{
-				if ((this._HourCount != value))
-				{
-					this._HourCount = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CalcStaffCountWithoutReplacement", DbType="Decimal(14,4)")]
-		public System.Nullable<decimal> CalcStaffCountWithoutReplacement
-		{
-			get
-			{
-				return this._CalcStaffCountWithoutReplacement;
-			}
-			set
-			{
-				if ((this._CalcStaffCountWithoutReplacement != value))
-				{
-					this._CalcStaffCountWithoutReplacement = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateBegin", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateBegin
-		{
-			get
-			{
-				return this._DateBegin;
-			}
-			set
-			{
-				if ((this._DateBegin != value))
-				{
-					this._DateBegin = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateEnd", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateEnd
-		{
-			get
-			{
-				return this._DateEnd;
-			}
-			set
-			{
-				if ((this._DateEnd != value))
-				{
-					this._DateEnd = value;
-				}
 			}
 		}
 	}
@@ -9359,6 +8631,734 @@ namespace Reports
 				if ((this._Salary != value))
 				{
 					this._Salary = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetEmployeesSumResult
+	{
+		
+		private string _ReportMainObjectName;
+		
+		private string _TypeWorkName;
+		
+		private string _PKCategoryName;
+		
+		private string _FinancingSourceName;
+		
+		private string _BonusTypeName;
+		
+		private string _PostName;
+		
+		private string _EmployeeName;
+		
+		private string _BonusLevel;
+		
+		private string _BonusCount;
+		
+		private System.Nullable<decimal> _BonusSum;
+		
+		private System.Nullable<decimal> _AllBonusSum;
+		
+		private System.Nullable<decimal> _StaffCount;
+		
+		private System.Nullable<decimal> _Salary;
+		
+		private System.Nullable<int> _idFactStaff;
+		
+		private System.Nullable<int> _idPlanStaff;
+		
+		private System.Nullable<int> _SeverKoeff;
+		
+		private System.Nullable<int> _RayonKoeff;
+		
+		private System.Nullable<int> _NDFLKoeff;
+		
+		private string _DepartmentName;
+		
+		private System.Nullable<int> _idBonusType;
+		
+		private System.Nullable<System.DateTime> _PeriodBegin;
+		
+		private System.Nullable<System.DateTime> _PeriodEnd;
+		
+		private System.Nullable<decimal> _StaffCountWithoutReplacement;
+		
+		private System.Nullable<int> _idReplacementReason;
+		
+		private System.Nullable<bool> _HasEnvironmentBonus;
+		
+		private string _CategoryName;
+		
+		private string _PostFullName;
+		
+		private string _DepartmentFullName;
+		
+		private System.Nullable<bool> _ForEmployee;
+		
+		private string _MatOtpusk;
+		
+		private System.Nullable<decimal> _SalaryKoeff;
+		
+		private System.Nullable<int> _idBonusMeasure;
+		
+		private System.Nullable<bool> _IsStaffRateable;
+		
+		private System.Nullable<bool> _IsCalcStaffRateable;
+		
+		private System.Nullable<decimal> _CalcStaffCount;
+		
+		private string _ReplacedEmployeeName;
+		
+		private System.Nullable<decimal> _HourCount;
+		
+		private System.Nullable<decimal> _CalcStaffCountWithoutReplacement;
+		
+		private System.Nullable<System.DateTime> _DateBegin;
+		
+		private System.Nullable<System.DateTime> _DateEnd;
+		
+		public GetEmployeesSumResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportMainObjectName", DbType="VarChar(50)")]
+		public string ReportMainObjectName
+		{
+			get
+			{
+				return this._ReportMainObjectName;
+			}
+			set
+			{
+				if ((this._ReportMainObjectName != value))
+				{
+					this._ReportMainObjectName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeWorkName", DbType="VarChar(50)")]
+		public string TypeWorkName
+		{
+			get
+			{
+				return this._TypeWorkName;
+			}
+			set
+			{
+				if ((this._TypeWorkName != value))
+				{
+					this._TypeWorkName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PKCategoryName", DbType="VarChar(50)")]
+		public string PKCategoryName
+		{
+			get
+			{
+				return this._PKCategoryName;
+			}
+			set
+			{
+				if ((this._PKCategoryName != value))
+				{
+					this._PKCategoryName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FinancingSourceName", DbType="VarChar(50)")]
+		public string FinancingSourceName
+		{
+			get
+			{
+				return this._FinancingSourceName;
+			}
+			set
+			{
+				if ((this._FinancingSourceName != value))
+				{
+					this._FinancingSourceName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusTypeName", DbType="VarChar(50)")]
+		public string BonusTypeName
+		{
+			get
+			{
+				return this._BonusTypeName;
+			}
+			set
+			{
+				if ((this._BonusTypeName != value))
+				{
+					this._BonusTypeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostName", DbType="VarChar(150)")]
+		public string PostName
+		{
+			get
+			{
+				return this._PostName;
+			}
+			set
+			{
+				if ((this._PostName != value))
+				{
+					this._PostName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeName", DbType="VarChar(150)")]
+		public string EmployeeName
+		{
+			get
+			{
+				return this._EmployeeName;
+			}
+			set
+			{
+				if ((this._EmployeeName != value))
+				{
+					this._EmployeeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusLevel", DbType="VarChar(50)")]
+		public string BonusLevel
+		{
+			get
+			{
+				return this._BonusLevel;
+			}
+			set
+			{
+				if ((this._BonusLevel != value))
+				{
+					this._BonusLevel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusCount", DbType="VarChar(50)")]
+		public string BonusCount
+		{
+			get
+			{
+				return this._BonusCount;
+			}
+			set
+			{
+				if ((this._BonusCount != value))
+				{
+					this._BonusCount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusSum", DbType="Decimal(14,4)")]
+		public System.Nullable<decimal> BonusSum
+		{
+			get
+			{
+				return this._BonusSum;
+			}
+			set
+			{
+				if ((this._BonusSum != value))
+				{
+					this._BonusSum = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllBonusSum", DbType="Decimal(14,4)")]
+		public System.Nullable<decimal> AllBonusSum
+		{
+			get
+			{
+				return this._AllBonusSum;
+			}
+			set
+			{
+				if ((this._AllBonusSum != value))
+				{
+					this._AllBonusSum = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StaffCount", DbType="Decimal(14,4)")]
+		public System.Nullable<decimal> StaffCount
+		{
+			get
+			{
+				return this._StaffCount;
+			}
+			set
+			{
+				if ((this._StaffCount != value))
+				{
+					this._StaffCount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Salary", DbType="Decimal(14,4)")]
+		public System.Nullable<decimal> Salary
+		{
+			get
+			{
+				return this._Salary;
+			}
+			set
+			{
+				if ((this._Salary != value))
+				{
+					this._Salary = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idFactStaff", DbType="Int")]
+		public System.Nullable<int> idFactStaff
+		{
+			get
+			{
+				return this._idFactStaff;
+			}
+			set
+			{
+				if ((this._idFactStaff != value))
+				{
+					this._idFactStaff = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPlanStaff", DbType="Int")]
+		public System.Nullable<int> idPlanStaff
+		{
+			get
+			{
+				return this._idPlanStaff;
+			}
+			set
+			{
+				if ((this._idPlanStaff != value))
+				{
+					this._idPlanStaff = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SeverKoeff", DbType="Int")]
+		public System.Nullable<int> SeverKoeff
+		{
+			get
+			{
+				return this._SeverKoeff;
+			}
+			set
+			{
+				if ((this._SeverKoeff != value))
+				{
+					this._SeverKoeff = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RayonKoeff", DbType="Int")]
+		public System.Nullable<int> RayonKoeff
+		{
+			get
+			{
+				return this._RayonKoeff;
+			}
+			set
+			{
+				if ((this._RayonKoeff != value))
+				{
+					this._RayonKoeff = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NDFLKoeff", DbType="Int")]
+		public System.Nullable<int> NDFLKoeff
+		{
+			get
+			{
+				return this._NDFLKoeff;
+			}
+			set
+			{
+				if ((this._NDFLKoeff != value))
+				{
+					this._NDFLKoeff = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentName", DbType="VarChar(50)")]
+		public string DepartmentName
+		{
+			get
+			{
+				return this._DepartmentName;
+			}
+			set
+			{
+				if ((this._DepartmentName != value))
+				{
+					this._DepartmentName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBonusType", DbType="Int")]
+		public System.Nullable<int> idBonusType
+		{
+			get
+			{
+				return this._idBonusType;
+			}
+			set
+			{
+				if ((this._idBonusType != value))
+				{
+					this._idBonusType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodBegin", DbType="Date")]
+		public System.Nullable<System.DateTime> PeriodBegin
+		{
+			get
+			{
+				return this._PeriodBegin;
+			}
+			set
+			{
+				if ((this._PeriodBegin != value))
+				{
+					this._PeriodBegin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodEnd", DbType="Date")]
+		public System.Nullable<System.DateTime> PeriodEnd
+		{
+			get
+			{
+				return this._PeriodEnd;
+			}
+			set
+			{
+				if ((this._PeriodEnd != value))
+				{
+					this._PeriodEnd = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StaffCountWithoutReplacement", DbType="Decimal(8,2)")]
+		public System.Nullable<decimal> StaffCountWithoutReplacement
+		{
+			get
+			{
+				return this._StaffCountWithoutReplacement;
+			}
+			set
+			{
+				if ((this._StaffCountWithoutReplacement != value))
+				{
+					this._StaffCountWithoutReplacement = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idReplacementReason", DbType="Int")]
+		public System.Nullable<int> idReplacementReason
+		{
+			get
+			{
+				return this._idReplacementReason;
+			}
+			set
+			{
+				if ((this._idReplacementReason != value))
+				{
+					this._idReplacementReason = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasEnvironmentBonus", DbType="Bit")]
+		public System.Nullable<bool> HasEnvironmentBonus
+		{
+			get
+			{
+				return this._HasEnvironmentBonus;
+			}
+			set
+			{
+				if ((this._HasEnvironmentBonus != value))
+				{
+					this._HasEnvironmentBonus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="VarChar(50)")]
+		public string CategoryName
+		{
+			get
+			{
+				return this._CategoryName;
+			}
+			set
+			{
+				if ((this._CategoryName != value))
+				{
+					this._CategoryName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostFullName", DbType="VarChar(150)")]
+		public string PostFullName
+		{
+			get
+			{
+				return this._PostFullName;
+			}
+			set
+			{
+				if ((this._PostFullName != value))
+				{
+					this._PostFullName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentFullName", DbType="VarChar(150)")]
+		public string DepartmentFullName
+		{
+			get
+			{
+				return this._DepartmentFullName;
+			}
+			set
+			{
+				if ((this._DepartmentFullName != value))
+				{
+					this._DepartmentFullName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForEmployee", DbType="Bit")]
+		public System.Nullable<bool> ForEmployee
+		{
+			get
+			{
+				return this._ForEmployee;
+			}
+			set
+			{
+				if ((this._ForEmployee != value))
+				{
+					this._ForEmployee = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatOtpusk", DbType="VarChar(10)")]
+		public string MatOtpusk
+		{
+			get
+			{
+				return this._MatOtpusk;
+			}
+			set
+			{
+				if ((this._MatOtpusk != value))
+				{
+					this._MatOtpusk = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalaryKoeff", DbType="Decimal(6,2)")]
+		public System.Nullable<decimal> SalaryKoeff
+		{
+			get
+			{
+				return this._SalaryKoeff;
+			}
+			set
+			{
+				if ((this._SalaryKoeff != value))
+				{
+					this._SalaryKoeff = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBonusMeasure", DbType="Int")]
+		public System.Nullable<int> idBonusMeasure
+		{
+			get
+			{
+				return this._idBonusMeasure;
+			}
+			set
+			{
+				if ((this._idBonusMeasure != value))
+				{
+					this._idBonusMeasure = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsStaffRateable", DbType="Bit")]
+		public System.Nullable<bool> IsStaffRateable
+		{
+			get
+			{
+				return this._IsStaffRateable;
+			}
+			set
+			{
+				if ((this._IsStaffRateable != value))
+				{
+					this._IsStaffRateable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsCalcStaffRateable", DbType="Bit")]
+		public System.Nullable<bool> IsCalcStaffRateable
+		{
+			get
+			{
+				return this._IsCalcStaffRateable;
+			}
+			set
+			{
+				if ((this._IsCalcStaffRateable != value))
+				{
+					this._IsCalcStaffRateable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CalcStaffCount", DbType="Decimal(14,4)")]
+		public System.Nullable<decimal> CalcStaffCount
+		{
+			get
+			{
+				return this._CalcStaffCount;
+			}
+			set
+			{
+				if ((this._CalcStaffCount != value))
+				{
+					this._CalcStaffCount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReplacedEmployeeName", DbType="VarChar(150)")]
+		public string ReplacedEmployeeName
+		{
+			get
+			{
+				return this._ReplacedEmployeeName;
+			}
+			set
+			{
+				if ((this._ReplacedEmployeeName != value))
+				{
+					this._ReplacedEmployeeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HourCount", DbType="Decimal(14,2)")]
+		public System.Nullable<decimal> HourCount
+		{
+			get
+			{
+				return this._HourCount;
+			}
+			set
+			{
+				if ((this._HourCount != value))
+				{
+					this._HourCount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CalcStaffCountWithoutReplacement", DbType="Decimal(14,4)")]
+		public System.Nullable<decimal> CalcStaffCountWithoutReplacement
+		{
+			get
+			{
+				return this._CalcStaffCountWithoutReplacement;
+			}
+			set
+			{
+				if ((this._CalcStaffCountWithoutReplacement != value))
+				{
+					this._CalcStaffCountWithoutReplacement = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateBegin", DbType="Date")]
+		public System.Nullable<System.DateTime> DateBegin
+		{
+			get
+			{
+				return this._DateBegin;
+			}
+			set
+			{
+				if ((this._DateBegin != value))
+				{
+					this._DateBegin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateEnd", DbType="Date")]
+		public System.Nullable<System.DateTime> DateEnd
+		{
+			get
+			{
+				return this._DateEnd;
+			}
+			set
+			{
+				if ((this._DateEnd != value))
+				{
+					this._DateEnd = value;
 				}
 			}
 		}

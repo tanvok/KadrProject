@@ -177,8 +177,8 @@ namespace Kadr.KadrTreeView
             try
             {
                 depObj.AddChildNodes();
-                KadrEmployeeObject emplObj = depObj.Where(dObj => dObj is Kadr.KadrTreeView.KadrEmployeeObject).Where(dObj
-                    => (dObj as Kadr.KadrTreeView.KadrEmployeeObject).Employee == employee).FirstOrDefault() as KadrEmployeeObject;
+                KadrEmployeeObject emplObj = depObj.Where(dObj => dObj is KadrEmployeeObject).Where(dObj
+                    => (dObj as KadrEmployeeObject).Employee == employee).FirstOrDefault() as KadrEmployeeObject;
 
                 if (emplObj != null)
                 {

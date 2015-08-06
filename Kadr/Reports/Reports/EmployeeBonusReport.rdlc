@@ -924,7 +924,6 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
-                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixHeader>
               <TablixMembers>
@@ -1101,6 +1100,8 @@
                       <GroupExpression>=Fields!idFactStaff.Value</GroupExpression>
                       <GroupExpression>=Fields!EmployeeName.Value</GroupExpression>
                       <GroupExpression>=Fields!idPlanStaff.Value</GroupExpression>
+                      <GroupExpression>=Fields!Salary.Value</GroupExpression>
+                      <GroupExpression>=Fields!CalcStaffCount.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
@@ -1242,6 +1243,7 @@
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
+                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixHeader>
                                   <TablixMembers>
@@ -2158,7 +2160,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.22916in</Height>
+    <Height>1.13541in</Height>
     <Style />
   </Body>
   <Width>11.90235in</Width>

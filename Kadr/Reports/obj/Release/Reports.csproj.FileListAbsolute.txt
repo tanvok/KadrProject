@@ -80,3 +80,33 @@ G:\tanvok\kadr\KadrProject\Kadr\Reports\obj\Release\RdlCompile.cache
 G:\tanvok\kadr\KadrProject\Kadr\Reports\obj\Release\RdlCompile.compiled
 G:\tanvok\kadr\KadrProject\Kadr\Reports\obj\Release\Reports.dll
 G:\tanvok\kadr\KadrProject\Kadr\Reports\obj\Release\Reports.pdb
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\Reports.dll.config
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\Reports.dll
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\Microsoft.ReportViewer.Common.dll
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\Microsoft.ReportViewer.WinForms.dll
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\de\Microsoft.ReportViewer.WinForms.resources.dll
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\es\Microsoft.ReportViewer.WinForms.resources.dll
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\fr\Microsoft.ReportViewer.WinForms.resources.dll
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\it\Microsoft.ReportViewer.WinForms.resources.dll
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\ja\Microsoft.ReportViewer.WinForms.resources.dll
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\ko\Microsoft.ReportViewer.WinForms.resources.dll
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\pt\Microsoft.ReportViewer.WinForms.resources.dll
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\ru\Microsoft.ReportViewer.WinForms.resources.dll
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\Reports.csprojResolveAssemblyReference.cache
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\Reports.Dialogs.DepartmentSelectDialog.resources
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\Reports.Forms.BaseReportForm.resources
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\Reports.Forms.BaseReportFormWithYear.resources
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\Reports.Frames.DepEmplCountReportFrame.resources
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\Reports.Frames.ReportBaseFrame.resources
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\Reports.Frames.ReportBaseFrameForPeriod.resources
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\Reports.Frames.ReportBaseFrameForQuarter.resources
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\Reports.Frames.ReportBaseFrameForYear.resources
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\Reports.Properties.Resources.resources
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\Reports.csproj.GenerateResource.Cache
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\RdlCompile.cache
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\RdlCompile.compiled
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\Reports.dll
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\obj\Release\Reports.pdb
+E:\tanvok\Проекты\Штатное расписание\KadrProject\Kadr\Reports\bin\Release\Reports.pdb

@@ -294,95 +294,6 @@
       <Column Name="CategoryZPOrderBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.GetDepartmentBonusWithSettings" Method="GetDepartmentBonusWithSettings" IsComposable="true">
-    <Parameter Name="idDepartment" Type="System.Int32" DbType="Int" />
-    <Parameter Name="PeriodBegin" Parameter="periodBegin" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="PeriodEnd" Parameter="periodEnd" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="WithSubDeps" Parameter="withSubDeps" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="idBonusReport" Type="System.Int32" DbType="Int" />
-    <Parameter Name="idWorkType" Type="System.Int32" DbType="Int" />
-    <ElementType Name="GetDepartmentBonusWithSettingsResult">
-      <Column Name="ReportMainObjectName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="TypeWorkName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="PKCategoryName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="FinancingSourceName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="BonusTypeName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="PostName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="EmployeeName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="ReplacedEmployeeName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="BonusLevel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="BonusCount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="BonusSum" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
-      <Column Name="AllBonusSum" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
-      <Column Name="StaffCount" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
-      <Column Name="Salary" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
-      <Column Name="idFactStaff" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="idPlanStaff" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SeverKoeff" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RayonKoeff" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NDFLKoeff" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DepartmentName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="idBonusType" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PeriodBegin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="PeriodEnd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="StaffCountWithoutReplacement" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
-      <Column Name="StaffCountReal" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
-      <Column Name="idReplacementReason" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HasEnvironmentBonus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="HasIndivSalary" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GlobalPrikazName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="GlobalPrikazFullName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="BonusSuperTypeName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="CategoryName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="idCategory" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="WorkSuperTypeName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DirectionManagerName" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
-      <Column Name="BonusOrderNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PostFullName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="DepartmentFullName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="DateBegin" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="DateEnd" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="ForVacancy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="ForEmployee" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="MatOtpusk" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="BonusTypeFullName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="HourCount" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="FinancingSourceFullName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="PostComment" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="SalaryKoeff" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
-      <Column Name="PKCategoryFullName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="CategoryOrderBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FinancingSourceOrderBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ManagerBit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="PostTypeName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="PostCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="BonusFinancingSourceName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="idEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="idlaborcontrakt" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EmployeeSmallName" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
-      <Column Name="CalcStaffCount" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
-      <Column Name="CalcStaffCountWithoutReplacement" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
-      <Column Name="CalcStaffCountReal" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
-      <Column Name="idBonusMeasure" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IsStaffRateable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="IsCalcStaffRateable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Comment" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="IntermediateDateEnd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="IntermediatePrikaz" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="PrikazBegin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="WorkTypeFullName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DepTreeIndex" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="OnlyExtrabudgetary" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="idWorkType" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="idDepartment" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CategoryVPOName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="CategoryVPOOrderBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CategoryZPName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="CategoryZPOrderBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="OKVEDName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="PrikazAppointment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.GetAverageNumEmpl" Method="GetAverageNumEmpl" IsComposable="true">
     <Parameter Name="Year" Parameter="year" Type="System.Int32" DbType="Int" />
     <Parameter Name="idDepartment" Type="System.Int32" DbType="Int" />
@@ -621,6 +532,97 @@
       <Column Name="CalcStaffCountWithoutReplacement" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
       <Column Name="DateBegin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="DateEnd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDepartmentBonusWithSettings" Method="GetDepartmentBonusWithSettings" IsComposable="true">
+    <Parameter Name="idDepartment" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodBegin" Parameter="periodBegin" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PeriodEnd" Parameter="periodEnd" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="WithSubDeps" Parameter="withSubDeps" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="idBonusReport" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idWorkType" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetDepartmentBonusWithSettingsResult">
+      <Column Name="ReportMainObjectName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="TypeWorkName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PKCategoryName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FinancingSourceName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BonusTypeName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PostName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="EmployeeName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ReplacedEmployeeName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="BonusLevel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BonusCount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BonusSum" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
+      <Column Name="AllBonusSum" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
+      <Column Name="StaffCount" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
+      <Column Name="Salary" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
+      <Column Name="idFactStaff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPlanStaff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SeverKoeff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RayonKoeff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NDFLKoeff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DepartmentName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="idBonusType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PeriodBegin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PeriodEnd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="StaffCountWithoutReplacement" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
+      <Column Name="StaffCountReal" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
+      <Column Name="idReplacementReason" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HasEnvironmentBonus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HasIndivSalary" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GlobalPrikazName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GlobalPrikazFullName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BonusSuperTypeName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idCategory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WorkSuperTypeName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DirectionManagerName" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="BonusOrderNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostFullName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="DepartmentFullName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DateBegin" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ForVacancy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ForEmployee" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MatOtpusk" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BonusTypeFullName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HourCount" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="FinancingSourceFullName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PostComment" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="SalaryKoeff" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
+      <Column Name="PKCategoryFullName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryOrderBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FinancingSourceOrderBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ManagerBit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PostTypeName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PostCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BonusFinancingSourceName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idlaborcontrakt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeSmallName" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="CalcStaffCount" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
+      <Column Name="CalcStaffCountWithoutReplacement" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
+      <Column Name="CalcStaffCountReal" Type="System.Decimal" DbType="Decimal(14,4)" CanBeNull="true" />
+      <Column Name="idBonusMeasure" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsStaffRateable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsCalcStaffRateable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IntermediateDateEnd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IntermediatePrikaz" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PrikazBegin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WorkTypeFullName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DepTreeIndex" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="OnlyExtrabudgetary" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="idWorkType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idDepartment" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryVPOName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryVPOOrderBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryZPName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryZPOrderBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OKVEDName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PrikazAppointment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NewCategoryName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FundingCenterName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

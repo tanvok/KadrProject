@@ -758,7 +758,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Max(Fields!StaffCount.Value)</Value>
+                                                <Value>=Sum(Fields!StaffCount.Value)</Value>
                                                 <Style>
                                                   <FontFamily>Times New Roman</FontFamily>
                                                 </Style>

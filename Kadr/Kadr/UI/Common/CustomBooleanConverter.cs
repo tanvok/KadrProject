@@ -14,6 +14,8 @@ namespace Kadr.UI.Common
           object value,
           Type destType)
         {
+            //if (value == null)
+                //return value;
             return (bool)value ?
               "Да" : "Нет";
         }

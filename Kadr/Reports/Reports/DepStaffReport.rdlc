@@ -2976,6 +2976,10 @@
                               <Value>=Fields!DepTreeIndex.Value</Value>
                             </SortExpression>
                             <SortExpression>
+                              <Value>=Fields!ManagerBit.Value</Value>
+                              <Direction>Descending</Direction>
+                            </SortExpression>
+                            <SortExpression>
                               <Value>=Fields!FinancingSourceName.Value</Value>
                             </SortExpression>
                             <SortExpression>
@@ -3143,6 +3147,10 @@
         <Field Name="StaffCountWithoutReplacement">
           <DataField>StaffCountWithoutReplacement</DataField>
           <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="ManagerBit">
+          <DataField>ManagerBit</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

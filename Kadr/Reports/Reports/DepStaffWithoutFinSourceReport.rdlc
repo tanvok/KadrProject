@@ -2200,6 +2200,10 @@
                               <Group Name="Details" />
                               <SortExpressions>
                                 <SortExpression>
+                                  <Value>=Fields!ManagerBit.Value</Value>
+                                  <Direction>Descending</Direction>
+                                </SortExpression>
+                                <SortExpression>
                                   <Value>=Fields!FinancingSourceName.Value</Value>
                                 </SortExpression>
                                 <SortExpression>

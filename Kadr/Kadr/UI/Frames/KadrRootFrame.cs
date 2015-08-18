@@ -1572,7 +1572,7 @@ namespace Kadr.UI.Frames
                }
 
                if ((CurrentFrame != null) )
-                   CurrentFrame.UpdateReportParams(Convert.ToInt32(cbYearOfQr.SelectedItem), Convert.ToInt32(cbQuarter.SelectedIndex), Department.id, chbWithSubDeps.Checked);
+                   CurrentFrame.UpdateReportParams(Convert.ToInt32(cbYearOfQr.SelectedItem), Convert.ToInt32(cbQuarter.SelectedIndex), Department.id, chbWithSubDepsQuarter.Checked);
            }
  
        }

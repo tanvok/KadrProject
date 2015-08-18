@@ -230,7 +230,7 @@ namespace Reports.Frames
 
             if ((ReportType == typeof(Reports.GetDepartmentBonusWithSettingsResult)) && (ReportNumber == 4))
             {
-                bsReportData.DataSource = Model.GetDepartmentBonusWithSettings(ReportParam, PeriodBegin, PeriodEnd, true, 12, -1);
+                bsReportData.DataSource = Model.GetDepartmentBonusWithSettings(ReportParam, PeriodBegin, PeriodEnd, WithSubReports, 12, -1);
             }
 
             if (ReportType == typeof(Reports.GetPPSDepartmentBonusResult))

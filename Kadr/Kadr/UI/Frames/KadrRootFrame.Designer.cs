@@ -256,7 +256,7 @@
             this.cbYear = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.tpQrStaffAverage = new System.Windows.Forms.TabPage();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chbWithSubDepsQuarter = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.tcQrStaffAverage = new System.Windows.Forms.TabControl();
@@ -470,7 +470,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
             this.splitContainer1.Size = new System.Drawing.Size(796, 527);
-            this.splitContainer1.SplitterDistance = 211;
+            this.splitContainer1.SplitterDistance = 210;
             this.splitContainer1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -486,7 +486,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(796, 211);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(796, 210);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgvPlanStaff
@@ -779,7 +779,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(796, 312);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(796, 313);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // dgvFactStaff
@@ -826,7 +826,7 @@
             this.dgvFactStaff.RowHeadersVisible = false;
             this.dgvFactStaff.RowHeadersWidth = 4;
             this.dgvFactStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFactStaff.Size = new System.Drawing.Size(915, 283);
+            this.dgvFactStaff.Size = new System.Drawing.Size(915, 284);
             this.dgvFactStaff.TabIndex = 6;
             this.dgvFactStaff.DoubleClick += new System.EventHandler(this.dgvFactStaff_DoubleClick);
             // 
@@ -1874,7 +1874,7 @@
             this.tpDepEmplReport.Location = new System.Drawing.Point(4, 22);
             this.tpDepEmplReport.Name = "tpDepEmplReport";
             this.tpDepEmplReport.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDepEmplReport.Size = new System.Drawing.Size(927, 405);
+            this.tpDepEmplReport.Size = new System.Drawing.Size(802, 533);
             this.tpDepEmplReport.TabIndex = 3;
             this.tpDepEmplReport.Text = "Штат сотрудников";
             this.tpDepEmplReport.UseVisualStyleBackColor = true;
@@ -1921,7 +1921,7 @@
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(921, 399);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(796, 527);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
             // toolStrip11
@@ -1931,7 +1931,7 @@
             this.toolStripLabel5});
             this.toolStrip11.Location = new System.Drawing.Point(0, 0);
             this.toolStrip11.Name = "toolStrip11";
-            this.toolStrip11.Size = new System.Drawing.Size(921, 24);
+            this.toolStrip11.Size = new System.Drawing.Size(796, 24);
             this.toolStrip11.TabIndex = 12;
             this.toolStrip11.Text = "toolStrip11";
             // 
@@ -1949,7 +1949,7 @@
             this.tcDepStaffReport.Location = new System.Drawing.Point(3, 27);
             this.tcDepStaffReport.Name = "tcDepStaffReport";
             this.tcDepStaffReport.SelectedIndex = 0;
-            this.tcDepStaffReport.Size = new System.Drawing.Size(915, 497);
+            this.tcDepStaffReport.Size = new System.Drawing.Size(790, 497);
             this.tcDepStaffReport.TabIndex = 13;
             // 
             // tpDepStaffReportWithFinSource
@@ -1958,7 +1958,7 @@
             this.tpDepStaffReportWithFinSource.Location = new System.Drawing.Point(4, 22);
             this.tpDepStaffReportWithFinSource.Name = "tpDepStaffReportWithFinSource";
             this.tpDepStaffReportWithFinSource.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDepStaffReportWithFinSource.Size = new System.Drawing.Size(907, 471);
+            this.tpDepStaffReportWithFinSource.Size = new System.Drawing.Size(782, 471);
             this.tpDepStaffReportWithFinSource.TabIndex = 0;
             this.tpDepStaffReportWithFinSource.Text = "С делением по источникам фин-я";
             this.tpDepStaffReportWithFinSource.UseVisualStyleBackColor = true;
@@ -1973,7 +1973,7 @@
             this.depEmplReportFrame1.ReportNumber = 0;
             this.depEmplReportFrame1.ReportParam = -1;
             this.depEmplReportFrame1.ReportType = null;
-            this.depEmplReportFrame1.Size = new System.Drawing.Size(901, 465);
+            this.depEmplReportFrame1.Size = new System.Drawing.Size(776, 465);
             this.depEmplReportFrame1.TabIndex = 0;
             this.depEmplReportFrame1.WithSubReports = true;
             // 
@@ -2617,7 +2617,7 @@
             // 
             // tpQrStaffAverage
             // 
-            this.tpQrStaffAverage.Controls.Add(this.checkBox1);
+            this.tpQrStaffAverage.Controls.Add(this.chbWithSubDepsQuarter);
             this.tpQrStaffAverage.Controls.Add(this.button2);
             this.tpQrStaffAverage.Controls.Add(this.tableLayoutPanel12);
             this.tpQrStaffAverage.Location = new System.Drawing.Point(4, 22);
@@ -2628,18 +2628,18 @@
             this.tpQrStaffAverage.Text = "Среднесп численность за квартал";
             this.tpQrStaffAverage.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chbWithSubDepsQuarter
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(455, 6);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(198, 17);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Отображать подчиненные отделы";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.chbWithSubDepsQuarter.AutoSize = true;
+            this.chbWithSubDepsQuarter.BackColor = System.Drawing.SystemColors.Control;
+            this.chbWithSubDepsQuarter.Checked = true;
+            this.chbWithSubDepsQuarter.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbWithSubDepsQuarter.Location = new System.Drawing.Point(455, 6);
+            this.chbWithSubDepsQuarter.Name = "chbWithSubDepsQuarter";
+            this.chbWithSubDepsQuarter.Size = new System.Drawing.Size(198, 17);
+            this.chbWithSubDepsQuarter.TabIndex = 16;
+            this.chbWithSubDepsQuarter.Text = "Отображать подчиненные отделы";
+            this.chbWithSubDepsQuarter.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -4087,7 +4087,7 @@
         private System.Windows.Forms.ToolStripComboBox cbYearOfQr;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
         private System.Windows.Forms.ToolStripComboBox cbQuarter;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chbWithSubDepsQuarter;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TabPage tpByOKVED;
         private Reports.Frames.ReportBaseFrameForYear depCategoryAverageStaff1;

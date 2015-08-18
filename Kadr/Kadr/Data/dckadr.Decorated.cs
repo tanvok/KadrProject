@@ -1426,11 +1426,11 @@ namespace Kadr.Data
         }
 
 
-        [System.ComponentModel.DisplayName("Надбавка только для вакансий")]
+        [System.ComponentModel.DisplayName("Применяется к вакансиям")]
         [System.ComponentModel.Category("Атрибуты надбавки штатной должности")]
-        [System.ComponentModel.Description("Показатель того, что надбавка только для вакансий")]
+        [System.ComponentModel.Description("Надбавка применяется к вакансиям")]
         [System.ComponentModel.TypeConverter(typeof(Kadr.UI.Common.CustomBooleanConverter))]
-        public bool ForVacancy
+        public bool? ForVacancy
         {
             get
             {
@@ -1442,15 +1442,15 @@ namespace Kadr.Data
             set
             {
                 if (bonus.BonusPlanStaff != null)
-                    bonus.BonusPlanStaff.ForVacancy = value;
+                    bonus.BonusPlanStaff.ForVacancy = value.Value;
             }
         }
 
-        [System.ComponentModel.DisplayName("Надбавка только для сотрудников")]
+        [System.ComponentModel.DisplayName("Применяется также к сотрудникам")]
         [System.ComponentModel.Category("Атрибуты надбавки штатной должности")]
-        [System.ComponentModel.Description("Показатель того, что надбавка только для сотрудников")]
+        [System.ComponentModel.Description("Надбавка применяется также к сотрудникам")]
         [System.ComponentModel.TypeConverter(typeof(Kadr.UI.Common.CustomBooleanConverter))]
-        public bool ForEmployee
+        public bool? ForEmployee
         {
             get
             {
@@ -1462,7 +1462,7 @@ namespace Kadr.Data
             set
             {
                 if (bonus.BonusPlanStaff != null)
-                    bonus.BonusPlanStaff.ForEmployee = value;
+                    bonus.BonusPlanStaff.ForEmployee = value.Value;
             }
         }
     }

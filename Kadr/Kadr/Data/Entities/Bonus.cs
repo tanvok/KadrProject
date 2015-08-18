@@ -324,6 +324,9 @@ namespace Kadr.Data
                     throw new ArgumentOutOfRangeException("Дата отмены должна быть позже даты назначения.");
                 if ((Prikaz != null) && (DateEnd == null))
                     throw new ArgumentNullException("Дата отмены надбавки, так как указан приказ отмены.");
+                if (BonusPlanStaff != null)
+                    if (BonusPlanStaff.ForEmployee && !BonusPlanStaff.ForVacancy)
+                        throw new ArgumentOutOfRangeException("Если надбавка применяется к сотруднику, то она должна применяться и к вакансии.");
             }
         }
 

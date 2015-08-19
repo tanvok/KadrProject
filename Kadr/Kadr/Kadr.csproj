@@ -164,6 +164,7 @@
     <Compile Include="Controllers\MonthController.cs" />
     <Compile Include="Data\Common\INull.cs" />
     <Compile Include="Data\Common\IObjectState.cs" />
+    <Compile Include="Data\Converters\SimpleToStringConvertor.cs" />
     <Compile Include="Data\dcKadr.dcKadrDataContext.cs" />
     <Compile Include="Data\dckadr.designer.cs">
       <AutoGen>True</AutoGen>
@@ -171,9 +172,38 @@
       <DependentUpon>dckadr.dbml</DependentUpon>
     </Compile>
     <Compile Include="Data\dckadr.Decorated.cs" />
+    <Compile Include="Data\Decorators\BonusDecorator.cs" />
+    <Compile Include="Data\Decorators\BonusHistoryDecorator.cs" />
+    <Compile Include="Data\Decorators\BonusPlanStaffDecorator.cs" />
+    <Compile Include="Data\Decorators\BonusTypeDecorator.cs" />
+    <Compile Include="Data\Decorators\DepartmentDecorator.cs" />
+    <Compile Include="Data\Decorators\DepartmentFundDecorator.cs" />
+    <Compile Include="Data\Decorators\DepartmentHistoryDecorator.cs" />
+    <Compile Include="Data\Decorators\DepartmentTimeNormDecorator.cs" />
+    <Compile Include="Data\Decorators\EmployeeDecorator.cs" />
+    <Compile Include="Data\Decorators\EmployeeDegreeDecorator.cs" />
+    <Compile Include="Data\Decorators\EmployeeRankDecorator.cs" />
+    <Compile Include="Data\Decorators\FactStaffDecorator.cs" />
+    <Compile Include="Data\Decorators\FactStaffHistoryDecorator.cs" />
+    <Compile Include="Data\Decorators\FactStaffHistoryReplacementDecorator.cs" />
+    <Compile Include="Data\Decorators\FactStaffHourContractDecorator.cs" />
+    <Compile Include="Data\Decorators\FactStaffHourDecorator.cs" />
+    <Compile Include="Data\Decorators\FactStaffMonthHourDecorator.cs" />
+    <Compile Include="Data\Decorators\FactStaffReplacementDecorator.cs" />
+    <Compile Include="Data\Decorators\PKCategoryDecorator.cs" />
+    <Compile Include="Data\Decorators\PKCategorySalaryDecorator.cs" />
+    <Compile Include="Data\Decorators\PKGroupDecorator.cs" />
+    <Compile Include="Data\Decorators\PlanStaffDecorator.cs" />
+    <Compile Include="Data\Decorators\PlanStaffHistoryDecorator.cs" />
+    <Compile Include="Data\Decorators\PlanStaffSalaryDecorator.cs" />
+    <Compile Include="Data\Decorators\PostDecorator.cs" />
+    <Compile Include="Data\Decorators\PrikazDecorator.cs" />
+    <Compile Include="Data\Decorators\TimeSheetDecorator.cs" />
+    <Compile Include="Data\Decorators\TimeSheetFSWorkingDaysDecorator.cs" />
     <Compile Include="Data\Entities\Bonus.cs" />
     <Compile Include="Data\Entities\BonusHistory.cs" />
     <Compile Include="Data\Entities\BonusMeasure.cs" />
+    <Compile Include="Data\Entities\BonusPlanStaff.cs" />
     <Compile Include="Data\Entities\BonusReport.cs" />
     <Compile Include="Data\Entities\BonusSuperType.cs" />
     <Compile Include="Data\Entities\BonusType.cs" />
@@ -227,6 +257,7 @@
     <Compile Include="Data\Entities\TimeSheetRecord.cs" />
     <Compile Include="Data\Entities\WorkShedule.cs" />
     <Compile Include="Data\Entities\WorkType.cs" />
+    <Compile Include="Interfaces\IOrderInformer.cs" />
     <Compile Include="KadrTreeView\KadrTreeView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1015,6 +1046,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

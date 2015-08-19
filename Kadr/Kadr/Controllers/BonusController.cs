@@ -15,107 +15,69 @@ namespace Kadr.Controllers
         /// <param name="bonusBindingSource">BindingSource</param>
         public void AddBonus(object bonusObject, BindingSource bonusBindingSource)
         {
-
-            using (Kadr.UI.Common.PropertyGridDialogAdding<Bonus> dlg =
-               new Kadr.UI.Common.PropertyGridDialogAdding<Bonus>())
+            if (bonusObject is PlanStaff)
             {
-                dlg.ObjectList = KadrController.Instance.Model.Bonus;
-                dlg.BindingSource = bonusBindingSource;
-                dlg.UseInternalCommandManager = true;
-                dlg.PrikazButtonVisible = true;
-                dlg.InitializeNewObject = (x) =>
+                using (Kadr.UI.Common.PropertyGridDialogAdding<BonusPlanStaff> dlg =
+                   new Kadr.UI.Common.PropertyGridDialogAdding<BonusPlanStaff>())
                 {
-                    //создаем историю надбавки
-                    BonusHistory bonusHistory = new BonusHistory();
-                    dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusHistory, Bonus>(bonusHistory, "Bonus", x, null), this);
-                    
-                    if ((dlg.SelectedObjects != null) && (dlg.SelectedObjects.Length == 1))
+                    dlg.ObjectList = KadrController.Instance.Model.BonusPlanStaffs;
+                    //dlg.BindingSource = bonusBindingSource;
+                    dlg.UseInternalCommandManager = true;
+                    dlg.PrikazButtonVisible = true;
+                    dlg.InitializeNewObject = (x) =>
                     {
-                        Bonus prev = dlg.SelectedObjects[0] as Bonus;
-                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusHistory, Prikaz>(bonusHistory, "Prikaz", prev.PrikazBegin, null), this);
-                    }
-                    else
-                    {
-                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusHistory, Prikaz>(bonusHistory, "Prikaz", NullPrikaz.Instance, null), this);
-                    }
-                    dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<Bonus, BonusType>(x, "BonusType", NullBonusType.Instance, null), this);
+                        Bonus bonus = new Bonus();
+                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPlanStaff, Bonus>(x, "Bonus", bonus, null), this);
+                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPlanStaff, PlanStaff>(x, "PlanStaff", bonusObject as PlanStaff, null), this);
+                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPlanStaff, bool>(x, "ForVacancy", true, null), this);
+                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPlanStaff, bool>(x, "ForEmployee", false, null), this);
 
-                    if (bonusObject is FactStaff)
-                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusHistory, System.DateTime>(bonusHistory, "DateBegin", DateTime.Today.AddDays(1 - DateTime.Today.Day), null), this);
-                    else
-                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusHistory, System.DateTime>(bonusHistory, "DateBegin", DateTime.Today, null), this);
-
-                    //заполнение источника финансирования
-                    if (bonusObject is FactStaff)
-                    {
-                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusHistory, FinancingSource>(bonusHistory, "FinancingSource", (bonusObject as FactStaff).PlanStaff.FinancingSource, null), this);
-                    }
-
-                    if (bonusObject is PlanStaff)
-                    {
-                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusHistory, FinancingSource>(bonusHistory, "FinancingSource", (bonusObject as PlanStaff).FinancingSource, null), this);
-                    }
-
-                    if ((bonusObject is Post) || (bonusObject is Employee))
-                    {
-                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusHistory, FinancingSource>(bonusHistory, "FinancingSource", FinancingSource.DefaultFinancingSource, null), this);
-                    }
-                    /*if (bonusObject is Post)
-                    {
-                        BonusPost bonusPost = new BonusPost();
-                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPost, Bonus>(bonusPost, "Bonus", prev, null), this);
-                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPost, Post>(bonusPost, "Post", bonusObject as Post, null), this);
-                    }
-
-                    if (bonusObject is Employee)
-                    {
-                        BonusEmployee bonusEmployee = new BonusEmployee();
-                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusEmployee, Bonus>(bonusEmployee, "Bonus", prev, null), this);
-                        dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusEmployee, Employee>(bonusEmployee, "Employee", bonusObject as Employee, null), this);
-                    }*/
-
-                                 
-                };
-
-
-                dlg.CreateRelatedObject = (x) =>
-                {
-                    if ((dlg.SelectedObjects != null) && (dlg.SelectedObjects.Length == 1))
-                    {
-                        Bonus prev = dlg.SelectedObjects[0] as Bonus;
-                        if (bonusObject is FactStaff)
+                        Bonus prev = null;
+                        if ((dlg.SelectedObjects != null) && (dlg.SelectedObjects.Length == 1))
                         {
-                            BonusFactStaff bonusFactStaff = new BonusFactStaff();
-                            dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusFactStaff, Bonus>(bonusFactStaff, "Bonus", prev, null), this);
-                            dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusFactStaff, FactStaff>(bonusFactStaff, "FactStaff", bonusObject as FactStaff, null), this);
+                            prev = (dlg.SelectedObjects[0] as BonusPlanStaff).Bonus;
                         }
+                        //создаем историю надбавки
+                        BonusHistory bonusHistory = new BonusHistory(dlg.CommandManager, bonusObject, x.Bonus, prev);
+                    };
 
-                        if (bonusObject is PlanStaff)
-                        {
-                            BonusPlanStaff bonusPlanStaff = new BonusPlanStaff();
-                            dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPlanStaff, Bonus>(bonusPlanStaff, "Bonus", prev, null), this);
-                            dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPlanStaff, PlanStaff>(bonusPlanStaff, "PlanStaff", bonusObject as PlanStaff, null), this);
-                            dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPlanStaff, bool>(bonusPlanStaff, "ForVacancy", true, null), this);
-                            dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPlanStaff, bool>(bonusPlanStaff, "ForEmployee", false, null), this);
-                        }
 
-                        if (bonusObject is Post)
-                        {
-                            BonusPost bonusPost = new BonusPost();
-                            dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPost, Bonus>(bonusPost, "Bonus", prev, null), this);
-                            dlg.CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPost, Post>(bonusPost, "Post", bonusObject as Post, null), this);
-                        }
+                    dlg.UpdateObjectList = () =>
+                    {
+                        dlg.ObjectList = KadrController.Instance.Model.BonusPlanStaffs;
+                    };
 
-                    }
-
-                };
-
-                dlg.UpdateObjectList = () =>
+                    dlg.ShowDialog();
+                }
+            }
+            else
+            {
+                using (Kadr.UI.Common.PropertyGridDialogAdding<Bonus> dlg =
+                   new Kadr.UI.Common.PropertyGridDialogAdding<Bonus>())
                 {
                     dlg.ObjectList = KadrController.Instance.Model.Bonus;
-                };
+                    dlg.BindingSource = bonusBindingSource;
+                    dlg.UseInternalCommandManager = true;
+                    dlg.PrikazButtonVisible = true;
+                    dlg.InitializeNewObject = (x) =>
+                    {
+                        Bonus prev = null;
+                        if ((dlg.SelectedObjects != null) && (dlg.SelectedObjects.Length == 1))
+                        {
+                            prev = dlg.SelectedObjects[0] as Bonus;
+                        }
+                        //создаем историю надбавки
+                        BonusHistory bonusHistory = new BonusHistory(dlg.CommandManager, bonusObject, x, prev);
+                    };
 
-                dlg.ShowDialog();
+
+                    dlg.UpdateObjectList = () =>
+                    {
+                        dlg.ObjectList = KadrController.Instance.Model.Bonus;
+                    };
+
+                    dlg.ShowDialog();
+                }
             }
            
         }
@@ -204,7 +166,10 @@ namespace Kadr.Controllers
 
         public void EditBonus(Bonus bonus)
         {
-            LinqActionsController<Bonus>.Instance.EditObject(bonus, true);
+            if (bonus.BonusPlanStaff != null)
+                LinqActionsController<BonusPlanStaff>.Instance.EditObject(bonus.BonusPlanStaff, true);
+            else
+                LinqActionsController<Bonus>.Instance.EditObject(bonus, true);
         }
 
 

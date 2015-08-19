@@ -91,6 +91,58 @@ namespace Kadr.Data
                 
             }
         }
+
+        public BonusHistory(UIX.Commands.ICommandManager CommandManager, object bonusObject, Bonus x, Bonus prev)
+            : this()
+        {
+            //создаем историю надбавки
+            CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusHistory, Bonus>(this, "Bonus", x, null), this);
+
+            if (prev != null)
+            {
+                CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusHistory, Prikaz>(this, "Prikaz", prev.PrikazBegin, null), this);
+            }
+            else
+            {
+                CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusHistory, Prikaz>(this, "Prikaz", NullPrikaz.Instance, null), this);
+            }
+            CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<Bonus, BonusType>(x, "BonusType", NullBonusType.Instance, null), this);
+
+            if (bonusObject is FactStaff)
+                CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusHistory, System.DateTime>(this, "DateBegin", DateTime.Today.AddDays(1 - DateTime.Today.Day), null), this);
+            else
+                CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusHistory, System.DateTime>(this, "DateBegin", DateTime.Today, null), this);
+
+            FinancingSource finSource = FinancingSource.DefaultFinancingSource;
+            //заполнение источника финансирования и создание связанных объектов
+            if (bonusObject is FactStaff)
+            {
+                BonusFactStaff bonusFactStaff = new BonusFactStaff();
+                CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusFactStaff, Bonus>(bonusFactStaff, "Bonus", x, null), this);
+                CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusFactStaff, FactStaff>(bonusFactStaff, "FactStaff", bonusObject as FactStaff, null), this);
+
+                finSource = (bonusObject as FactStaff).PlanStaff.FinancingSource;
+            }
+
+            if (bonusObject is PlanStaff)
+            {
+                /*BonusPlanStaff bonusPlanStaff = new BonusPlanStaff();
+                CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPlanStaff, Bonus>(bonusPlanStaff, "Bonus", x, null), this);
+                CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPlanStaff, PlanStaff>(bonusPlanStaff, "PlanStaff", bonusObject as PlanStaff, null), this);
+                CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPlanStaff, bool>(bonusPlanStaff, "ForVacancy", true, null), this);
+                CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPlanStaff, bool>(bonusPlanStaff, "ForEmployee", false, null), this);*/
+
+                finSource = (bonusObject as PlanStaff).FinancingSource;
+            }
+
+            if ((bonusObject is Post) || (bonusObject is Employee))
+            {
+                BonusPost bonusPost = new BonusPost();
+                CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPost, Bonus>(bonusPost, "Bonus", x, null), this);
+                CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusPost, Post>(bonusPost, "Post", bonusObject as Post, null), this);
+            }
+            CommandManager.Execute(new UIX.Commands.GenericPropertyCommand<BonusHistory, FinancingSource>(this, "FinancingSource", finSource, null), this);
+        }
  
         #region partial Methods
         partial void OnCreated()

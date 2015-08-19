@@ -63,6 +63,7 @@ namespace Kadr.UI.Forms
         private void AddBonusBtn_Click(object sender, EventArgs e)
         {
             BonusController.Instance.AddBonus(bonusObject, bonusBindingSource);
+            LoadBonus();
         }
 
         private void EditBonusBtn_Click(object sender, EventArgs e)

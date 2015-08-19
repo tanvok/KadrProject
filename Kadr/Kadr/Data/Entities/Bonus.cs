@@ -366,6 +366,9 @@ namespace Kadr.Data
             return curState;
 
         }
+
+
+        
     }
 
     public class NullBonus : Bonus, INull

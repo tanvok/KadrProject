@@ -164,6 +164,7 @@
     <Compile Include="Controllers\MonthController.cs" />
     <Compile Include="Data\Common\INull.cs" />
     <Compile Include="Data\Common\IObjectState.cs" />
+    <Compile Include="Data\Converters\FinancingSourceConvertor.cs" />
     <Compile Include="Data\Converters\SimpleToStringConvertor.cs" />
     <Compile Include="Data\dcKadr.dcKadrDataContext.cs" />
     <Compile Include="Data\dckadr.designer.cs">

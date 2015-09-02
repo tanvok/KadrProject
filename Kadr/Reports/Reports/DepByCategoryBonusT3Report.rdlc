@@ -5565,7 +5565,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value>=Sum(Fields!Salary.Value * Fields!StaffCountWithoutReplacement.Value + Fields!BonusSum1.Value + Fields!BonusSum2.Value + Fields!BonusSum3.Value) * 0.5</Value>
+                                                                                <Value>=(Sum(Fields!RealSalary.Value) + Sum(Fields!BonusSum1.Value) + Sum(Fields!BonusSum2.Value) + Sum(Fields!BonusSum3.Value)) * 0.5</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Times New Roman</FontFamily>
                                                                                   <FontSize>8pt</FontSize>
@@ -5641,7 +5641,7 @@
                                                                                   <Paragraph>
                                                                                     <TextRuns>
                                                                                       <TextRun>
-                                                                                        <Value>=Sum(Fields!Salary.Value * Fields!StaffCountWithoutReplacement.Value + Fields!BonusSum1.Value + Fields!BonusSum2.Value + Fields!BonusSum3.Value) * 1.8</Value>
+                                                                                        <Value>=(Sum(Fields!RealSalary.Value) + Sum(Fields!BonusSum1.Value) + Sum(Fields!BonusSum2.Value) + Sum(Fields!BonusSum3.Value)) * 1.8</Value>
                                                                                         <Style>
                                                                                           <FontFamily>Times New Roman</FontFamily>
                                                                                           <FontSize>8pt</FontSize>
@@ -5781,7 +5781,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Sum(Fields!SalaryBase.Value * Fields!StaffCountWithoutReplacement.Value)</Value>
+                                                    <Value>=Sum(Fields!SalaryBase.Value*Fields!StaffCountWithoutReplacement.Value)</Value>
                                                     <Style>
                                                       <FontStyle>Italic</FontStyle>
                                                       <FontFamily>Times New Roman</FontFamily>
@@ -6011,7 +6011,7 @@
                                                                       <Paragraph>
                                                                         <TextRuns>
                                                                           <TextRun>
-                                                                            <Value>=Sum(Fields!Salary.Value * Fields!StaffCountWithoutReplacement.Value + Fields!BonusSum1.Value + Fields!BonusSum2.Value + Fields!BonusSum3.Value) * 0.5</Value>
+                                                                            <Value>=(Sum(Fields!RealSalary.Value) + Sum(Fields!BonusSum1.Value) + Sum(Fields!BonusSum2.Value) + Sum(Fields!BonusSum3.Value)) * 0.5</Value>
                                                                             <Style>
                                                                               <FontStyle>Italic</FontStyle>
                                                                               <FontFamily>Times New Roman</FontFamily>
@@ -6050,7 +6050,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value>=Sum(Fields!Salary.Value * Fields!StaffCountWithoutReplacement.Value + Fields!BonusSum1.Value + Fields!BonusSum2.Value + Fields!BonusSum3.Value) * 0.3</Value>
+                                                                                <Value>=(Sum(Fields!RealSalary.Value) + Sum(Fields!BonusSum1.Value) + Sum(Fields!BonusSum2.Value) + Sum(Fields!BonusSum3.Value)) * 0.3</Value>
                                                                                 <Style>
                                                                                   <FontStyle>Italic</FontStyle>
                                                                                   <FontFamily>Times New Roman</FontFamily>
@@ -6089,7 +6089,7 @@
                                                                               <Paragraph>
                                                                                 <TextRuns>
                                                                                   <TextRun>
-                                                                                    <Value>=Sum(Fields!Salary.Value * Fields!StaffCountWithoutReplacement.Value + Fields!BonusSum1.Value + Fields!BonusSum2.Value + Fields!BonusSum3.Value) * 1.8</Value>
+                                                                                    <Value>=(Sum(Fields!RealSalary.Value) + Sum(Fields!BonusSum1.Value) + Sum(Fields!BonusSum2.Value) + Sum(Fields!BonusSum3.Value)) * 1.8</Value>
                                                                                     <Style>
                                                                                       <FontStyle>Italic</FontStyle>
                                                                                       <FontFamily>Times New Roman</FontFamily>

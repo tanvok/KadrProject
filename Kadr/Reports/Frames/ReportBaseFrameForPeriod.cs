@@ -211,7 +211,12 @@ namespace Reports.Frames
                 bsReportData.DataSource = Model.GetDepartmentBonusWithEmployees(ReportParam, PeriodBegin, PeriodEnd, WithSubReports, 1).ToArray();
 
             if (ReportType == typeof(Reports.GetDepartmentBonusForT3Result))
-                bsReportData.DataSource = Model.GetDepartmentBonusForT3(ReportParam, PeriodBegin, PeriodEnd, WithSubReports,7).ToArray();
+            {
+                if (ReportNumber == 2)
+                    bsReportData.DataSource = Model.GetDepartmentBonusForT3(ReportParam, PeriodBegin, PeriodEnd, WithSubReports, 7).Where(res => res.Salary > 0 ).ToArray();
+                else
+                    bsReportData.DataSource = Model.GetDepartmentBonusForT3(ReportParam, PeriodBegin, PeriodEnd, WithSubReports, 7).ToArray();
+            }
 
             if (ReportType == typeof(Reports.GetEmployeesSumResult))
                 bsReportData.DataSource = Model.GetEmployeesSum(ReportParam, PeriodBegin, PeriodEnd).ToArray();

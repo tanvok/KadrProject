@@ -120,5 +120,38 @@ namespace Kadr.Data
 
 
 
+        [System.ComponentModel.DisplayName("\t\t\t\t\t\tАдрес отдела")]
+        [System.ComponentModel.Category("Территориальные условия")]
+        [System.ComponentModel.Description("Адрес отдела")]
+        [System.ComponentModel.ReadOnly(false)]
+        public string DepAddress
+        {
+            get
+            {
+                return departmentHistory.Address;
+            }
+            set
+            {
+                departmentHistory.Address = value;
+            }
+        }
+
+        [System.ComponentModel.DisplayName("\t\t\t\t\t\t\t\t\t\t\t\tТерриториальные условия")]
+        [System.ComponentModel.Category("Территориальные условия")]
+        [System.ComponentModel.Description("Территориальные условия")]
+        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<RegionType>))]
+        [System.ComponentModel.ReadOnly(false)]
+        public RegionType DepRegionType
+        {
+            get
+            {
+                return departmentHistory.RegionType;
+            }
+            set
+            {
+                departmentHistory.RegionType = value;
+            }
+        }
+
     }
 }

@@ -94,6 +94,18 @@ namespace Kadr.Data
             }
         }
 
+        public RegionType CurrentRegionType
+        {
+            get
+            {
+                return CurrentChange.RegionType;
+            }
+            set
+            {
+                CurrentChange.RegionType = value;
+            }
+        }
+
         #region DepartmentHistory Data
 
         /// <summary>

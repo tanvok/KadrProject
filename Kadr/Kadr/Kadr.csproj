@@ -250,6 +250,7 @@
     <Compile Include="Data\Entities\Prikaz.cs" />
     <Compile Include="Data\Entities\PrikazType.cs" />
     <Compile Include="Data\Entities\Rank.cs" />
+    <Compile Include="Data\Entities\RegionType.cs" />
     <Compile Include="Data\Entities\SalaryKoeff.cs" />
     <Compile Include="Data\Entities\ScienceType.cs" />
     <Compile Include="Data\Entities\SemPol.cs" />

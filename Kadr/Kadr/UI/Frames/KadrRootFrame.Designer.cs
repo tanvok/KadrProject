@@ -112,6 +112,12 @@
             this.tpDepartments = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDepartments = new System.Windows.Forms.DataGridView();
+            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepartmentSmallName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepExtraordSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepPlanFundSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepFactFundSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepRegionType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip10 = new System.Windows.Forms.ToolStrip();
             this.btnAddDep = new System.Windows.Forms.ToolStripButton();
@@ -348,12 +354,6 @@
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContractStaffBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.timeSheetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DepartmentSmallName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DepExtraordSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DepPlanFundSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DepFactFundSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DepRegionType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.tpStaff.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -1128,6 +1128,51 @@
             this.dgvDepartments.TabIndex = 0;
             this.dgvDepartments.DoubleClick += new System.EventHandler(this.dgvDepartments_DoubleClick);
             // 
+            // departmentNameDataGridViewTextBoxColumn
+            // 
+            this.departmentNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "DepartmentName";
+            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "Название отдела";
+            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
+            this.departmentNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // DepartmentSmallName
+            // 
+            this.DepartmentSmallName.DataPropertyName = "DepartmentSmallName";
+            this.DepartmentSmallName.HeaderText = "Краткое название";
+            this.DepartmentSmallName.Name = "DepartmentSmallName";
+            this.DepartmentSmallName.ReadOnly = true;
+            this.DepartmentSmallName.Width = 200;
+            // 
+            // DepExtraordSum
+            // 
+            this.DepExtraordSum.DataPropertyName = "DepExtraordSum";
+            this.DepExtraordSum.HeaderText = "Внеплановые расходы";
+            this.DepExtraordSum.Name = "DepExtraordSum";
+            this.DepExtraordSum.ReadOnly = true;
+            // 
+            // DepPlanFundSum
+            // 
+            this.DepPlanFundSum.DataPropertyName = "DepPlanFundSum";
+            this.DepPlanFundSum.HeaderText = "Плановый фонд";
+            this.DepPlanFundSum.Name = "DepPlanFundSum";
+            this.DepPlanFundSum.ReadOnly = true;
+            // 
+            // DepFactFundSum
+            // 
+            this.DepFactFundSum.DataPropertyName = "DepFactFundSum";
+            this.DepFactFundSum.HeaderText = "Фактический фонд";
+            this.DepFactFundSum.Name = "DepFactFundSum";
+            this.DepFactFundSum.ReadOnly = true;
+            // 
+            // DepRegionType
+            // 
+            this.DepRegionType.DataPropertyName = "CurrentRegionType";
+            this.DepRegionType.HeaderText = "Территор. условия";
+            this.DepRegionType.Name = "DepRegionType";
+            this.DepRegionType.ReadOnly = true;
+            this.DepRegionType.Width = 70;
+            // 
             // departmentBindingSource
             // 
             this.departmentBindingSource.DataSource = typeof(Kadr.Data.DepartmentDecorator);
@@ -1266,7 +1311,7 @@
             this.tpHourStaff.Location = new System.Drawing.Point(4, 22);
             this.tpHourStaff.Name = "tpHourStaff";
             this.tpHourStaff.Padding = new System.Windows.Forms.Padding(3);
-            this.tpHourStaff.Size = new System.Drawing.Size(802, 533);
+            this.tpHourStaff.Size = new System.Drawing.Size(927, 405);
             this.tpHourStaff.TabIndex = 11;
             this.tpHourStaff.Text = "Почасовики";
             this.tpHourStaff.UseVisualStyleBackColor = true;
@@ -1285,7 +1330,7 @@
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(796, 527);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(921, 399);
             this.tableLayoutPanel11.TabIndex = 2;
             // 
             // toolStrip12
@@ -1304,7 +1349,7 @@
             this.btnHourStaffToExcel});
             this.toolStrip12.Location = new System.Drawing.Point(0, 0);
             this.toolStrip12.Name = "toolStrip12";
-            this.toolStrip12.Size = new System.Drawing.Size(796, 24);
+            this.toolStrip12.Size = new System.Drawing.Size(921, 24);
             this.toolStrip12.TabIndex = 8;
             this.toolStrip12.Text = "toolStrip12";
             // 
@@ -1425,9 +1470,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tslPPSVacations});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 507);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 379);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(796, 20);
+            this.statusStrip1.Size = new System.Drawing.Size(921, 20);
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -1509,7 +1554,7 @@
             this.dgvHourFactStaff.RowHeadersVisible = false;
             this.dgvHourFactStaff.RowHeadersWidth = 4;
             this.dgvHourFactStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHourFactStaff.Size = new System.Drawing.Size(790, 477);
+            this.dgvHourFactStaff.Size = new System.Drawing.Size(915, 349);
             this.dgvHourFactStaff.TabIndex = 9;
             this.dgvHourFactStaff.DoubleClick += new System.EventHandler(this.dgvHourFactStaff_DoubleClick);
             // 
@@ -3635,51 +3680,6 @@
             // timeSheetBindingSource
             // 
             this.timeSheetBindingSource.DataSource = typeof(Kadr.Data.TimeSheet);
-            // 
-            // departmentNameDataGridViewTextBoxColumn
-            // 
-            this.departmentNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "DepartmentName";
-            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "Название отдела";
-            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
-            this.departmentNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // DepartmentSmallName
-            // 
-            this.DepartmentSmallName.DataPropertyName = "DepartmentSmallName";
-            this.DepartmentSmallName.HeaderText = "Краткое название";
-            this.DepartmentSmallName.Name = "DepartmentSmallName";
-            this.DepartmentSmallName.ReadOnly = true;
-            this.DepartmentSmallName.Width = 200;
-            // 
-            // DepExtraordSum
-            // 
-            this.DepExtraordSum.DataPropertyName = "DepExtraordSum";
-            this.DepExtraordSum.HeaderText = "Внеплановые расходы";
-            this.DepExtraordSum.Name = "DepExtraordSum";
-            this.DepExtraordSum.ReadOnly = true;
-            // 
-            // DepPlanFundSum
-            // 
-            this.DepPlanFundSum.DataPropertyName = "DepPlanFundSum";
-            this.DepPlanFundSum.HeaderText = "Плановый фонд";
-            this.DepPlanFundSum.Name = "DepPlanFundSum";
-            this.DepPlanFundSum.ReadOnly = true;
-            // 
-            // DepFactFundSum
-            // 
-            this.DepFactFundSum.DataPropertyName = "DepFactFundSum";
-            this.DepFactFundSum.HeaderText = "Фактический фонд";
-            this.DepFactFundSum.Name = "DepFactFundSum";
-            this.DepFactFundSum.ReadOnly = true;
-            // 
-            // DepRegionType
-            // 
-            this.DepRegionType.DataPropertyName = "CurrentRegionType";
-            this.DepRegionType.HeaderText = "Территор. условия";
-            this.DepRegionType.Name = "DepRegionType";
-            this.DepRegionType.ReadOnly = true;
-            this.DepRegionType.Width = 70;
             // 
             // KadrRootFrame
             // 

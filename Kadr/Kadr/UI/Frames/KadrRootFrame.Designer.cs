@@ -451,7 +451,7 @@
             this.tpStaff.Location = new System.Drawing.Point(4, 22);
             this.tpStaff.Name = "tpStaff";
             this.tpStaff.Padding = new System.Windows.Forms.Padding(3);
-            this.tpStaff.Size = new System.Drawing.Size(802, 533);
+            this.tpStaff.Size = new System.Drawing.Size(927, 405);
             this.tpStaff.TabIndex = 1;
             this.tpStaff.Text = "Штаты";
             this.tpStaff.UseVisualStyleBackColor = true;
@@ -470,8 +470,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.splitContainer1.Size = new System.Drawing.Size(796, 527);
-            this.splitContainer1.SplitterDistance = 210;
+            this.splitContainer1.Size = new System.Drawing.Size(921, 399);
+            this.splitContainer1.SplitterDistance = 157;
             this.splitContainer1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -487,7 +487,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(796, 210);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(921, 157);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgvPlanStaff
@@ -780,7 +780,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(796, 313);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(921, 238);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // dgvFactStaff
@@ -827,7 +827,7 @@
             this.dgvFactStaff.RowHeadersVisible = false;
             this.dgvFactStaff.RowHeadersWidth = 4;
             this.dgvFactStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFactStaff.Size = new System.Drawing.Size(915, 285);
+            this.dgvFactStaff.Size = new System.Drawing.Size(915, 287);
             this.dgvFactStaff.TabIndex = 6;
             this.dgvFactStaff.DoubleClick += new System.EventHandler(this.dgvFactStaff_DoubleClick);
             // 
@@ -1311,7 +1311,7 @@
             this.tpHourStaff.Location = new System.Drawing.Point(4, 22);
             this.tpHourStaff.Name = "tpHourStaff";
             this.tpHourStaff.Padding = new System.Windows.Forms.Padding(3);
-            this.tpHourStaff.Size = new System.Drawing.Size(927, 405);
+            this.tpHourStaff.Size = new System.Drawing.Size(802, 533);
             this.tpHourStaff.TabIndex = 11;
             this.tpHourStaff.Text = "Почасовики";
             this.tpHourStaff.UseVisualStyleBackColor = true;
@@ -1330,7 +1330,7 @@
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(921, 399);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(796, 527);
             this.tableLayoutPanel11.TabIndex = 2;
             // 
             // toolStrip12
@@ -1349,7 +1349,7 @@
             this.btnHourStaffToExcel});
             this.toolStrip12.Location = new System.Drawing.Point(0, 0);
             this.toolStrip12.Name = "toolStrip12";
-            this.toolStrip12.Size = new System.Drawing.Size(921, 24);
+            this.toolStrip12.Size = new System.Drawing.Size(796, 24);
             this.toolStrip12.TabIndex = 8;
             this.toolStrip12.Text = "toolStrip12";
             // 
@@ -1470,9 +1470,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tslPPSVacations});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 379);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 507);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(921, 20);
+            this.statusStrip1.Size = new System.Drawing.Size(796, 20);
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -1554,7 +1554,7 @@
             this.dgvHourFactStaff.RowHeadersVisible = false;
             this.dgvHourFactStaff.RowHeadersWidth = 4;
             this.dgvHourFactStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHourFactStaff.Size = new System.Drawing.Size(915, 349);
+            this.dgvHourFactStaff.Size = new System.Drawing.Size(790, 477);
             this.dgvHourFactStaff.TabIndex = 9;
             this.dgvHourFactStaff.DoubleClick += new System.EventHandler(this.dgvHourFactStaff_DoubleClick);
             // 
@@ -1986,6 +1986,7 @@
             this.depEmplReportFrame1.Size = new System.Drawing.Size(776, 465);
             this.depEmplReportFrame1.TabIndex = 0;
             this.depEmplReportFrame1.WithSubReports = true;
+            this.depEmplReportFrame1.Load += new System.EventHandler(this.depEmplReportFrame1_Load);
             // 
             // tpDepStaffReport
             // 
@@ -2011,6 +2012,7 @@
             this.depStaffReportFrame1.Size = new System.Drawing.Size(901, 465);
             this.depStaffReportFrame1.TabIndex = 0;
             this.depStaffReportFrame1.WithSubReports = true;
+            this.depStaffReportFrame1.Load += new System.EventHandler(this.depStaffReportFrame1_Load);
             // 
             // tpDepBonusReport
             // 
@@ -2144,6 +2146,7 @@
             this.reportBaseFrameForPeriod1.Size = new System.Drawing.Size(782, 471);
             this.reportBaseFrameForPeriod1.TabIndex = 0;
             this.reportBaseFrameForPeriod1.WithSubReports = true;
+            this.reportBaseFrameForPeriod1.Load += new System.EventHandler(this.reportBaseFrameForPeriod1_Load);
             // 
             // tpEmplBonusReport
             // 
@@ -2169,6 +2172,7 @@
             this.departmentBonusReportFrame1.Size = new System.Drawing.Size(901, 465);
             this.departmentBonusReportFrame1.TabIndex = 0;
             this.departmentBonusReportFrame1.WithSubReports = true;
+            this.departmentBonusReportFrame1.Load += new System.EventHandler(this.departmentBonusReportFrame1_Load);
             // 
             // tpT3ByPostReport
             // 
@@ -2194,6 +2198,7 @@
             this.depByPostBonusТ3ReportFrame1.Size = new System.Drawing.Size(901, 465);
             this.depByPostBonusТ3ReportFrame1.TabIndex = 0;
             this.depByPostBonusТ3ReportFrame1.WithSubReports = true;
+            this.depByPostBonusТ3ReportFrame1.Load += new System.EventHandler(this.depByPostBonusТ3ReportFrame1_Load);
             // 
             // tpT3ByCategoryReport
             // 
@@ -2219,6 +2224,7 @@
             this.depByCategoryBonusТ3ReportFrame1.Size = new System.Drawing.Size(901, 465);
             this.depByCategoryBonusТ3ReportFrame1.TabIndex = 0;
             this.depByCategoryBonusТ3ReportFrame1.WithSubReports = true;
+            this.depByCategoryBonusТ3ReportFrame1.Load += new System.EventHandler(this.depByCategoryBonusТ3ReportFrame1_Load);
             // 
             // tpBonusByFundSources
             // 
@@ -2243,6 +2249,7 @@
             this.reportBaseFrameForPeriod2.Size = new System.Drawing.Size(907, 471);
             this.reportBaseFrameForPeriod2.TabIndex = 0;
             this.reportBaseFrameForPeriod2.WithSubReports = true;
+            this.reportBaseFrameForPeriod2.Load += new System.EventHandler(this.reportBaseFrameForPeriod2_Load);
             // 
             // tpTimeSheet
             // 
@@ -2553,6 +2560,7 @@
             this.DepartmentAverageStaff1.Size = new System.Drawing.Size(776, 465);
             this.DepartmentAverageStaff1.TabIndex = 0;
             this.DepartmentAverageStaff1.WithSubReports = true;
+            this.DepartmentAverageStaff1.Load += new System.EventHandler(this.DepartmentAverageStaff1_Load);
             // 
             // tpCategoryAverage
             // 
@@ -2577,6 +2585,7 @@
             this.depCategoryAverageStaff1.Size = new System.Drawing.Size(901, 465);
             this.depCategoryAverageStaff1.TabIndex = 0;
             this.depCategoryAverageStaff1.WithSubReports = true;
+            this.depCategoryAverageStaff1.Load += new System.EventHandler(this.depCategoryAverageStaff1_Load);
             // 
             // tpCategoryVPOAverage
             // 
@@ -2601,6 +2610,7 @@
             this.depCategoryAverageStaff2.Size = new System.Drawing.Size(901, 465);
             this.depCategoryAverageStaff2.TabIndex = 0;
             this.depCategoryAverageStaff2.WithSubReports = true;
+            this.depCategoryAverageStaff2.Load += new System.EventHandler(this.depCategoryAverageStaff2_Load);
             // 
             // toolStrip5
             // 
@@ -2720,6 +2730,7 @@
             this.depCategoryAverageStaff3.Size = new System.Drawing.Size(776, 465);
             this.depCategoryAverageStaff3.TabIndex = 0;
             this.depCategoryAverageStaff3.WithSubReports = true;
+            this.depCategoryAverageStaff3.Load += new System.EventHandler(this.depCategoryAverageStaff3_Load);
             // 
             // tpDepPostAverage
             // 
@@ -2745,6 +2756,7 @@
             this.depPostAverageStaffFrame1.Size = new System.Drawing.Size(901, 465);
             this.depPostAverageStaffFrame1.TabIndex = 0;
             this.depPostAverageStaffFrame1.WithSubReports = true;
+            this.depPostAverageStaffFrame1.Load += new System.EventHandler(this.depPostAverageStaffFrame1_Load);
             // 
             // tpByOKVED
             // 
@@ -2768,6 +2780,7 @@
             this.reportBaseFrameForQuarter1.Size = new System.Drawing.Size(907, 471);
             this.reportBaseFrameForQuarter1.TabIndex = 0;
             this.reportBaseFrameForQuarter1.WithSubReports = true;
+            this.reportBaseFrameForQuarter1.Load += new System.EventHandler(this.reportBaseFrameForQuarter1_Load);
             // 
             // tpZZFAverage
             // 
@@ -2792,6 +2805,7 @@
             this.reportBaseFrameForQuarter2.Size = new System.Drawing.Size(907, 471);
             this.reportBaseFrameForQuarter2.TabIndex = 0;
             this.reportBaseFrameForQuarter2.WithSubReports = true;
+            this.reportBaseFrameForQuarter2.Load += new System.EventHandler(this.reportBaseFrameForQuarter2_Load);
             // 
             // toolStrip13
             // 
@@ -2943,6 +2957,7 @@
             this.minFormMainFrame1.Size = new System.Drawing.Size(776, 465);
             this.minFormMainFrame1.TabIndex = 0;
             this.minFormMainFrame1.WithSubReports = true;
+            this.minFormMainFrame1.Load += new System.EventHandler(this.minFormMainFrame1_Load);
             // 
             // tpForm7
             // 
@@ -2968,6 +2983,7 @@
             this.minFormsFrame1.Size = new System.Drawing.Size(901, 465);
             this.minFormsFrame1.TabIndex = 0;
             this.minFormsFrame1.WithSubReports = true;
+            this.minFormsFrame1.Load += new System.EventHandler(this.minFormsFrame1_Load);
             // 
             // tpForm3
             // 
@@ -2993,6 +3009,7 @@
             this.minForm3PPSFrame1.Size = new System.Drawing.Size(901, 465);
             this.minForm3PPSFrame1.TabIndex = 0;
             this.minForm3PPSFrame1.WithSubReports = true;
+            this.minForm3PPSFrame1.Load += new System.EventHandler(this.minForm3PPSFrame1_Load);
             // 
             // toolStrip4
             // 
@@ -3138,6 +3155,7 @@
             this.factStaffChangesFrame1.Size = new System.Drawing.Size(776, 465);
             this.factStaffChangesFrame1.TabIndex = 0;
             this.factStaffChangesFrame1.WithSubReports = true;
+            this.factStaffChangesFrame1.Load += new System.EventHandler(this.factStaffChangesFrame1_Load);
             // 
             // tpPostStaffChangesReport
             // 
@@ -3163,6 +3181,7 @@
             this.postStaffChangesFrame1.Size = new System.Drawing.Size(901, 465);
             this.postStaffChangesFrame1.TabIndex = 0;
             this.postStaffChangesFrame1.WithSubReports = true;
+            this.postStaffChangesFrame1.Load += new System.EventHandler(this.postStaffChangesFrame1_Load);
             // 
             // tpTimeNorm
             // 

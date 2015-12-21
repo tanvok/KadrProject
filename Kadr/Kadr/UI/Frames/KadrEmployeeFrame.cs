@@ -316,7 +316,7 @@ namespace Kadr.UI.Frames
             dtpBonRepPeriodBegin.Value = DateTime.Today.AddDays(-DateTime.Today.Day + 1);
             dtpBonRepPeriodEnd.Value = DateTime.Today;
 
-            employeeBonusReportFrame1.InitializeReport(typeof(Reports.GetEmployeesSumResult), 0);
+            
         }
 
         private void btnBonusRepLoad_Click(object sender, EventArgs e)
@@ -386,6 +386,10 @@ namespace Kadr.UI.Frames
             LoadOtpusk();
         }
 
+        private void employeeBonusReportFrame1_Load(object sender, EventArgs e)
+        {
+            employeeBonusReportFrame1.InitializeReport(typeof(Reports.GetEmployeesSumResult), 0);
+        }
     }
 
 }

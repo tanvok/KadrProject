@@ -132,5 +132,20 @@ namespace Reports.Frames
         {
             InitializeComponent();
         }
+
+        private void ReportBaseFrame_Load(object sender, EventArgs e)
+        {
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+
+
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(516, 389);
+            this.reportViewer1.TabIndex = 0;
+
+            this.Controls.Add(reportViewer1);
+            this.reportViewer1.Parent = this;
+        }
     }
 }

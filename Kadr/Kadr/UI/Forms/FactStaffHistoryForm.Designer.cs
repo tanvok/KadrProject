@@ -33,6 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvFactStaffHistory = new System.Windows.Forms.DataGridView();
+            this.dateChangeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prikazDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.newStaffCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HourStaffCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SalaryKoeff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HourCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HourSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factStaffHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.EditFStChangeBtn = new System.Windows.Forms.ToolStripButton();
@@ -46,14 +54,6 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateChangeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prikazDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.newStaffCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HourStaffCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SalaryKoeff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HourCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HourSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactStaffHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.factStaffHistoryBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -109,6 +109,69 @@
             this.dgvFactStaffHistory.TabIndex = 5;
             this.dgvFactStaffHistory.DoubleClick += new System.EventHandler(this.EditFStChangeBtn_Click);
             // 
+            // dateChangeDataGridViewTextBoxColumn
+            // 
+            this.dateChangeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dateChangeDataGridViewTextBoxColumn.DataPropertyName = "DateBegin";
+            this.dateChangeDataGridViewTextBoxColumn.HeaderText = "Дата изм.";
+            this.dateChangeDataGridViewTextBoxColumn.Name = "dateChangeDataGridViewTextBoxColumn";
+            this.dateChangeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateChangeDataGridViewTextBoxColumn.Width = 78;
+            // 
+            // prikazDataGridViewTextBoxColumn
+            // 
+            this.prikazDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.prikazDataGridViewTextBoxColumn.DataPropertyName = "Prikaz";
+            this.prikazDataGridViewTextBoxColumn.HeaderText = "Приказ об изменении";
+            this.prikazDataGridViewTextBoxColumn.Name = "prikazDataGridViewTextBoxColumn";
+            this.prikazDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // newStaffCountDataGridViewTextBoxColumn
+            // 
+            this.newStaffCountDataGridViewTextBoxColumn.DataPropertyName = "StaffCount";
+            this.newStaffCountDataGridViewTextBoxColumn.HeaderText = "Новое кол-во ставок";
+            this.newStaffCountDataGridViewTextBoxColumn.Name = "newStaffCountDataGridViewTextBoxColumn";
+            this.newStaffCountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // HourStaffCount
+            // 
+            this.HourStaffCount.DataPropertyName = "HourStaffCount";
+            this.HourStaffCount.HeaderText = "Новое кол-во ставок по нагрузке";
+            this.HourStaffCount.Name = "HourStaffCount";
+            this.HourStaffCount.ReadOnly = true;
+            // 
+            // workTypeDataGridViewTextBoxColumn
+            // 
+            this.workTypeDataGridViewTextBoxColumn.DataPropertyName = "WorkType";
+            this.workTypeDataGridViewTextBoxColumn.HeaderText = "Новый вид работы";
+            this.workTypeDataGridViewTextBoxColumn.Name = "workTypeDataGridViewTextBoxColumn";
+            this.workTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.workTypeDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // SalaryKoeff
+            // 
+            this.SalaryKoeff.DataPropertyName = "SalaryKoeff";
+            this.SalaryKoeff.HeaderText = "Коэффициент оклада";
+            this.SalaryKoeff.Name = "SalaryKoeff";
+            this.SalaryKoeff.ReadOnly = true;
+            this.SalaryKoeff.Width = 85;
+            // 
+            // HourCount
+            // 
+            this.HourCount.DataPropertyName = "HourCount";
+            this.HourCount.HeaderText = "Кол-во часов";
+            this.HourCount.Name = "HourCount";
+            this.HourCount.ReadOnly = true;
+            this.HourCount.Width = 55;
+            // 
+            // HourSalary
+            // 
+            this.HourSalary.DataPropertyName = "HourSalary";
+            this.HourSalary.HeaderText = "Оплата";
+            this.HourSalary.Name = "HourSalary";
+            this.HourSalary.ReadOnly = true;
+            this.HourSalary.Width = 55;
+            // 
             // factStaffHistoryBindingSource
             // 
             this.factStaffHistoryBindingSource.DataSource = typeof(Kadr.Data.FactStaffHistory);
@@ -144,6 +207,7 @@
             this.DelFStChangeBtn.Size = new System.Drawing.Size(71, 22);
             this.DelFStChangeBtn.Text = "Удалить";
             this.DelFStChangeBtn.ToolTipText = "Удалить изменение";
+            this.DelFStChangeBtn.Visible = false;
             this.DelFStChangeBtn.Click += new System.EventHandler(this.DelFStChangeBtn_Click);
             // 
             // toolStripSeparator1
@@ -216,69 +280,6 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 110;
-            // 
-            // dateChangeDataGridViewTextBoxColumn
-            // 
-            this.dateChangeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dateChangeDataGridViewTextBoxColumn.DataPropertyName = "DateBegin";
-            this.dateChangeDataGridViewTextBoxColumn.HeaderText = "Дата изм.";
-            this.dateChangeDataGridViewTextBoxColumn.Name = "dateChangeDataGridViewTextBoxColumn";
-            this.dateChangeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateChangeDataGridViewTextBoxColumn.Width = 84;
-            // 
-            // prikazDataGridViewTextBoxColumn
-            // 
-            this.prikazDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prikazDataGridViewTextBoxColumn.DataPropertyName = "Prikaz";
-            this.prikazDataGridViewTextBoxColumn.HeaderText = "Приказ об изменении";
-            this.prikazDataGridViewTextBoxColumn.Name = "prikazDataGridViewTextBoxColumn";
-            this.prikazDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // newStaffCountDataGridViewTextBoxColumn
-            // 
-            this.newStaffCountDataGridViewTextBoxColumn.DataPropertyName = "StaffCount";
-            this.newStaffCountDataGridViewTextBoxColumn.HeaderText = "Новое кол-во ставок";
-            this.newStaffCountDataGridViewTextBoxColumn.Name = "newStaffCountDataGridViewTextBoxColumn";
-            this.newStaffCountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // HourStaffCount
-            // 
-            this.HourStaffCount.DataPropertyName = "HourStaffCount";
-            this.HourStaffCount.HeaderText = "Новое кол-во ставок по нагрузке";
-            this.HourStaffCount.Name = "HourStaffCount";
-            this.HourStaffCount.ReadOnly = true;
-            // 
-            // workTypeDataGridViewTextBoxColumn
-            // 
-            this.workTypeDataGridViewTextBoxColumn.DataPropertyName = "WorkType";
-            this.workTypeDataGridViewTextBoxColumn.HeaderText = "Новый вид работы";
-            this.workTypeDataGridViewTextBoxColumn.Name = "workTypeDataGridViewTextBoxColumn";
-            this.workTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.workTypeDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // SalaryKoeff
-            // 
-            this.SalaryKoeff.DataPropertyName = "SalaryKoeff";
-            this.SalaryKoeff.HeaderText = "Коэффициент оклада";
-            this.SalaryKoeff.Name = "SalaryKoeff";
-            this.SalaryKoeff.ReadOnly = true;
-            this.SalaryKoeff.Width = 85;
-            // 
-            // HourCount
-            // 
-            this.HourCount.DataPropertyName = "HourCount";
-            this.HourCount.HeaderText = "Кол-во часов";
-            this.HourCount.Name = "HourCount";
-            this.HourCount.ReadOnly = true;
-            this.HourCount.Width = 55;
-            // 
-            // HourSalary
-            // 
-            this.HourSalary.DataPropertyName = "HourSalary";
-            this.HourSalary.HeaderText = "Оплата";
-            this.HourSalary.Name = "HourSalary";
-            this.HourSalary.ReadOnly = true;
-            this.HourSalary.Width = 55;
             // 
             // FactStaffHistoryForm
             // 

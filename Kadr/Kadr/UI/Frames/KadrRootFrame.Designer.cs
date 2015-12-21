@@ -957,6 +957,7 @@
             this.AddFactStaffBtn.Size = new System.Drawing.Size(79, 19);
             this.AddFactStaffBtn.Text = "Добавить";
             this.AddFactStaffBtn.ToolTipText = "Добавить сотрудника";
+            this.AddFactStaffBtn.Visible = false;
             this.AddFactStaffBtn.Click += new System.EventHandler(this.AddFactStaffBtn_Click);
             // 
             // DelFactStaffBtn
@@ -967,6 +968,7 @@
             this.DelFactStaffBtn.Size = new System.Drawing.Size(71, 19);
             this.DelFactStaffBtn.Text = "Удалить";
             this.DelFactStaffBtn.ToolTipText = "Удалить сотрудника";
+            this.DelFactStaffBtn.Visible = false;
             this.DelFactStaffBtn.Click += new System.EventHandler(this.DelFactStaffBtn_Click);
             // 
             // toolStripSeparator8
@@ -982,6 +984,7 @@
             this.btnChangeFactStaff.Size = new System.Drawing.Size(81, 19);
             this.btnChangeFactStaff.Text = "Изменить";
             this.btnChangeFactStaff.ToolTipText = "Добавить изменение по приказу";
+            this.btnChangeFactStaff.Visible = false;
             this.btnChangeFactStaff.Click += new System.EventHandler(this.btnChangeFactStaff_Click);
             // 
             // btnHistoryFactStaff
@@ -1007,6 +1010,7 @@
             this.TransferFactStaffBtn.Size = new System.Drawing.Size(85, 19);
             this.TransferFactStaffBtn.Text = "Перевести";
             this.TransferFactStaffBtn.ToolTipText = "Перевести сотрудников";
+            this.TransferFactStaffBtn.Visible = false;
             this.TransferFactStaffBtn.Click += new System.EventHandler(this.TransferFactStaffBtn_Click);
             // 
             // btnFactStaffBonus
@@ -1026,6 +1030,7 @@
             this.AddReplacementBtn.Name = "AddReplacementBtn";
             this.AddReplacementBtn.Size = new System.Drawing.Size(151, 19);
             this.AddReplacementBtn.Text = "Назначить замещение";
+            this.AddReplacementBtn.Visible = false;
             this.AddReplacementBtn.Click += new System.EventHandler(this.AddReplacementBtn_Click);
             // 
             // toolStripSeparator9

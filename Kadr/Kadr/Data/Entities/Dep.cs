@@ -360,6 +360,7 @@ namespace Kadr.Data
                     if (OKVED.IsNull())
                         OKVED = null;
 
+                (CurrentChange as UIX.Views.IValidatable).Validate();
             }
         }
 

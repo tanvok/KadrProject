@@ -109,7 +109,6 @@ namespace Kadr.UI.Dialogs
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            (getBonusByBonusTypeForProlongResultBindingSource.Current as GetBonusByBonusTypeForProlongResult).Prolong = true;
         }
 
         

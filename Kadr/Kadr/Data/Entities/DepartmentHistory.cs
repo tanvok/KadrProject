@@ -82,6 +82,9 @@ namespace Kadr.Data
                     throw new ArgumentNullException("Дата изменения.");
                 if (((Prikaz as Kadr.Data.Common.INull).IsNull()) || (Prikaz == null))
                     throw new ArgumentNullException("Приказ изменения.");
+
+                if (RegionType == null)
+                    throw new ArgumentNullException("Территориальные условия.");
             }
 
          }

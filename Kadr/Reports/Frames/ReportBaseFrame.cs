@@ -124,7 +124,6 @@ namespace Reports.Frames
 
         protected virtual void LoadData()
         {
-            
         }
 
 

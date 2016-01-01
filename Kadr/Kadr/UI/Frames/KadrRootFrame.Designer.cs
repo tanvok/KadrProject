@@ -451,7 +451,7 @@
             this.tpStaff.Location = new System.Drawing.Point(4, 22);
             this.tpStaff.Name = "tpStaff";
             this.tpStaff.Padding = new System.Windows.Forms.Padding(3);
-            this.tpStaff.Size = new System.Drawing.Size(927, 405);
+            this.tpStaff.Size = new System.Drawing.Size(802, 533);
             this.tpStaff.TabIndex = 1;
             this.tpStaff.Text = "Штаты";
             this.tpStaff.UseVisualStyleBackColor = true;
@@ -470,8 +470,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.splitContainer1.Size = new System.Drawing.Size(921, 399);
-            this.splitContainer1.SplitterDistance = 157;
+            this.splitContainer1.Size = new System.Drawing.Size(796, 527);
+            this.splitContainer1.SplitterDistance = 207;
             this.splitContainer1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -487,7 +487,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(921, 157);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(796, 207);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgvPlanStaff
@@ -780,7 +780,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(921, 238);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(796, 316);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // dgvFactStaff
@@ -1316,7 +1316,7 @@
             this.tpHourStaff.Location = new System.Drawing.Point(4, 22);
             this.tpHourStaff.Name = "tpHourStaff";
             this.tpHourStaff.Padding = new System.Windows.Forms.Padding(3);
-            this.tpHourStaff.Size = new System.Drawing.Size(802, 533);
+            this.tpHourStaff.Size = new System.Drawing.Size(927, 405);
             this.tpHourStaff.TabIndex = 11;
             this.tpHourStaff.Text = "Почасовики";
             this.tpHourStaff.UseVisualStyleBackColor = true;
@@ -1335,7 +1335,7 @@
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(796, 527);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(921, 399);
             this.tableLayoutPanel11.TabIndex = 2;
             // 
             // toolStrip12
@@ -1354,7 +1354,7 @@
             this.btnHourStaffToExcel});
             this.toolStrip12.Location = new System.Drawing.Point(0, 0);
             this.toolStrip12.Name = "toolStrip12";
-            this.toolStrip12.Size = new System.Drawing.Size(796, 24);
+            this.toolStrip12.Size = new System.Drawing.Size(921, 24);
             this.toolStrip12.TabIndex = 8;
             this.toolStrip12.Text = "toolStrip12";
             // 
@@ -1475,9 +1475,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tslPPSVacations});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 507);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 379);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(796, 20);
+            this.statusStrip1.Size = new System.Drawing.Size(921, 20);
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -1559,7 +1559,7 @@
             this.dgvHourFactStaff.RowHeadersVisible = false;
             this.dgvHourFactStaff.RowHeadersWidth = 4;
             this.dgvHourFactStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHourFactStaff.Size = new System.Drawing.Size(790, 477);
+            this.dgvHourFactStaff.Size = new System.Drawing.Size(915, 349);
             this.dgvHourFactStaff.TabIndex = 9;
             this.dgvHourFactStaff.DoubleClick += new System.EventHandler(this.dgvHourFactStaff_DoubleClick);
             // 
@@ -1889,7 +1889,7 @@
             this.tpDepEmplReport.Location = new System.Drawing.Point(4, 22);
             this.tpDepEmplReport.Name = "tpDepEmplReport";
             this.tpDepEmplReport.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDepEmplReport.Size = new System.Drawing.Size(802, 533);
+            this.tpDepEmplReport.Size = new System.Drawing.Size(927, 405);
             this.tpDepEmplReport.TabIndex = 3;
             this.tpDepEmplReport.Text = "Штат сотрудников";
             this.tpDepEmplReport.UseVisualStyleBackColor = true;
@@ -1936,7 +1936,7 @@
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(796, 527);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(921, 399);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
             // toolStrip11
@@ -1946,7 +1946,7 @@
             this.toolStripLabel5});
             this.toolStrip11.Location = new System.Drawing.Point(0, 0);
             this.toolStrip11.Name = "toolStrip11";
-            this.toolStrip11.Size = new System.Drawing.Size(796, 24);
+            this.toolStrip11.Size = new System.Drawing.Size(921, 24);
             this.toolStrip11.TabIndex = 12;
             this.toolStrip11.Text = "toolStrip11";
             // 
@@ -1964,7 +1964,7 @@
             this.tcDepStaffReport.Location = new System.Drawing.Point(3, 27);
             this.tcDepStaffReport.Name = "tcDepStaffReport";
             this.tcDepStaffReport.SelectedIndex = 0;
-            this.tcDepStaffReport.Size = new System.Drawing.Size(790, 497);
+            this.tcDepStaffReport.Size = new System.Drawing.Size(915, 497);
             this.tcDepStaffReport.TabIndex = 13;
             // 
             // tpDepStaffReportWithFinSource
@@ -1973,7 +1973,7 @@
             this.tpDepStaffReportWithFinSource.Location = new System.Drawing.Point(4, 22);
             this.tpDepStaffReportWithFinSource.Name = "tpDepStaffReportWithFinSource";
             this.tpDepStaffReportWithFinSource.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDepStaffReportWithFinSource.Size = new System.Drawing.Size(782, 471);
+            this.tpDepStaffReportWithFinSource.Size = new System.Drawing.Size(907, 471);
             this.tpDepStaffReportWithFinSource.TabIndex = 0;
             this.tpDepStaffReportWithFinSource.Text = "С делением по источникам фин-я";
             this.tpDepStaffReportWithFinSource.UseVisualStyleBackColor = true;
@@ -1988,7 +1988,7 @@
             this.depEmplReportFrame1.ReportNumber = 0;
             this.depEmplReportFrame1.ReportParam = -1;
             this.depEmplReportFrame1.ReportType = null;
-            this.depEmplReportFrame1.Size = new System.Drawing.Size(776, 465);
+            this.depEmplReportFrame1.Size = new System.Drawing.Size(901, 465);
             this.depEmplReportFrame1.TabIndex = 0;
             this.depEmplReportFrame1.WithSubReports = true;
             this.depEmplReportFrame1.Load += new System.EventHandler(this.depEmplReportFrame1_Load);
@@ -2030,7 +2030,7 @@
             this.tpDepBonusReport.Location = new System.Drawing.Point(4, 22);
             this.tpDepBonusReport.Name = "tpDepBonusReport";
             this.tpDepBonusReport.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDepBonusReport.Size = new System.Drawing.Size(802, 533);
+            this.tpDepBonusReport.Size = new System.Drawing.Size(927, 405);
             this.tpDepBonusReport.TabIndex = 4;
             this.tpDepBonusReport.Text = "Отчеты по надбавкам";
             this.tpDepBonusReport.UseVisualStyleBackColor = true;
@@ -2095,7 +2095,7 @@
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(796, 527);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(921, 399);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // toolStrip6
@@ -2104,7 +2104,7 @@
             this.toolStripLabel2});
             this.toolStrip6.Location = new System.Drawing.Point(0, 0);
             this.toolStrip6.Name = "toolStrip6";
-            this.toolStrip6.Size = new System.Drawing.Size(796, 24);
+            this.toolStrip6.Size = new System.Drawing.Size(921, 24);
             this.toolStrip6.TabIndex = 11;
             this.toolStrip6.Text = "toolStrip6";
             // 
@@ -2125,7 +2125,7 @@
             this.tcBonusReports.Location = new System.Drawing.Point(3, 27);
             this.tcBonusReports.Name = "tcBonusReports";
             this.tcBonusReports.SelectedIndex = 0;
-            this.tcBonusReports.Size = new System.Drawing.Size(790, 497);
+            this.tcBonusReports.Size = new System.Drawing.Size(915, 497);
             this.tcBonusReports.TabIndex = 1;
             // 
             // tpSmallDelBonusReport
@@ -2133,7 +2133,7 @@
             this.tpSmallDelBonusReport.Controls.Add(this.reportBaseFrameForPeriod1);
             this.tpSmallDelBonusReport.Location = new System.Drawing.Point(4, 22);
             this.tpSmallDelBonusReport.Name = "tpSmallDelBonusReport";
-            this.tpSmallDelBonusReport.Size = new System.Drawing.Size(782, 471);
+            this.tpSmallDelBonusReport.Size = new System.Drawing.Size(907, 471);
             this.tpSmallDelBonusReport.TabIndex = 5;
             this.tpSmallDelBonusReport.Text = "Для раскладов";
             this.tpSmallDelBonusReport.UseVisualStyleBackColor = true;
@@ -2148,7 +2148,7 @@
             this.reportBaseFrameForPeriod1.ReportNumber = 0;
             this.reportBaseFrameForPeriod1.ReportParam = -1;
             this.reportBaseFrameForPeriod1.ReportType = null;
-            this.reportBaseFrameForPeriod1.Size = new System.Drawing.Size(782, 471);
+            this.reportBaseFrameForPeriod1.Size = new System.Drawing.Size(907, 471);
             this.reportBaseFrameForPeriod1.TabIndex = 0;
             this.reportBaseFrameForPeriod1.WithSubReports = true;
             this.reportBaseFrameForPeriod1.Load += new System.EventHandler(this.reportBaseFrameForPeriod1_Load);
@@ -2648,7 +2648,7 @@
             this.tpQrStaffAverage.Location = new System.Drawing.Point(4, 22);
             this.tpQrStaffAverage.Name = "tpQrStaffAverage";
             this.tpQrStaffAverage.Padding = new System.Windows.Forms.Padding(3);
-            this.tpQrStaffAverage.Size = new System.Drawing.Size(802, 533);
+            this.tpQrStaffAverage.Size = new System.Drawing.Size(927, 405);
             this.tpQrStaffAverage.TabIndex = 12;
             this.tpQrStaffAverage.Text = "Среднесп численность за квартал";
             this.tpQrStaffAverage.UseVisualStyleBackColor = true;
@@ -2692,7 +2692,7 @@
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(796, 527);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(921, 399);
             this.tableLayoutPanel12.TabIndex = 2;
             // 
             // tcQrStaffAverage
@@ -2708,7 +2708,7 @@
             this.tcQrStaffAverage.Multiline = true;
             this.tcQrStaffAverage.Name = "tcQrStaffAverage";
             this.tcQrStaffAverage.SelectedIndex = 0;
-            this.tcQrStaffAverage.Size = new System.Drawing.Size(790, 497);
+            this.tcQrStaffAverage.Size = new System.Drawing.Size(915, 497);
             this.tcQrStaffAverage.TabIndex = 1;
             // 
             // tpCategoryZPAverage
@@ -2717,7 +2717,7 @@
             this.tpCategoryZPAverage.Location = new System.Drawing.Point(4, 22);
             this.tpCategoryZPAverage.Name = "tpCategoryZPAverage";
             this.tpCategoryZPAverage.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCategoryZPAverage.Size = new System.Drawing.Size(782, 471);
+            this.tpCategoryZPAverage.Size = new System.Drawing.Size(907, 471);
             this.tpCategoryZPAverage.TabIndex = 4;
             this.tpCategoryZPAverage.Text = "По категориям для ЗП";
             this.tpCategoryZPAverage.UseVisualStyleBackColor = true;
@@ -2732,7 +2732,7 @@
             this.depCategoryAverageStaff3.ReportParam = -1;
             this.depCategoryAverageStaff3.ReportType = null;
             this.depCategoryAverageStaff3.SelectedYear = 0;
-            this.depCategoryAverageStaff3.Size = new System.Drawing.Size(776, 465);
+            this.depCategoryAverageStaff3.Size = new System.Drawing.Size(901, 465);
             this.depCategoryAverageStaff3.TabIndex = 0;
             this.depCategoryAverageStaff3.WithSubReports = true;
             this.depCategoryAverageStaff3.Load += new System.EventHandler(this.depCategoryAverageStaff3_Load);
@@ -2820,7 +2820,7 @@
             this.cbQuarter});
             this.toolStrip13.Location = new System.Drawing.Point(0, 0);
             this.toolStrip13.Name = "toolStrip13";
-            this.toolStrip13.Size = new System.Drawing.Size(796, 24);
+            this.toolStrip13.Size = new System.Drawing.Size(921, 24);
             this.toolStrip13.TabIndex = 13;
             this.toolStrip13.Text = "toolStrip13";
             // 

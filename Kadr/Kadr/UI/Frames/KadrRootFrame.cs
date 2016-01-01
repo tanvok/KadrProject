@@ -859,10 +859,9 @@ namespace Kadr.UI.Frames
            if ((cbYearOfQr.SelectedItem == null) && (cbYearOfQr.Items.Count > 0))
                cbYearOfQr.SelectedItem = cbYearOfQr.Items[0];
 
-           int MonthMod3 = 0;
-           if (DateTime.Today.Month % 3 > 1)
-               MonthMod3 = 1;
-           cbQuarter.SelectedItem = cbQuarter.Items[DateTime.Today.Month / 3 + MonthMod3 - 1];
+           int MonthNumber = (DateTime.Today.Month > 1) ? DateTime.Today.Month : 13;
+           int MonthMod3 = (DateTime.Today.Month % 3 > 1) ? 1 : 0;
+           cbQuarter.SelectedItem = cbQuarter.Items[MonthNumber / 3 + MonthMod3 - 1];
        }
 
        private void btnReportLoad_Click(object sender, EventArgs e)

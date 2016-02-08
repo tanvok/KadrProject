@@ -13,22 +13,31 @@ namespace Kadr.Data
         public override string ToString()
         {
             string result;
-            result = Convert.ToString(this.PKGroup.GroupNumber) + "." +
-                Convert.ToString(this.PKCategoryNumber) + "." +
-                Convert.ToString(this.PKSubCategoryNumber);
+            result = CategorySmallName;
             if (this.PKSubSubCategoryNumber > 0)
                 result += "." +
                 Convert.ToString(this.PKSubSubCategoryNumber);
             return result;
         }
 
-        public string CategoryFullName
+        /// <summary>
+        /// краткое имя ПКГ (только 3 цифры)
+        /// </summary>
+        public string CategorySmallName
         {
             get
             {
                 return Convert.ToString(this.PKGroup.GroupNumber) + "." +
                 Convert.ToString(this.PKCategoryNumber) + "." +
-                Convert.ToString(this.PKSubCategoryNumber) + " (" + PKGroup.GroupName + ")";
+                Convert.ToString(this.PKSubCategoryNumber);
+            }
+        }
+
+        public string CategoryFullName
+        {
+            get
+            {
+                return CategorySmallName + " (" + PKGroup.GroupName + ")";
             }
 
         }

@@ -58,14 +58,15 @@ namespace Kadr.Data
             }
         }*/
 
-        public string SalarySize
+        #region Salary
+        public decimal? Salary
         {
             get
             {
                 //если есть индивидуальный оклад, загружаем его
                 if (HaveIndivSal)
                 {
-                    return PlanStaffSalary.SalarySize.ToString("N2");
+                    return PlanStaffSalary.SalarySize;
                 }
                 //иначе - оклад смотрим по категории
                 else
@@ -75,9 +76,18 @@ namespace Kadr.Data
                     //Contract.Requires(Post.PKCategory.PKCategorySalary != null);
 
                     if (Post.PKCategory.HaveSalary)
-                        return Post.PKCategory.PKCategorySalary.SalarySize.ToString("N2");
+                        return Post.PKCategory.PKCategorySalary.SalarySize;
                 }
-                return "     – ";
+                return null;
+            }
+        }
+
+
+        public string SalarySize
+        {
+            get
+            {
+                return Salary == null ? "     – " : Salary.Value.ToString("N2");
             }
         }
 
@@ -86,13 +96,13 @@ namespace Kadr.Data
             get
             {
                 //Contract.Requires(PlanStaffalaries != null);
-                if (PlanStaffSalaries.Count() >0)
+                if (PlanStaffSalaries.Count() > 0)
                     if (PlanStaffSalaries.Where(plStSal => ((plStSal.DateEnd == null) || (plStSal.DateEnd > DateTime.Today)) && (plStSal.SalarySize > 0)).Count() > 0)
                         return PlanStaffSalaries.Where(plStSal => ((plStSal.DateEnd == null) || ((plStSal.DateBegin <= DateTime.Today) && (plStSal.DateEnd > DateTime.Today))) && (plStSal.SalarySize > 0)).LastOrDefault();
                 return null;
             }
         }
-        
+
         /// <summary>
         /// показатель индивидуального оклада
         /// </summary>
@@ -103,6 +113,8 @@ namespace Kadr.Data
                 return (PlanStaffSalary != null);
             }
         }
+
+        #endregion        
 
         /// <summary>
         /// показатель руководителя

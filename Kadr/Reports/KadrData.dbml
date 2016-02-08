@@ -69,20 +69,6 @@
       <Column Name="resume" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
-  <Function Name="dbo.GetAllPosts" Method="GetAllPosts" IsComposable="true">
-    <Parameter Name="idDepartment" Type="System.Int32" DbType="Int" />
-    <Parameter Name="PeriodBegin" Parameter="periodBegin" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="PeriodEnd" Parameter="periodEnd" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="WithSubDeps" Parameter="withSubDeps" Type="System.Boolean" DbType="Bit" />
-    <ElementType Name="GetAllPostsResult">
-      <Column Name="PostName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="PKCategoryName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="PeriodBegin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="PeriodEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="GlobalPrikazName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SalarySize" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.GetPPSDepartmentBonusForT3" Method="GetPPSDepartmentBonusForT3" IsComposable="true">
     <Parameter Name="idDepartment" Type="System.Int32" DbType="Int" />
     <Parameter Name="PeriodBegin" Parameter="periodBegin" Type="System.DateTime" DbType="Date" />
@@ -623,6 +609,20 @@
       <Column Name="PrikazAppointment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="NewCategoryName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="FundingCenterName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAllPosts" Method="GetAllPosts" IsComposable="true">
+    <Parameter Name="idDepartment" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodBegin" Parameter="periodBegin" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PeriodEnd" Parameter="periodEnd" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="WithSubDeps" Parameter="withSubDeps" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="GetAllPostsResult">
+      <Column Name="GlobalPrikazName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PKCategoryName" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="SalarySize" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PostName" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodBegin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PeriodEnd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

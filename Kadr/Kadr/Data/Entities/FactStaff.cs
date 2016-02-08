@@ -133,6 +133,12 @@ namespace Kadr.Data
             }
         }
 
+
+
+
+        #endregion
+
+        #region PKCategory
         public PKCategory PKCategory
         {
             get
@@ -143,19 +149,19 @@ namespace Kadr.Data
             }
         }
 
-        public string SalarySize
+        public string PKCategoryFullName
         {
             get
             {
                 if (PlanStaff != null)
-                    return PlanStaff.SalarySize;
-                return HourSalary.ToString();
-                //return null;
+                {
+                    if (CurrentChange.SalaryKoeff != null)
+                        return PlanStaff.Post.PKCategory.CategorySmallName + ((CurrentChange.SalaryKoeff == null) ? "" : "." + CurrentChange.SalaryKoeff.PKSubSubCategoryNumber.ToString() + "");
+                }
+                return NullPKCategory.Instance.ToString();
             }
         }
-
         #endregion
-
 
         #region FactStaffHistories
         /// <summary>
@@ -435,7 +441,36 @@ namespace Kadr.Data
                     PlanStaff.Post = value;
             }
         }
-        #endregion 
+        #endregion
+
+        #region Salary
+
+        public decimal? Salary
+        {
+            get
+            {
+                if (PlanStaff != null)
+                {
+                    decimal PlanStaffSalary = PlanStaff.Salary ?? 0;
+                    if (CurrentChange != null)
+                        if (CurrentChange.SalaryKoeff != null)
+                        {
+                            return (PlanStaffSalary * CurrentChange.SalaryKoeff.SalaryKoeffc);
+                        }
+                    return PlanStaffSalary;
+                }
+                return HourSalary;
+                //return null;
+            }
+        }
+        public string SalarySize
+        {
+            get
+            {
+                return Salary == null ? "     – " : Salary.Value.ToString("N2");
+            }
+        }
+        #endregion
 
         #region ReplacementData
 

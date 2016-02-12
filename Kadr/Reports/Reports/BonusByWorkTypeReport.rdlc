@@ -1136,6 +1136,7 @@
                               <GroupExpression>=Fields!PostName.Value</GroupExpression>
                               <GroupExpression>=Fields!PKCategoryName.Value</GroupExpression>
                               <GroupExpression>=Fields!Salary.Value</GroupExpression>
+                              <GroupExpression>=Fields!FinancingSourceName.Value</GroupExpression>
                             </GroupExpressions>
                           </Group>
                           <SortExpressions>
@@ -1190,6 +1191,7 @@
                                       <PaddingBottom>2pt</PaddingBottom>
                                     </Style>
                                   </Textbox>
+                                  <rd:Selected>true</rd:Selected>
                                 </CellContents>
                               </TablixHeader>
                               <TablixMembers>

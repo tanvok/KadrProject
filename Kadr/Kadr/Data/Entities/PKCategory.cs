@@ -12,13 +12,10 @@ namespace Kadr.Data
     {
         public override string ToString()
         {
-            string result;
-            result = CategorySmallName;
-            if (this.PKSubSubCategoryNumber > 0)
-                result += "." +
-                Convert.ToString(this.PKSubSubCategoryNumber);
-            return result;
+            return CategoryName;
         }
+
+        #region CategoryName
 
         /// <summary>
         /// краткое имя ПКГ (только 3 цифры)
@@ -28,11 +25,26 @@ namespace Kadr.Data
             get
             {
                 return Convert.ToString(this.PKGroup.GroupNumber) + "." +
-                Convert.ToString(this.PKCategoryNumber) + "." +
-                Convert.ToString(this.PKSubCategoryNumber);
+                    Convert.ToString(this.PKCategoryNumber) + "." +
+                    Convert.ToString(this.PKSubCategoryNumber);
             }
         }
 
+        /// <summary>
+        /// Имя - 4 цифры
+        /// </summary>
+        public string CategoryName
+        {
+            get
+            {
+                return CategorySmallName + (this.PKSubSubCategoryNumber > 0 ? "." +
+                    Convert.ToString(this.PKSubSubCategoryNumber) : "");
+            }
+        }
+
+        /// <summary>
+        /// Имя полное - с 4 цифрами и номеров группы в скобках
+        /// </summary>
         public string CategoryFullName
         {
             get
@@ -41,6 +53,7 @@ namespace Kadr.Data
             }
 
         }
+        #endregion
 
         public bool HaveSalary
         {

@@ -155,8 +155,9 @@ namespace Kadr.Data
             {
                 if (PlanStaff != null)
                 {
-                    if (CurrentChange.SalaryKoeff != null)
-                        return PlanStaff.Post.PKCategory.CategorySmallName + ((CurrentChange.SalaryKoeff == null) ? "" : "." + CurrentChange.SalaryKoeff.PKSubSubCategoryNumber.ToString() + "");
+                    return (CurrentChange.SalaryKoeff == null) ? 
+                        PlanStaff.Post.PKCategory.CategoryName : 
+                        PlanStaff.Post.PKCategory.CategorySmallName + "." + CurrentChange.SalaryKoeff.PKSubSubCategoryNumber.ToString() ;
                 }
                 return NullPKCategory.Instance.ToString();
             }

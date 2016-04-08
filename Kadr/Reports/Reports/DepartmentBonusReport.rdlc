@@ -387,7 +387,7 @@
               <Width>2.79104cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.80864cm</Width>
+              <Width>2.83509cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.1825cm</Width>
@@ -1596,6 +1596,7 @@ Round(Sum((Fields!AllBonusSum.Value)*
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -6716,7 +6717,7 @@ Round(Sum((Fields!BonusSum.Value)*
         <Top>0.1152cm</Top>
         <Left>0.02647cm</Left>
         <Height>4.45604cm</Height>
-        <Width>68.87404cm</Width>
+        <Width>68.90049cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

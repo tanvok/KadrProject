@@ -70,7 +70,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Количество рабочих дней")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Общее количество рабочих дней сотрудника за месяц")]
-        public int WorkingDaysCount
+        public double WorkingDaysCount
         {
             get
             {

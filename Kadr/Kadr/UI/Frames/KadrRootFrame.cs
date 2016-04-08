@@ -131,7 +131,7 @@ namespace Kadr.UI.Frames
             TimeSheet SelectedTimeSheet = cbTimeSheet.SelectedItem as TimeSheet;
             //timeSheetBindingSource.DataSource = KadrController.Instance.Model.TimeSheets.OrderBy(ts => ts.TimeSheetYear).ThenBy(ts => ts.TimeSheetMonth);
             cbTimeSheet.Items.Clear();
-            foreach (TimeSheet timeSheet in KadrController.Instance.Model.TimeSheets.Where(ts => ts.TimeSheetYear >= (DateTime.Today.Year-1)).OrderByDescending(ts => ts.TimeSheetYear).ThenByDescending(ts => ts.TimeSheetMonth))
+            foreach (TimeSheet timeSheet in KadrController.Instance.Model.TimeSheets.Where(ts => ts.TimeSheetYear >= (DateTime.Today.Year-2)).OrderByDescending(ts => ts.TimeSheetYear).ThenByDescending(ts => ts.TimeSheetMonth))
             {
                 cbTimeSheet.Items.Add(timeSheet);
             }

@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Kadr" Class="dckadrDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ugtudb.ugtu.net;Initial Catalog=Kadr;Integrated Security=True" SettingsObjectName="Kadr.Properties.Settings" SettingsPropertyName="KadrConnectionString1" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KadrRealTest" Class="dckadrDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ugtudb.ugtu.net;Initial Catalog=KadrRealTest;Integrated Security=True" SettingsObjectName="Kadr.Properties.Settings" SettingsPropertyName="KadrRealTestConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DepartmentType" Member="DepartmentTypes">
     <Type Name="DepartmentType">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -274,17 +274,6 @@
       <Association Name="TimeSheet_TimeSheetFSWorkingDay" Member="TimeSheetFSWorkingDays" ThisKey="id" OtherKey="idTimeSheet" Type="TimeSheetFSWorkingDay" />
     </Type>
   </Table>
-  <Table Name="dbo.TimeSheetFSWorkingDays" Member="TimeSheetFSWorkingDays">
-    <Type Name="TimeSheetFSWorkingDay">
-      <Column Name="idTimeSheet" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="idFactStaff" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="WorkingDaysCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IsClosed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="StaffCount" Type="System.Decimal" DbType="Decimal(3,2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="TimeSheet_TimeSheetFSWorkingDay" Member="TimeSheet" ThisKey="idTimeSheet" OtherKey="id" Type="TimeSheet" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="FactStaff_TimeSheetFSWorkingDay" Member="FactStaff" ThisKey="idFactStaff" OtherKey="id" Type="FactStaff" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.OK_Otpuskvid" Member="OK_Otpuskvids">
     <Type Name="OK_Otpuskvid">
       <Column Name="idotpuskvid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -483,7 +472,6 @@
       <Column Name="idMainFactStaff" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="idOKVED" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="FactStaff_BonusFactStaff" Member="BonusFactStaffs" ThisKey="id" OtherKey="idFactStaff" Type="BonusFactStaff" />
-      <Association Name="FactStaff_TimeSheetFSWorkingDay" Member="TimeSheetFSWorkingDays" ThisKey="id" OtherKey="idFactStaff" Type="TimeSheetFSWorkingDay" />
       <Association Name="FactStaff_FactStaffReplacement" Member="FactStaffReplacement" ThisKey="id" OtherKey="idFactStaff" Type="FactStaffReplacement" Cardinality="One" />
       <Association Name="FactStaff_FactStaffReplacement1" Member="FactStaffReplacements" ThisKey="id" OtherKey="idReplacedFactStaff" Type="FactStaffReplacement" />
       <Association Name="FactStaff_FactStaffHistory" Member="FactStaffHistories" ThisKey="id" OtherKey="idFactStaff" Type="FactStaffHistory" />
@@ -491,6 +479,7 @@
       <Association Name="FactStaff_FactStaff" Member="FactStaffs" ThisKey="id" OtherKey="idMainFactStaff" Type="FactStaff" />
       <Association Name="FactStaff_OK_Otpusk" Member="OK_Otpusks" ThisKey="id" OtherKey="idFactStaff" Type="OK_Otpusk" />
       <Association Name="FactStaff_FactStaffPrikaz" Member="FactStaffPrikazs" ThisKey="id" OtherKey="idFactStaff" Type="FactStaffPrikaz" />
+      <Association Name="FactStaff_TimeSheetFSWorkingDay" Member="TimeSheetFSWorkingDays" ThisKey="id" OtherKey="idFactStaff" Type="TimeSheetFSWorkingDay" />
       <Association Name="FactStaff_FactStaff" Member="FactStaff1" ThisKey="idMainFactStaff" OtherKey="id" Type="FactStaff" IsForeignKey="true" />
       <Association Name="FinancingSource_FactStaff" Member="FinancingSource" ThisKey="idFinancingSource" OtherKey="id" Type="FinancingSource" IsForeignKey="true" />
       <Association Name="FundingCenter_FactStaff" Member="FundingCenter" ThisKey="idFundingCenter" OtherKey="id" Type="FundingCenter" IsForeignKey="true" />
@@ -808,6 +797,17 @@
       <Association Name="RegionType_DepartmentHistory" Member="DepartmentHistories" ThisKey="id" OtherKey="idRegionType" Type="DepartmentHistory" />
     </Type>
   </Table>
+  <Table Name="dbo.TimeSheetFSWorkingDays" Member="TimeSheetFSWorkingDays">
+    <Type Name="TimeSheetFSWorkingDay">
+      <Column Name="idTimeSheet" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idFactStaff" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="WorkingDaysCount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="IsClosed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="StaffCount" Type="System.Decimal" DbType="Decimal(3,2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="FactStaff_TimeSheetFSWorkingDay" Member="FactStaff" ThisKey="idFactStaff" OtherKey="id" Type="FactStaff" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="TimeSheet_TimeSheetFSWorkingDay" Member="TimeSheet" ThisKey="idTimeSheet" OtherKey="id" Type="TimeSheet" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.TransferFactStaff" Method="TransferFactStaff">
     <Parameter Name="idOldFactStaff" Type="System.Int32" DbType="Int" />
     <Parameter Name="idNewPlanStaff" Type="System.Int32" DbType="Int" />
@@ -815,25 +815,6 @@
     <Parameter Name="TransferData" Parameter="transferData" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="TransferWithBonus" Parameter="transferWithBonus" Type="System.Boolean" DbType="Bit" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.GetFactStaffForTimeSheet" Method="GetFactStaffForTimeSheet" IsComposable="true">
-    <Parameter Name="PeriodBegin" Parameter="periodBegin" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="PeriodEnd" Parameter="periodEnd" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="GetFactStaffForTimeSheetResult">
-      <Column Name="idFactStaff" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="StaffCount" Type="System.Decimal" DbType="Decimal(4,2) NOT NULL" CanBeNull="false" />
-      <Column Name="idDepartment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IsReplacement" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="idTypeWork" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="idPost" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="idPlanStaff" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="idEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="idFinancingSource" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="isMain" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="daysCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DateBegin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </ElementType>
   </Function>
   <Function Name="dbo.GetFullSubDepartments" Method="GetFullSubDepartments" IsComposable="true">
     <Parameter Name="idManagerDepartment" Type="System.Int32" DbType="Int" />
@@ -913,6 +894,29 @@
       <Column Name="BonusFinancingSourceName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Prolong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="idBonus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetFactStaffForTimeSheet" Method="GetFactStaffForTimeSheet" IsComposable="true">
+    <Parameter Name="PeriodBegin" Parameter="periodBegin" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PeriodEnd" Parameter="periodEnd" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetFactStaffForTimeSheetResult">
+      <Column Name="idFactStaff" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StaffCount" Type="System.Decimal" DbType="Decimal(4,2) NOT NULL" CanBeNull="false" />
+      <Column Name="idDepartment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsReplacement" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="idTypeWork" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPost" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPlanStaff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idFinancingSource" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idOKVED" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isMain" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="daysCount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DateBegin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OtpDateBegin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OtpDateEnd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="idOtpusk" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

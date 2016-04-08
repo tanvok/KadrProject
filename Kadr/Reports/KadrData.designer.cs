@@ -187,12 +187,6 @@ namespace Reports
 			return this.CreateMethodCallQuery<GetAverageNumEmplResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), year, idDepartment, withSubDeps, monthBegin, monthEnd);
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetDepartmentBonusWithEmployees", IsComposable=true)]
-		public IQueryable<GetDepartmentBonusWithEmployeesResult> GetDepartmentBonusWithEmployees([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idDepartment, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodBegin", DbType="Date")] System.Nullable<System.DateTime> periodBegin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodEnd", DbType="Date")] System.Nullable<System.DateTime> periodEnd, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WithSubDeps", DbType="Bit")] System.Nullable<bool> withSubDeps, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idBonusReport)
-		{
-			return this.CreateMethodCallQuery<GetDepartmentBonusWithEmployeesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDepartment, periodBegin, periodEnd, withSubDeps, idBonusReport);
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetFundingDepAverageNumEmpl", IsComposable=true)]
 		public IQueryable<GetFundingDepAverageNumEmplResult> GetFundingDepAverageNumEmpl([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Year", DbType="Int")] System.Nullable<int> year, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idDepartment, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WithSubDeps", DbType="Bit")] System.Nullable<bool> withSubDeps, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MonthBegin", DbType="Int")] System.Nullable<int> monthBegin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MonthEnd", DbType="Int")] System.Nullable<int> monthEnd)
 		{
@@ -227,6 +221,12 @@ namespace Reports
 		public IQueryable<GetAllPostsResult> GetAllPosts([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idDepartment, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodBegin", DbType="Date")] System.Nullable<System.DateTime> periodBegin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodEnd", DbType="Date")] System.Nullable<System.DateTime> periodEnd, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WithSubDeps", DbType="Bit")] System.Nullable<bool> withSubDeps)
 		{
 			return this.CreateMethodCallQuery<GetAllPostsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDepartment, periodBegin, periodEnd, withSubDeps);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetDepartmentBonusWithEmployees", IsComposable=true)]
+		public IQueryable<GetDepartmentBonusWithEmployeesResult> GetDepartmentBonusWithEmployees([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idDepartment, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodBegin", DbType="Date")] System.Nullable<System.DateTime> periodBegin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodEnd", DbType="Date")] System.Nullable<System.DateTime> periodEnd, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WithSubDeps", DbType="Bit")] System.Nullable<bool> withSubDeps, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idBonusReport)
+		{
+			return this.CreateMethodCallQuery<GetDepartmentBonusWithEmployeesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDepartment, periodBegin, periodEnd, withSubDeps, idBonusReport);
 		}
 	}
 	
@@ -4736,1292 +4736,6 @@ namespace Reports
 		}
 	}
 	
-	public partial class GetDepartmentBonusWithEmployeesResult
-	{
-		
-		private string _ReportMainObjectName;
-		
-		private string _EmployeeName;
-		
-		private string _BonusLevel;
-		
-		private string _BonusCount;
-		
-		private System.Nullable<int> _idFactStaff;
-		
-		private System.Nullable<int> _SeverKoeff;
-		
-		private System.Nullable<int> _RayonKoeff;
-		
-		private string _TypeWorkName;
-		
-		private System.Nullable<decimal> _StaffCount;
-		
-		private string _DepartmentName;
-		
-		private string _PostName;
-		
-		private System.Nullable<int> _idPlanStaff;
-		
-		private System.Nullable<int> _NDFLKoeff;
-		
-		private string _BonusTypeName;
-		
-		private string _BonusTypeFullName;
-		
-		private System.Nullable<int> _idBonusType;
-		
-		private string _FinancingSourceName;
-		
-		private string _PKCategoryName;
-		
-		private System.Nullable<System.DateTime> _PeriodBegin;
-		
-		private System.Nullable<System.DateTime> _PeriodEnd;
-		
-		private System.Nullable<decimal> _StaffCountWithoutReplacement;
-		
-		private System.Nullable<decimal> _StaffCountReal;
-		
-		private System.Nullable<int> _idReplacementReason;
-		
-		private System.Nullable<bool> _HasEnvironmentBonus;
-		
-		private string _GlobalPrikazName;
-		
-		private string _GlobalPrikazFullName;
-		
-		private string _BonusSuperTypeName;
-		
-		private string _CategoryName;
-		
-		private System.Nullable<int> _idCategory;
-		
-		private string _WorkSuperTypeName;
-		
-		private string _DirectionManagerName;
-		
-		private string _ReplacedEmployeeName;
-		
-		private System.Nullable<int> _BonusOrderNumber;
-		
-		private string _PostFullName;
-		
-		private string _DepartmentFullName;
-		
-		private string _DateBegin;
-		
-		private string _DateEnd;
-		
-		private System.Nullable<decimal> _BonusSum;
-		
-		private System.Nullable<decimal> _AllBonusSum;
-		
-		private System.Nullable<bool> _ForVacancy;
-		
-		private System.Nullable<bool> _ForEmployee;
-		
-		private string _MatOtpusk;
-		
-		private System.Nullable<decimal> _HourCount;
-		
-		private string _FinancingSourceFullName;
-		
-		private string _PostComment;
-		
-		private System.Nullable<decimal> _SalaryKoeff;
-		
-		private string _PKCategoryFullName;
-		
-		private System.Nullable<int> _CategoryOrderBy;
-		
-		private System.Nullable<int> _FinancingSourceOrderBy;
-		
-		private System.Nullable<bool> _ManagerBit;
-		
-		private string _PostTypeName;
-		
-		private string _PostCode;
-		
-		private System.Nullable<decimal> _Salary;
-		
-		private System.Nullable<bool> _HasIndivSalary;
-		
-		private string _BonusFinancingSourceName;
-		
-		private System.Nullable<int> _idEmployee;
-		
-		private System.Nullable<int> _idlaborcontrakt;
-		
-		private string _EmployeeSmallName;
-		
-		private string _RankName;
-		
-		private string _DegreeName;
-		
-		private string _PrikazDateEnd;
-		
-		private System.Nullable<decimal> _CalcStaffCount;
-		
-		private System.Nullable<decimal> _CalcStaffCountWithoutReplacement;
-		
-		private string _DepTreeIndex;
-		
-		private string _FundingCenterName;
-		
-		private string _CategoryVPOName;
-		
-		private System.Nullable<int> _CategoryVPOOrderBy;
-		
-		private string _CategoryZPName;
-		
-		private System.Nullable<int> _CategoryZPOrderBy;
-		
-		private string _OKVEDName;
-		
-		private string _NewCategoryName;
-		
-		public GetDepartmentBonusWithEmployeesResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportMainObjectName", DbType="VarChar(500)")]
-		public string ReportMainObjectName
-		{
-			get
-			{
-				return this._ReportMainObjectName;
-			}
-			set
-			{
-				if ((this._ReportMainObjectName != value))
-				{
-					this._ReportMainObjectName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeName", DbType="VarChar(150)")]
-		public string EmployeeName
-		{
-			get
-			{
-				return this._EmployeeName;
-			}
-			set
-			{
-				if ((this._EmployeeName != value))
-				{
-					this._EmployeeName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusLevel", DbType="VarChar(50)")]
-		public string BonusLevel
-		{
-			get
-			{
-				return this._BonusLevel;
-			}
-			set
-			{
-				if ((this._BonusLevel != value))
-				{
-					this._BonusLevel = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusCount", DbType="VarChar(50)")]
-		public string BonusCount
-		{
-			get
-			{
-				return this._BonusCount;
-			}
-			set
-			{
-				if ((this._BonusCount != value))
-				{
-					this._BonusCount = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idFactStaff", DbType="Int")]
-		public System.Nullable<int> idFactStaff
-		{
-			get
-			{
-				return this._idFactStaff;
-			}
-			set
-			{
-				if ((this._idFactStaff != value))
-				{
-					this._idFactStaff = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SeverKoeff", DbType="Int")]
-		public System.Nullable<int> SeverKoeff
-		{
-			get
-			{
-				return this._SeverKoeff;
-			}
-			set
-			{
-				if ((this._SeverKoeff != value))
-				{
-					this._SeverKoeff = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RayonKoeff", DbType="Int")]
-		public System.Nullable<int> RayonKoeff
-		{
-			get
-			{
-				return this._RayonKoeff;
-			}
-			set
-			{
-				if ((this._RayonKoeff != value))
-				{
-					this._RayonKoeff = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeWorkName", DbType="VarChar(50)")]
-		public string TypeWorkName
-		{
-			get
-			{
-				return this._TypeWorkName;
-			}
-			set
-			{
-				if ((this._TypeWorkName != value))
-				{
-					this._TypeWorkName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StaffCount", DbType="Decimal(14,4)")]
-		public System.Nullable<decimal> StaffCount
-		{
-			get
-			{
-				return this._StaffCount;
-			}
-			set
-			{
-				if ((this._StaffCount != value))
-				{
-					this._StaffCount = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentName", DbType="VarChar(500)")]
-		public string DepartmentName
-		{
-			get
-			{
-				return this._DepartmentName;
-			}
-			set
-			{
-				if ((this._DepartmentName != value))
-				{
-					this._DepartmentName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostName", DbType="VarChar(150)")]
-		public string PostName
-		{
-			get
-			{
-				return this._PostName;
-			}
-			set
-			{
-				if ((this._PostName != value))
-				{
-					this._PostName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPlanStaff", DbType="Int")]
-		public System.Nullable<int> idPlanStaff
-		{
-			get
-			{
-				return this._idPlanStaff;
-			}
-			set
-			{
-				if ((this._idPlanStaff != value))
-				{
-					this._idPlanStaff = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NDFLKoeff", DbType="Int")]
-		public System.Nullable<int> NDFLKoeff
-		{
-			get
-			{
-				return this._NDFLKoeff;
-			}
-			set
-			{
-				if ((this._NDFLKoeff != value))
-				{
-					this._NDFLKoeff = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusTypeName", DbType="VarChar(50)")]
-		public string BonusTypeName
-		{
-			get
-			{
-				return this._BonusTypeName;
-			}
-			set
-			{
-				if ((this._BonusTypeName != value))
-				{
-					this._BonusTypeName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusTypeFullName", DbType="VarChar(50)")]
-		public string BonusTypeFullName
-		{
-			get
-			{
-				return this._BonusTypeFullName;
-			}
-			set
-			{
-				if ((this._BonusTypeFullName != value))
-				{
-					this._BonusTypeFullName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBonusType", DbType="Int")]
-		public System.Nullable<int> idBonusType
-		{
-			get
-			{
-				return this._idBonusType;
-			}
-			set
-			{
-				if ((this._idBonusType != value))
-				{
-					this._idBonusType = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FinancingSourceName", DbType="VarChar(50)")]
-		public string FinancingSourceName
-		{
-			get
-			{
-				return this._FinancingSourceName;
-			}
-			set
-			{
-				if ((this._FinancingSourceName != value))
-				{
-					this._FinancingSourceName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PKCategoryName", DbType="VarChar(250)")]
-		public string PKCategoryName
-		{
-			get
-			{
-				return this._PKCategoryName;
-			}
-			set
-			{
-				if ((this._PKCategoryName != value))
-				{
-					this._PKCategoryName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodBegin", DbType="Date")]
-		public System.Nullable<System.DateTime> PeriodBegin
-		{
-			get
-			{
-				return this._PeriodBegin;
-			}
-			set
-			{
-				if ((this._PeriodBegin != value))
-				{
-					this._PeriodBegin = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodEnd", DbType="Date")]
-		public System.Nullable<System.DateTime> PeriodEnd
-		{
-			get
-			{
-				return this._PeriodEnd;
-			}
-			set
-			{
-				if ((this._PeriodEnd != value))
-				{
-					this._PeriodEnd = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StaffCountWithoutReplacement", DbType="Decimal(14,4)")]
-		public System.Nullable<decimal> StaffCountWithoutReplacement
-		{
-			get
-			{
-				return this._StaffCountWithoutReplacement;
-			}
-			set
-			{
-				if ((this._StaffCountWithoutReplacement != value))
-				{
-					this._StaffCountWithoutReplacement = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StaffCountReal", DbType="Decimal(14,4)")]
-		public System.Nullable<decimal> StaffCountReal
-		{
-			get
-			{
-				return this._StaffCountReal;
-			}
-			set
-			{
-				if ((this._StaffCountReal != value))
-				{
-					this._StaffCountReal = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idReplacementReason", DbType="Int")]
-		public System.Nullable<int> idReplacementReason
-		{
-			get
-			{
-				return this._idReplacementReason;
-			}
-			set
-			{
-				if ((this._idReplacementReason != value))
-				{
-					this._idReplacementReason = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasEnvironmentBonus", DbType="Bit")]
-		public System.Nullable<bool> HasEnvironmentBonus
-		{
-			get
-			{
-				return this._HasEnvironmentBonus;
-			}
-			set
-			{
-				if ((this._HasEnvironmentBonus != value))
-				{
-					this._HasEnvironmentBonus = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GlobalPrikazName", DbType="VarChar(50)")]
-		public string GlobalPrikazName
-		{
-			get
-			{
-				return this._GlobalPrikazName;
-			}
-			set
-			{
-				if ((this._GlobalPrikazName != value))
-				{
-					this._GlobalPrikazName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GlobalPrikazFullName", DbType="VarChar(50)")]
-		public string GlobalPrikazFullName
-		{
-			get
-			{
-				return this._GlobalPrikazFullName;
-			}
-			set
-			{
-				if ((this._GlobalPrikazFullName != value))
-				{
-					this._GlobalPrikazFullName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusSuperTypeName", DbType="VarChar(50)")]
-		public string BonusSuperTypeName
-		{
-			get
-			{
-				return this._BonusSuperTypeName;
-			}
-			set
-			{
-				if ((this._BonusSuperTypeName != value))
-				{
-					this._BonusSuperTypeName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="VarChar(50)")]
-		public string CategoryName
-		{
-			get
-			{
-				return this._CategoryName;
-			}
-			set
-			{
-				if ((this._CategoryName != value))
-				{
-					this._CategoryName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idCategory", DbType="Int")]
-		public System.Nullable<int> idCategory
-		{
-			get
-			{
-				return this._idCategory;
-			}
-			set
-			{
-				if ((this._idCategory != value))
-				{
-					this._idCategory = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkSuperTypeName", DbType="VarChar(50)")]
-		public string WorkSuperTypeName
-		{
-			get
-			{
-				return this._WorkSuperTypeName;
-			}
-			set
-			{
-				if ((this._WorkSuperTypeName != value))
-				{
-					this._WorkSuperTypeName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DirectionManagerName", DbType="VarChar(70)")]
-		public string DirectionManagerName
-		{
-			get
-			{
-				return this._DirectionManagerName;
-			}
-			set
-			{
-				if ((this._DirectionManagerName != value))
-				{
-					this._DirectionManagerName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReplacedEmployeeName", DbType="VarChar(150)")]
-		public string ReplacedEmployeeName
-		{
-			get
-			{
-				return this._ReplacedEmployeeName;
-			}
-			set
-			{
-				if ((this._ReplacedEmployeeName != value))
-				{
-					this._ReplacedEmployeeName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusOrderNumber", DbType="Int")]
-		public System.Nullable<int> BonusOrderNumber
-		{
-			get
-			{
-				return this._BonusOrderNumber;
-			}
-			set
-			{
-				if ((this._BonusOrderNumber != value))
-				{
-					this._BonusOrderNumber = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostFullName", DbType="VarChar(150)")]
-		public string PostFullName
-		{
-			get
-			{
-				return this._PostFullName;
-			}
-			set
-			{
-				if ((this._PostFullName != value))
-				{
-					this._PostFullName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentFullName", DbType="VarChar(500)")]
-		public string DepartmentFullName
-		{
-			get
-			{
-				return this._DepartmentFullName;
-			}
-			set
-			{
-				if ((this._DepartmentFullName != value))
-				{
-					this._DepartmentFullName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateBegin", DbType="VarChar(10)")]
-		public string DateBegin
-		{
-			get
-			{
-				return this._DateBegin;
-			}
-			set
-			{
-				if ((this._DateBegin != value))
-				{
-					this._DateBegin = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateEnd", DbType="VarChar(10)")]
-		public string DateEnd
-		{
-			get
-			{
-				return this._DateEnd;
-			}
-			set
-			{
-				if ((this._DateEnd != value))
-				{
-					this._DateEnd = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusSum", DbType="Decimal(14,2)")]
-		public System.Nullable<decimal> BonusSum
-		{
-			get
-			{
-				return this._BonusSum;
-			}
-			set
-			{
-				if ((this._BonusSum != value))
-				{
-					this._BonusSum = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllBonusSum", DbType="Decimal(14,2)")]
-		public System.Nullable<decimal> AllBonusSum
-		{
-			get
-			{
-				return this._AllBonusSum;
-			}
-			set
-			{
-				if ((this._AllBonusSum != value))
-				{
-					this._AllBonusSum = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForVacancy", DbType="Bit")]
-		public System.Nullable<bool> ForVacancy
-		{
-			get
-			{
-				return this._ForVacancy;
-			}
-			set
-			{
-				if ((this._ForVacancy != value))
-				{
-					this._ForVacancy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForEmployee", DbType="Bit")]
-		public System.Nullable<bool> ForEmployee
-		{
-			get
-			{
-				return this._ForEmployee;
-			}
-			set
-			{
-				if ((this._ForEmployee != value))
-				{
-					this._ForEmployee = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatOtpusk", DbType="VarChar(10)")]
-		public string MatOtpusk
-		{
-			get
-			{
-				return this._MatOtpusk;
-			}
-			set
-			{
-				if ((this._MatOtpusk != value))
-				{
-					this._MatOtpusk = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HourCount", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> HourCount
-		{
-			get
-			{
-				return this._HourCount;
-			}
-			set
-			{
-				if ((this._HourCount != value))
-				{
-					this._HourCount = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FinancingSourceFullName", DbType="VarChar(50)")]
-		public string FinancingSourceFullName
-		{
-			get
-			{
-				return this._FinancingSourceFullName;
-			}
-			set
-			{
-				if ((this._FinancingSourceFullName != value))
-				{
-					this._FinancingSourceFullName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostComment", DbType="VarChar(150)")]
-		public string PostComment
-		{
-			get
-			{
-				return this._PostComment;
-			}
-			set
-			{
-				if ((this._PostComment != value))
-				{
-					this._PostComment = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalaryKoeff", DbType="Decimal(14,2)")]
-		public System.Nullable<decimal> SalaryKoeff
-		{
-			get
-			{
-				return this._SalaryKoeff;
-			}
-			set
-			{
-				if ((this._SalaryKoeff != value))
-				{
-					this._SalaryKoeff = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PKCategoryFullName", DbType="VarChar(50)")]
-		public string PKCategoryFullName
-		{
-			get
-			{
-				return this._PKCategoryFullName;
-			}
-			set
-			{
-				if ((this._PKCategoryFullName != value))
-				{
-					this._PKCategoryFullName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryOrderBy", DbType="Int")]
-		public System.Nullable<int> CategoryOrderBy
-		{
-			get
-			{
-				return this._CategoryOrderBy;
-			}
-			set
-			{
-				if ((this._CategoryOrderBy != value))
-				{
-					this._CategoryOrderBy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FinancingSourceOrderBy", DbType="Int")]
-		public System.Nullable<int> FinancingSourceOrderBy
-		{
-			get
-			{
-				return this._FinancingSourceOrderBy;
-			}
-			set
-			{
-				if ((this._FinancingSourceOrderBy != value))
-				{
-					this._FinancingSourceOrderBy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ManagerBit", DbType="Bit")]
-		public System.Nullable<bool> ManagerBit
-		{
-			get
-			{
-				return this._ManagerBit;
-			}
-			set
-			{
-				if ((this._ManagerBit != value))
-				{
-					this._ManagerBit = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostTypeName", DbType="VarChar(50)")]
-		public string PostTypeName
-		{
-			get
-			{
-				return this._PostTypeName;
-			}
-			set
-			{
-				if ((this._PostTypeName != value))
-				{
-					this._PostTypeName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostCode", DbType="VarChar(20)")]
-		public string PostCode
-		{
-			get
-			{
-				return this._PostCode;
-			}
-			set
-			{
-				if ((this._PostCode != value))
-				{
-					this._PostCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Salary", DbType="Decimal(14,2)")]
-		public System.Nullable<decimal> Salary
-		{
-			get
-			{
-				return this._Salary;
-			}
-			set
-			{
-				if ((this._Salary != value))
-				{
-					this._Salary = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasIndivSalary", DbType="Bit")]
-		public System.Nullable<bool> HasIndivSalary
-		{
-			get
-			{
-				return this._HasIndivSalary;
-			}
-			set
-			{
-				if ((this._HasIndivSalary != value))
-				{
-					this._HasIndivSalary = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusFinancingSourceName", DbType="VarChar(50)")]
-		public string BonusFinancingSourceName
-		{
-			get
-			{
-				return this._BonusFinancingSourceName;
-			}
-			set
-			{
-				if ((this._BonusFinancingSourceName != value))
-				{
-					this._BonusFinancingSourceName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idEmployee", DbType="Int")]
-		public System.Nullable<int> idEmployee
-		{
-			get
-			{
-				return this._idEmployee;
-			}
-			set
-			{
-				if ((this._idEmployee != value))
-				{
-					this._idEmployee = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idlaborcontrakt", DbType="Int")]
-		public System.Nullable<int> idlaborcontrakt
-		{
-			get
-			{
-				return this._idlaborcontrakt;
-			}
-			set
-			{
-				if ((this._idlaborcontrakt != value))
-				{
-					this._idlaborcontrakt = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeSmallName", DbType="VarChar(60)")]
-		public string EmployeeSmallName
-		{
-			get
-			{
-				return this._EmployeeSmallName;
-			}
-			set
-			{
-				if ((this._EmployeeSmallName != value))
-				{
-					this._EmployeeSmallName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RankName", DbType="VarChar(100)")]
-		public string RankName
-		{
-			get
-			{
-				return this._RankName;
-			}
-			set
-			{
-				if ((this._RankName != value))
-				{
-					this._RankName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DegreeName", DbType="VarChar(101)")]
-		public string DegreeName
-		{
-			get
-			{
-				return this._DegreeName;
-			}
-			set
-			{
-				if ((this._DegreeName != value))
-				{
-					this._DegreeName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrikazDateEnd", DbType="VarChar(10)")]
-		public string PrikazDateEnd
-		{
-			get
-			{
-				return this._PrikazDateEnd;
-			}
-			set
-			{
-				if ((this._PrikazDateEnd != value))
-				{
-					this._PrikazDateEnd = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CalcStaffCount", DbType="Decimal(14,4)")]
-		public System.Nullable<decimal> CalcStaffCount
-		{
-			get
-			{
-				return this._CalcStaffCount;
-			}
-			set
-			{
-				if ((this._CalcStaffCount != value))
-				{
-					this._CalcStaffCount = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CalcStaffCountWithoutReplacement", DbType="Decimal(14,4)")]
-		public System.Nullable<decimal> CalcStaffCountWithoutReplacement
-		{
-			get
-			{
-				return this._CalcStaffCountWithoutReplacement;
-			}
-			set
-			{
-				if ((this._CalcStaffCountWithoutReplacement != value))
-				{
-					this._CalcStaffCountWithoutReplacement = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepTreeIndex", DbType="VarChar(30)")]
-		public string DepTreeIndex
-		{
-			get
-			{
-				return this._DepTreeIndex;
-			}
-			set
-			{
-				if ((this._DepTreeIndex != value))
-				{
-					this._DepTreeIndex = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FundingCenterName", DbType="VarChar(50)")]
-		public string FundingCenterName
-		{
-			get
-			{
-				return this._FundingCenterName;
-			}
-			set
-			{
-				if ((this._FundingCenterName != value))
-				{
-					this._FundingCenterName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryVPOName", DbType="VarChar(50)")]
-		public string CategoryVPOName
-		{
-			get
-			{
-				return this._CategoryVPOName;
-			}
-			set
-			{
-				if ((this._CategoryVPOName != value))
-				{
-					this._CategoryVPOName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryVPOOrderBy", DbType="Int")]
-		public System.Nullable<int> CategoryVPOOrderBy
-		{
-			get
-			{
-				return this._CategoryVPOOrderBy;
-			}
-			set
-			{
-				if ((this._CategoryVPOOrderBy != value))
-				{
-					this._CategoryVPOOrderBy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryZPName", DbType="VarChar(50)")]
-		public string CategoryZPName
-		{
-			get
-			{
-				return this._CategoryZPName;
-			}
-			set
-			{
-				if ((this._CategoryZPName != value))
-				{
-					this._CategoryZPName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryZPOrderBy", DbType="Int")]
-		public System.Nullable<int> CategoryZPOrderBy
-		{
-			get
-			{
-				return this._CategoryZPOrderBy;
-			}
-			set
-			{
-				if ((this._CategoryZPOrderBy != value))
-				{
-					this._CategoryZPOrderBy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OKVEDName", DbType="VarChar(500)")]
-		public string OKVEDName
-		{
-			get
-			{
-				return this._OKVEDName;
-			}
-			set
-			{
-				if ((this._OKVEDName != value))
-				{
-					this._OKVEDName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewCategoryName", DbType="VarChar(50)")]
-		public string NewCategoryName
-		{
-			get
-			{
-				return this._NewCategoryName;
-			}
-			set
-			{
-				if ((this._NewCategoryName != value))
-				{
-					this._NewCategoryName = value;
-				}
-			}
-		}
-	}
-	
 	public partial class GetFundingDepAverageNumEmplResult
 	{
 		
@@ -9395,6 +8109,1292 @@ namespace Reports
 				if ((this._PeriodEnd != value))
 				{
 					this._PeriodEnd = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetDepartmentBonusWithEmployeesResult
+	{
+		
+		private string _ReportMainObjectName;
+		
+		private string _EmployeeName;
+		
+		private string _BonusLevel;
+		
+		private string _BonusCount;
+		
+		private System.Nullable<int> _idFactStaff;
+		
+		private System.Nullable<int> _SeverKoeff;
+		
+		private System.Nullable<int> _RayonKoeff;
+		
+		private string _TypeWorkName;
+		
+		private System.Nullable<decimal> _StaffCount;
+		
+		private string _DepartmentName;
+		
+		private string _PostName;
+		
+		private System.Nullable<int> _idPlanStaff;
+		
+		private System.Nullable<int> _NDFLKoeff;
+		
+		private string _BonusTypeName;
+		
+		private string _BonusTypeFullName;
+		
+		private System.Nullable<int> _idBonusType;
+		
+		private string _FinancingSourceName;
+		
+		private string _PKCategoryName;
+		
+		private System.Nullable<System.DateTime> _PeriodBegin;
+		
+		private System.Nullable<System.DateTime> _PeriodEnd;
+		
+		private System.Nullable<decimal> _StaffCountWithoutReplacement;
+		
+		private System.Nullable<decimal> _StaffCountReal;
+		
+		private System.Nullable<int> _idReplacementReason;
+		
+		private System.Nullable<bool> _HasEnvironmentBonus;
+		
+		private string _GlobalPrikazName;
+		
+		private string _GlobalPrikazFullName;
+		
+		private string _BonusSuperTypeName;
+		
+		private string _CategoryName;
+		
+		private System.Nullable<int> _idCategory;
+		
+		private string _WorkSuperTypeName;
+		
+		private string _DirectionManagerName;
+		
+		private string _ReplacedEmployeeName;
+		
+		private System.Nullable<int> _BonusOrderNumber;
+		
+		private string _PostFullName;
+		
+		private string _DepartmentFullName;
+		
+		private string _DateBegin;
+		
+		private string _DateEnd;
+		
+		private System.Nullable<decimal> _BonusSum;
+		
+		private System.Nullable<decimal> _AllBonusSum;
+		
+		private System.Nullable<bool> _ForVacancy;
+		
+		private System.Nullable<bool> _ForEmployee;
+		
+		private string _MatOtpusk;
+		
+		private System.Nullable<decimal> _HourCount;
+		
+		private string _FinancingSourceFullName;
+		
+		private string _PostComment;
+		
+		private System.Nullable<decimal> _SalaryKoeff;
+		
+		private string _PKCategoryFullName;
+		
+		private System.Nullable<int> _CategoryOrderBy;
+		
+		private System.Nullable<int> _FinancingSourceOrderBy;
+		
+		private System.Nullable<bool> _ManagerBit;
+		
+		private string _PostTypeName;
+		
+		private string _PostCode;
+		
+		private System.Nullable<decimal> _Salary;
+		
+		private System.Nullable<bool> _HasIndivSalary;
+		
+		private string _BonusFinancingSourceName;
+		
+		private System.Nullable<int> _idEmployee;
+		
+		private System.Nullable<int> _idlaborcontrakt;
+		
+		private string _EmployeeSmallName;
+		
+		private string _RankName;
+		
+		private string _DegreeName;
+		
+		private string _PrikazDateEnd;
+		
+		private System.Nullable<decimal> _CalcStaffCount;
+		
+		private System.Nullable<decimal> _CalcStaffCountWithoutReplacement;
+		
+		private string _DepTreeIndex;
+		
+		private string _FundingCenterName;
+		
+		private string _CategoryVPOName;
+		
+		private System.Nullable<int> _CategoryVPOOrderBy;
+		
+		private string _CategoryZPName;
+		
+		private System.Nullable<int> _CategoryZPOrderBy;
+		
+		private string _OKVEDName;
+		
+		private string _NewCategoryName;
+		
+		public GetDepartmentBonusWithEmployeesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReportMainObjectName", DbType="VarChar(500)")]
+		public string ReportMainObjectName
+		{
+			get
+			{
+				return this._ReportMainObjectName;
+			}
+			set
+			{
+				if ((this._ReportMainObjectName != value))
+				{
+					this._ReportMainObjectName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeName", DbType="VarChar(150)")]
+		public string EmployeeName
+		{
+			get
+			{
+				return this._EmployeeName;
+			}
+			set
+			{
+				if ((this._EmployeeName != value))
+				{
+					this._EmployeeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusLevel", DbType="VarChar(50)")]
+		public string BonusLevel
+		{
+			get
+			{
+				return this._BonusLevel;
+			}
+			set
+			{
+				if ((this._BonusLevel != value))
+				{
+					this._BonusLevel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusCount", DbType="VarChar(50)")]
+		public string BonusCount
+		{
+			get
+			{
+				return this._BonusCount;
+			}
+			set
+			{
+				if ((this._BonusCount != value))
+				{
+					this._BonusCount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idFactStaff", DbType="Int")]
+		public System.Nullable<int> idFactStaff
+		{
+			get
+			{
+				return this._idFactStaff;
+			}
+			set
+			{
+				if ((this._idFactStaff != value))
+				{
+					this._idFactStaff = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SeverKoeff", DbType="Int")]
+		public System.Nullable<int> SeverKoeff
+		{
+			get
+			{
+				return this._SeverKoeff;
+			}
+			set
+			{
+				if ((this._SeverKoeff != value))
+				{
+					this._SeverKoeff = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RayonKoeff", DbType="Int")]
+		public System.Nullable<int> RayonKoeff
+		{
+			get
+			{
+				return this._RayonKoeff;
+			}
+			set
+			{
+				if ((this._RayonKoeff != value))
+				{
+					this._RayonKoeff = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeWorkName", DbType="VarChar(50)")]
+		public string TypeWorkName
+		{
+			get
+			{
+				return this._TypeWorkName;
+			}
+			set
+			{
+				if ((this._TypeWorkName != value))
+				{
+					this._TypeWorkName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StaffCount", DbType="Decimal(14,4)")]
+		public System.Nullable<decimal> StaffCount
+		{
+			get
+			{
+				return this._StaffCount;
+			}
+			set
+			{
+				if ((this._StaffCount != value))
+				{
+					this._StaffCount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentName", DbType="VarChar(500)")]
+		public string DepartmentName
+		{
+			get
+			{
+				return this._DepartmentName;
+			}
+			set
+			{
+				if ((this._DepartmentName != value))
+				{
+					this._DepartmentName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostName", DbType="VarChar(150)")]
+		public string PostName
+		{
+			get
+			{
+				return this._PostName;
+			}
+			set
+			{
+				if ((this._PostName != value))
+				{
+					this._PostName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPlanStaff", DbType="Int")]
+		public System.Nullable<int> idPlanStaff
+		{
+			get
+			{
+				return this._idPlanStaff;
+			}
+			set
+			{
+				if ((this._idPlanStaff != value))
+				{
+					this._idPlanStaff = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NDFLKoeff", DbType="Int")]
+		public System.Nullable<int> NDFLKoeff
+		{
+			get
+			{
+				return this._NDFLKoeff;
+			}
+			set
+			{
+				if ((this._NDFLKoeff != value))
+				{
+					this._NDFLKoeff = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusTypeName", DbType="VarChar(50)")]
+		public string BonusTypeName
+		{
+			get
+			{
+				return this._BonusTypeName;
+			}
+			set
+			{
+				if ((this._BonusTypeName != value))
+				{
+					this._BonusTypeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusTypeFullName", DbType="VarChar(50)")]
+		public string BonusTypeFullName
+		{
+			get
+			{
+				return this._BonusTypeFullName;
+			}
+			set
+			{
+				if ((this._BonusTypeFullName != value))
+				{
+					this._BonusTypeFullName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBonusType", DbType="Int")]
+		public System.Nullable<int> idBonusType
+		{
+			get
+			{
+				return this._idBonusType;
+			}
+			set
+			{
+				if ((this._idBonusType != value))
+				{
+					this._idBonusType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FinancingSourceName", DbType="VarChar(50)")]
+		public string FinancingSourceName
+		{
+			get
+			{
+				return this._FinancingSourceName;
+			}
+			set
+			{
+				if ((this._FinancingSourceName != value))
+				{
+					this._FinancingSourceName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PKCategoryName", DbType="VarChar(250)")]
+		public string PKCategoryName
+		{
+			get
+			{
+				return this._PKCategoryName;
+			}
+			set
+			{
+				if ((this._PKCategoryName != value))
+				{
+					this._PKCategoryName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodBegin", DbType="Date")]
+		public System.Nullable<System.DateTime> PeriodBegin
+		{
+			get
+			{
+				return this._PeriodBegin;
+			}
+			set
+			{
+				if ((this._PeriodBegin != value))
+				{
+					this._PeriodBegin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodEnd", DbType="Date")]
+		public System.Nullable<System.DateTime> PeriodEnd
+		{
+			get
+			{
+				return this._PeriodEnd;
+			}
+			set
+			{
+				if ((this._PeriodEnd != value))
+				{
+					this._PeriodEnd = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StaffCountWithoutReplacement", DbType="Decimal(14,4)")]
+		public System.Nullable<decimal> StaffCountWithoutReplacement
+		{
+			get
+			{
+				return this._StaffCountWithoutReplacement;
+			}
+			set
+			{
+				if ((this._StaffCountWithoutReplacement != value))
+				{
+					this._StaffCountWithoutReplacement = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StaffCountReal", DbType="Decimal(14,4)")]
+		public System.Nullable<decimal> StaffCountReal
+		{
+			get
+			{
+				return this._StaffCountReal;
+			}
+			set
+			{
+				if ((this._StaffCountReal != value))
+				{
+					this._StaffCountReal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idReplacementReason", DbType="Int")]
+		public System.Nullable<int> idReplacementReason
+		{
+			get
+			{
+				return this._idReplacementReason;
+			}
+			set
+			{
+				if ((this._idReplacementReason != value))
+				{
+					this._idReplacementReason = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasEnvironmentBonus", DbType="Bit")]
+		public System.Nullable<bool> HasEnvironmentBonus
+		{
+			get
+			{
+				return this._HasEnvironmentBonus;
+			}
+			set
+			{
+				if ((this._HasEnvironmentBonus != value))
+				{
+					this._HasEnvironmentBonus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GlobalPrikazName", DbType="VarChar(50)")]
+		public string GlobalPrikazName
+		{
+			get
+			{
+				return this._GlobalPrikazName;
+			}
+			set
+			{
+				if ((this._GlobalPrikazName != value))
+				{
+					this._GlobalPrikazName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GlobalPrikazFullName", DbType="VarChar(50)")]
+		public string GlobalPrikazFullName
+		{
+			get
+			{
+				return this._GlobalPrikazFullName;
+			}
+			set
+			{
+				if ((this._GlobalPrikazFullName != value))
+				{
+					this._GlobalPrikazFullName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusSuperTypeName", DbType="VarChar(50)")]
+		public string BonusSuperTypeName
+		{
+			get
+			{
+				return this._BonusSuperTypeName;
+			}
+			set
+			{
+				if ((this._BonusSuperTypeName != value))
+				{
+					this._BonusSuperTypeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="VarChar(50)")]
+		public string CategoryName
+		{
+			get
+			{
+				return this._CategoryName;
+			}
+			set
+			{
+				if ((this._CategoryName != value))
+				{
+					this._CategoryName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idCategory", DbType="Int")]
+		public System.Nullable<int> idCategory
+		{
+			get
+			{
+				return this._idCategory;
+			}
+			set
+			{
+				if ((this._idCategory != value))
+				{
+					this._idCategory = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkSuperTypeName", DbType="VarChar(50)")]
+		public string WorkSuperTypeName
+		{
+			get
+			{
+				return this._WorkSuperTypeName;
+			}
+			set
+			{
+				if ((this._WorkSuperTypeName != value))
+				{
+					this._WorkSuperTypeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DirectionManagerName", DbType="VarChar(70)")]
+		public string DirectionManagerName
+		{
+			get
+			{
+				return this._DirectionManagerName;
+			}
+			set
+			{
+				if ((this._DirectionManagerName != value))
+				{
+					this._DirectionManagerName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReplacedEmployeeName", DbType="VarChar(150)")]
+		public string ReplacedEmployeeName
+		{
+			get
+			{
+				return this._ReplacedEmployeeName;
+			}
+			set
+			{
+				if ((this._ReplacedEmployeeName != value))
+				{
+					this._ReplacedEmployeeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusOrderNumber", DbType="Int")]
+		public System.Nullable<int> BonusOrderNumber
+		{
+			get
+			{
+				return this._BonusOrderNumber;
+			}
+			set
+			{
+				if ((this._BonusOrderNumber != value))
+				{
+					this._BonusOrderNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostFullName", DbType="VarChar(150)")]
+		public string PostFullName
+		{
+			get
+			{
+				return this._PostFullName;
+			}
+			set
+			{
+				if ((this._PostFullName != value))
+				{
+					this._PostFullName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentFullName", DbType="VarChar(500)")]
+		public string DepartmentFullName
+		{
+			get
+			{
+				return this._DepartmentFullName;
+			}
+			set
+			{
+				if ((this._DepartmentFullName != value))
+				{
+					this._DepartmentFullName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateBegin", DbType="VarChar(10)")]
+		public string DateBegin
+		{
+			get
+			{
+				return this._DateBegin;
+			}
+			set
+			{
+				if ((this._DateBegin != value))
+				{
+					this._DateBegin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateEnd", DbType="VarChar(10)")]
+		public string DateEnd
+		{
+			get
+			{
+				return this._DateEnd;
+			}
+			set
+			{
+				if ((this._DateEnd != value))
+				{
+					this._DateEnd = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusSum", DbType="Decimal(14,2)")]
+		public System.Nullable<decimal> BonusSum
+		{
+			get
+			{
+				return this._BonusSum;
+			}
+			set
+			{
+				if ((this._BonusSum != value))
+				{
+					this._BonusSum = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllBonusSum", DbType="Decimal(14,2)")]
+		public System.Nullable<decimal> AllBonusSum
+		{
+			get
+			{
+				return this._AllBonusSum;
+			}
+			set
+			{
+				if ((this._AllBonusSum != value))
+				{
+					this._AllBonusSum = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForVacancy", DbType="Bit")]
+		public System.Nullable<bool> ForVacancy
+		{
+			get
+			{
+				return this._ForVacancy;
+			}
+			set
+			{
+				if ((this._ForVacancy != value))
+				{
+					this._ForVacancy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForEmployee", DbType="Bit")]
+		public System.Nullable<bool> ForEmployee
+		{
+			get
+			{
+				return this._ForEmployee;
+			}
+			set
+			{
+				if ((this._ForEmployee != value))
+				{
+					this._ForEmployee = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatOtpusk", DbType="VarChar(10)")]
+		public string MatOtpusk
+		{
+			get
+			{
+				return this._MatOtpusk;
+			}
+			set
+			{
+				if ((this._MatOtpusk != value))
+				{
+					this._MatOtpusk = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HourCount", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> HourCount
+		{
+			get
+			{
+				return this._HourCount;
+			}
+			set
+			{
+				if ((this._HourCount != value))
+				{
+					this._HourCount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FinancingSourceFullName", DbType="VarChar(50)")]
+		public string FinancingSourceFullName
+		{
+			get
+			{
+				return this._FinancingSourceFullName;
+			}
+			set
+			{
+				if ((this._FinancingSourceFullName != value))
+				{
+					this._FinancingSourceFullName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostComment", DbType="VarChar(150)")]
+		public string PostComment
+		{
+			get
+			{
+				return this._PostComment;
+			}
+			set
+			{
+				if ((this._PostComment != value))
+				{
+					this._PostComment = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalaryKoeff", DbType="Decimal(14,2)")]
+		public System.Nullable<decimal> SalaryKoeff
+		{
+			get
+			{
+				return this._SalaryKoeff;
+			}
+			set
+			{
+				if ((this._SalaryKoeff != value))
+				{
+					this._SalaryKoeff = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PKCategoryFullName", DbType="VarChar(50)")]
+		public string PKCategoryFullName
+		{
+			get
+			{
+				return this._PKCategoryFullName;
+			}
+			set
+			{
+				if ((this._PKCategoryFullName != value))
+				{
+					this._PKCategoryFullName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryOrderBy", DbType="Int")]
+		public System.Nullable<int> CategoryOrderBy
+		{
+			get
+			{
+				return this._CategoryOrderBy;
+			}
+			set
+			{
+				if ((this._CategoryOrderBy != value))
+				{
+					this._CategoryOrderBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FinancingSourceOrderBy", DbType="Int")]
+		public System.Nullable<int> FinancingSourceOrderBy
+		{
+			get
+			{
+				return this._FinancingSourceOrderBy;
+			}
+			set
+			{
+				if ((this._FinancingSourceOrderBy != value))
+				{
+					this._FinancingSourceOrderBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ManagerBit", DbType="Bit")]
+		public System.Nullable<bool> ManagerBit
+		{
+			get
+			{
+				return this._ManagerBit;
+			}
+			set
+			{
+				if ((this._ManagerBit != value))
+				{
+					this._ManagerBit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostTypeName", DbType="VarChar(50)")]
+		public string PostTypeName
+		{
+			get
+			{
+				return this._PostTypeName;
+			}
+			set
+			{
+				if ((this._PostTypeName != value))
+				{
+					this._PostTypeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostCode", DbType="VarChar(20)")]
+		public string PostCode
+		{
+			get
+			{
+				return this._PostCode;
+			}
+			set
+			{
+				if ((this._PostCode != value))
+				{
+					this._PostCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Salary", DbType="Decimal(14,2)")]
+		public System.Nullable<decimal> Salary
+		{
+			get
+			{
+				return this._Salary;
+			}
+			set
+			{
+				if ((this._Salary != value))
+				{
+					this._Salary = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasIndivSalary", DbType="Bit")]
+		public System.Nullable<bool> HasIndivSalary
+		{
+			get
+			{
+				return this._HasIndivSalary;
+			}
+			set
+			{
+				if ((this._HasIndivSalary != value))
+				{
+					this._HasIndivSalary = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BonusFinancingSourceName", DbType="VarChar(50)")]
+		public string BonusFinancingSourceName
+		{
+			get
+			{
+				return this._BonusFinancingSourceName;
+			}
+			set
+			{
+				if ((this._BonusFinancingSourceName != value))
+				{
+					this._BonusFinancingSourceName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idEmployee", DbType="Int")]
+		public System.Nullable<int> idEmployee
+		{
+			get
+			{
+				return this._idEmployee;
+			}
+			set
+			{
+				if ((this._idEmployee != value))
+				{
+					this._idEmployee = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idlaborcontrakt", DbType="Int")]
+		public System.Nullable<int> idlaborcontrakt
+		{
+			get
+			{
+				return this._idlaborcontrakt;
+			}
+			set
+			{
+				if ((this._idlaborcontrakt != value))
+				{
+					this._idlaborcontrakt = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeSmallName", DbType="VarChar(60)")]
+		public string EmployeeSmallName
+		{
+			get
+			{
+				return this._EmployeeSmallName;
+			}
+			set
+			{
+				if ((this._EmployeeSmallName != value))
+				{
+					this._EmployeeSmallName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RankName", DbType="VarChar(100)")]
+		public string RankName
+		{
+			get
+			{
+				return this._RankName;
+			}
+			set
+			{
+				if ((this._RankName != value))
+				{
+					this._RankName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DegreeName", DbType="VarChar(101)")]
+		public string DegreeName
+		{
+			get
+			{
+				return this._DegreeName;
+			}
+			set
+			{
+				if ((this._DegreeName != value))
+				{
+					this._DegreeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrikazDateEnd", DbType="VarChar(10)")]
+		public string PrikazDateEnd
+		{
+			get
+			{
+				return this._PrikazDateEnd;
+			}
+			set
+			{
+				if ((this._PrikazDateEnd != value))
+				{
+					this._PrikazDateEnd = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CalcStaffCount", DbType="Decimal(14,4)")]
+		public System.Nullable<decimal> CalcStaffCount
+		{
+			get
+			{
+				return this._CalcStaffCount;
+			}
+			set
+			{
+				if ((this._CalcStaffCount != value))
+				{
+					this._CalcStaffCount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CalcStaffCountWithoutReplacement", DbType="Decimal(14,4)")]
+		public System.Nullable<decimal> CalcStaffCountWithoutReplacement
+		{
+			get
+			{
+				return this._CalcStaffCountWithoutReplacement;
+			}
+			set
+			{
+				if ((this._CalcStaffCountWithoutReplacement != value))
+				{
+					this._CalcStaffCountWithoutReplacement = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepTreeIndex", DbType="VarChar(30)")]
+		public string DepTreeIndex
+		{
+			get
+			{
+				return this._DepTreeIndex;
+			}
+			set
+			{
+				if ((this._DepTreeIndex != value))
+				{
+					this._DepTreeIndex = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FundingCenterName", DbType="VarChar(500)")]
+		public string FundingCenterName
+		{
+			get
+			{
+				return this._FundingCenterName;
+			}
+			set
+			{
+				if ((this._FundingCenterName != value))
+				{
+					this._FundingCenterName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryVPOName", DbType="VarChar(50)")]
+		public string CategoryVPOName
+		{
+			get
+			{
+				return this._CategoryVPOName;
+			}
+			set
+			{
+				if ((this._CategoryVPOName != value))
+				{
+					this._CategoryVPOName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryVPOOrderBy", DbType="Int")]
+		public System.Nullable<int> CategoryVPOOrderBy
+		{
+			get
+			{
+				return this._CategoryVPOOrderBy;
+			}
+			set
+			{
+				if ((this._CategoryVPOOrderBy != value))
+				{
+					this._CategoryVPOOrderBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryZPName", DbType="VarChar(50)")]
+		public string CategoryZPName
+		{
+			get
+			{
+				return this._CategoryZPName;
+			}
+			set
+			{
+				if ((this._CategoryZPName != value))
+				{
+					this._CategoryZPName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryZPOrderBy", DbType="Int")]
+		public System.Nullable<int> CategoryZPOrderBy
+		{
+			get
+			{
+				return this._CategoryZPOrderBy;
+			}
+			set
+			{
+				if ((this._CategoryZPOrderBy != value))
+				{
+					this._CategoryZPOrderBy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OKVEDName", DbType="VarChar(500)")]
+		public string OKVEDName
+		{
+			get
+			{
+				return this._OKVEDName;
+			}
+			set
+			{
+				if ((this._OKVEDName != value))
+				{
+					this._OKVEDName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewCategoryName", DbType="VarChar(50)")]
+		public string NewCategoryName
+		{
+			get
+			{
+				return this._NewCategoryName;
+			}
+			set
+			{
+				if ((this._NewCategoryName != value))
+				{
+					this._NewCategoryName = value;
 				}
 			}
 		}

@@ -132,9 +132,7 @@ namespace Reports.Forms
             {
                 bsReportData.DataSource = Model.GetAllPosts(1, dtpPeriodBegin.Value, dtpPeriodEnd.Value, true).ToArray();
             }
-
             this.reportViewer1.RefreshReport();
-            
         }
 
 

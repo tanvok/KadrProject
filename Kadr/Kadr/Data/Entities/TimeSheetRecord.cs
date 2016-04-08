@@ -101,7 +101,7 @@ namespace Kadr.Data
             }
         }
 
-        public int WorkingDaysCount
+        public double WorkingDaysCount
         {
             get
             {

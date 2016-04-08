@@ -232,7 +232,7 @@ namespace Kadr.Data
                 idFactStaff = (int)st.idFactStaff,
                 TimeSheet = this,
                 StaffCount = st.StaffCount,
-                WorkingDaysCount = Convert.ToInt32(st.daysCount),
+                WorkingDaysCount = Convert.ToDouble(st.daysCount),
                 IsClosed = false
             }).Distinct().ToArray();
 

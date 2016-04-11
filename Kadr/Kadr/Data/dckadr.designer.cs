@@ -22,7 +22,7 @@ namespace Kadr.Data
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="KadrRealTest")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="kadr")]
 	public partial class dckadrDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -219,7 +219,7 @@ namespace Kadr.Data
     #endregion
 		
 		public dckadrDataContext() : 
-				base(global::Kadr.Properties.Settings.Default.KadrRealTestConnectionString, mappingSource)
+				base(global::Kadr.Properties.Settings.Default.kadrConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

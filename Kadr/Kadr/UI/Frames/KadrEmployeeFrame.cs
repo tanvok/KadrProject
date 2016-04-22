@@ -390,6 +390,18 @@ namespace Kadr.UI.Frames
         {
             employeeBonusReportFrame1.InitializeReport(typeof(Reports.GetEmployeesSumResult), 0);
         }
+
+        private void LoadContactData()
+        {
+            CRUDPhone.Read(Employee, oKphoneBindingSource);
+            CRUDAddress.Read(Employee, oKAdressBindingSource);
+        }
+
+        private void tcEmplData_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tcEmplData.SelectedTab == tpContData)
+                LoadContactData();
+        }
     }
 
 }

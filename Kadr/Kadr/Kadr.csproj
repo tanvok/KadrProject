@@ -158,10 +158,13 @@
   <ItemGroup>
     <Compile Include="Command\CreatePlanStaffCommand.cs" />
     <Compile Include="Controllers\BonusController.cs" />
+    <Compile Include="Controllers\CRUDAddress.cs" />
+    <Compile Include="Controllers\CRUDPhone.cs" />
     <Compile Include="Controllers\ExcelExportController.cs" />
     <Compile Include="Controllers\KadrController.cs" />
     <Compile Include="Controllers\LinqActionsController.cs" />
     <Compile Include="Controllers\MonthController.cs" />
+    <Compile Include="Controllers\SimpleActionsProvider.cs" />
     <Compile Include="Data\Common\INull.cs" />
     <Compile Include="Data\Common\IObjectState.cs" />
     <Compile Include="Data\Converters\FinancingSourceConvertor.cs" />
@@ -907,7 +910,9 @@
     <None Include="Properties\DataSources\Kadr.Data.GetBonusByBonusTypeForProlong.datasource" />
     <None Include="Properties\DataSources\Kadr.Data.GetStaffErrorsByPeriod.datasource" />
     <None Include="Properties\DataSources\Kadr.Data.OKVED.datasource" />
+    <None Include="Properties\DataSources\Kadr.Data.OK_Adress.datasource" />
     <None Include="Properties\DataSources\Kadr.Data.OK_Otpusk.datasource" />
+    <None Include="Properties\DataSources\Kadr.Data.OK_phone.datasource" />
     <None Include="Properties\DataSources\Kadr.Data.PlanStaff.datasource" />
     <None Include="Properties\DataSources\Kadr.Data.PlanStaffHistory.datasource" />
     <None Include="Properties\DataSources\Kadr.Data.PlanStaffSalary.datasource" />

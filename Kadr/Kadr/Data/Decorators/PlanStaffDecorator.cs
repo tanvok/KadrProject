@@ -164,6 +164,7 @@ namespace Kadr.Data
                 planStaff.DateEnd = value;
             }
         }
+
         [System.ComponentModel.DisplayName("Источник финансирования")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Источник финансирования записи в штатном расписании")]
@@ -184,6 +185,22 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("График работы")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("График работы сотрудников на данной должности")]
+        [System.ComponentModel.TypeConverter(typeof(SimpleToStringConvertor<WorkShedule>))]
+        public Kadr.Data.WorkShedule WorkShedule
+        {
+            get
+            {
+                return planStaff.WorkShedule;
+            }
+            set
+            {
+                planStaff.WorkShedule = value;
+            }
+        }
+
+        /*[System.ComponentModel.DisplayName("График работы")]
+        [System.ComponentModel.Category("Основные параметры")]
+        [System.ComponentModel.Description("График работы сотрудников на данной должности")]
         public int? WorkSheduleToIntSing
         {
             get
@@ -197,7 +214,7 @@ namespace Kadr.Data
                 planStaff.WorkShedule = WorkShedule.IntSignToShedule(value);
             }
         }
-
+        */
     }
     #endregion
 

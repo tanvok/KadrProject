@@ -45,6 +45,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -52,7 +53,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tpStaff = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -226,6 +226,10 @@
             this.tpTimeSheet = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvTimeSheetFS = new System.Windows.Forms.DataGridView();
+            this.isClosedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.factStaffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StaffCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workingDaysCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeSheetFSWorkingDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.cbTimeSheet = new System.Windows.Forms.ToolStripComboBox();
@@ -351,10 +355,6 @@
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContractStaffBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.timeSheetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.isClosedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.factStaffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StaffCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workingDaysCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.tpStaff.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -452,7 +452,7 @@
             this.tpStaff.Location = new System.Drawing.Point(4, 22);
             this.tpStaff.Name = "tpStaff";
             this.tpStaff.Padding = new System.Windows.Forms.Padding(3);
-            this.tpStaff.Size = new System.Drawing.Size(802, 533);
+            this.tpStaff.Size = new System.Drawing.Size(927, 405);
             this.tpStaff.TabIndex = 1;
             this.tpStaff.Text = "Штаты";
             this.tpStaff.UseVisualStyleBackColor = true;
@@ -471,8 +471,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.splitContainer1.Size = new System.Drawing.Size(796, 527);
-            this.splitContainer1.SplitterDistance = 206;
+            this.splitContainer1.Size = new System.Drawing.Size(921, 399);
+            this.splitContainer1.SplitterDistance = 155;
             this.splitContainer1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -488,7 +488,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(796, 206);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(921, 155);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgvPlanStaff
@@ -781,7 +781,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(796, 317);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(921, 240);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // dgvFactStaff
@@ -2264,7 +2264,7 @@
             this.tpTimeSheet.Location = new System.Drawing.Point(4, 22);
             this.tpTimeSheet.Name = "tpTimeSheet";
             this.tpTimeSheet.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTimeSheet.Size = new System.Drawing.Size(927, 405);
+            this.tpTimeSheet.Size = new System.Drawing.Size(802, 533);
             this.tpTimeSheet.TabIndex = 5;
             this.tpTimeSheet.Text = "Табель";
             this.tpTimeSheet.UseVisualStyleBackColor = true;
@@ -2281,7 +2281,7 @@
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(921, 399);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(796, 527);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
             // dgvTimeSheetFS
@@ -2319,10 +2319,48 @@
             this.dgvTimeSheetFS.ReadOnly = true;
             this.dgvTimeSheetFS.RowHeadersVisible = false;
             this.dgvTimeSheetFS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTimeSheetFS.Size = new System.Drawing.Size(915, 497);
+            this.dgvTimeSheetFS.Size = new System.Drawing.Size(790, 497);
             this.dgvTimeSheetFS.TabIndex = 1;
             this.dgvTimeSheetFS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTimeSheetFS_CellClick);
             this.dgvTimeSheetFS.DoubleClick += new System.EventHandler(this.dgvTimeSheetFS_DoubleClick);
+            // 
+            // isClosedDataGridViewCheckBoxColumn
+            // 
+            this.isClosedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.isClosedDataGridViewCheckBoxColumn.DataPropertyName = "IsClosed";
+            this.isClosedDataGridViewCheckBoxColumn.HeaderText = "Зафиксировано";
+            this.isClosedDataGridViewCheckBoxColumn.Name = "isClosedDataGridViewCheckBoxColumn";
+            this.isClosedDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.isClosedDataGridViewCheckBoxColumn.Width = 94;
+            // 
+            // factStaffDataGridViewTextBoxColumn
+            // 
+            this.factStaffDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.factStaffDataGridViewTextBoxColumn.DataPropertyName = "FactStaff";
+            this.factStaffDataGridViewTextBoxColumn.HeaderText = "ФИО сотрудника";
+            this.factStaffDataGridViewTextBoxColumn.Name = "factStaffDataGridViewTextBoxColumn";
+            this.factStaffDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // StaffCount
+            // 
+            this.StaffCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.StaffCount.DataPropertyName = "StaffCount";
+            this.StaffCount.HeaderText = "Кол-во ставок";
+            this.StaffCount.Name = "StaffCount";
+            this.StaffCount.ReadOnly = true;
+            this.StaffCount.Width = 96;
+            // 
+            // workingDaysCountDataGridViewTextBoxColumn
+            // 
+            this.workingDaysCountDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.workingDaysCountDataGridViewTextBoxColumn.DataPropertyName = "WorkingDaysCount";
+            dataGridViewCellStyle15.Format = "N2";
+            dataGridViewCellStyle15.NullValue = null;
+            this.workingDaysCountDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            this.workingDaysCountDataGridViewTextBoxColumn.HeaderText = "Кол-во раб. дней";
+            this.workingDaysCountDataGridViewTextBoxColumn.Name = "workingDaysCountDataGridViewTextBoxColumn";
+            this.workingDaysCountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.workingDaysCountDataGridViewTextBoxColumn.Width = 86;
             // 
             // timeSheetFSWorkingDaysBindingSource
             // 
@@ -2344,7 +2382,7 @@
             this.btnTimeSheetToExcel});
             this.toolStrip3.Location = new System.Drawing.Point(0, 0);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(921, 24);
+            this.toolStrip3.Size = new System.Drawing.Size(796, 24);
             this.toolStrip3.TabIndex = 0;
             this.toolStrip3.Text = "toolStrip3";
             // 
@@ -3670,44 +3708,6 @@
             // timeSheetBindingSource
             // 
             this.timeSheetBindingSource.DataSource = typeof(Kadr.Data.TimeSheet);
-            // 
-            // isClosedDataGridViewCheckBoxColumn
-            // 
-            this.isClosedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.isClosedDataGridViewCheckBoxColumn.DataPropertyName = "IsClosed";
-            this.isClosedDataGridViewCheckBoxColumn.HeaderText = "Зафиксировано";
-            this.isClosedDataGridViewCheckBoxColumn.Name = "isClosedDataGridViewCheckBoxColumn";
-            this.isClosedDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.isClosedDataGridViewCheckBoxColumn.Width = 94;
-            // 
-            // factStaffDataGridViewTextBoxColumn
-            // 
-            this.factStaffDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.factStaffDataGridViewTextBoxColumn.DataPropertyName = "FactStaff";
-            this.factStaffDataGridViewTextBoxColumn.HeaderText = "ФИО сотрудника";
-            this.factStaffDataGridViewTextBoxColumn.Name = "factStaffDataGridViewTextBoxColumn";
-            this.factStaffDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // StaffCount
-            // 
-            this.StaffCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.StaffCount.DataPropertyName = "StaffCount";
-            this.StaffCount.HeaderText = "Кол-во ставок";
-            this.StaffCount.Name = "StaffCount";
-            this.StaffCount.ReadOnly = true;
-            this.StaffCount.Width = 96;
-            // 
-            // workingDaysCountDataGridViewTextBoxColumn
-            // 
-            this.workingDaysCountDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.workingDaysCountDataGridViewTextBoxColumn.DataPropertyName = "WorkingDaysCount";
-            dataGridViewCellStyle15.Format = "N2";
-            dataGridViewCellStyle15.NullValue = null;
-            this.workingDaysCountDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
-            this.workingDaysCountDataGridViewTextBoxColumn.HeaderText = "Кол-во раб. дней";
-            this.workingDaysCountDataGridViewTextBoxColumn.Name = "workingDaysCountDataGridViewTextBoxColumn";
-            this.workingDaysCountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.workingDaysCountDataGridViewTextBoxColumn.Width = 86;
             // 
             // KadrRootFrame
             // 

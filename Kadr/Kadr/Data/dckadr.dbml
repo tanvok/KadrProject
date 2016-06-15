@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="kadr" Class="dckadrDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ugtudb.ugtu.net;Initial Catalog=kadr;Integrated Security=True" SettingsObjectName="Kadr.Properties.Settings" SettingsPropertyName="kadrConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Kadr" Class="dckadrDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ugtudb.ugtu.net;Initial Catalog=Kadr;Integrated Security=True" SettingsObjectName="Kadr.Properties.Settings" SettingsPropertyName="KadrConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DepartmentType" Member="DepartmentTypes">
     <Type Name="DepartmentType">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -59,11 +59,11 @@
       <Association Name="Prikaz_BonusHistory" Member="BonusHistories" ThisKey="id" OtherKey="idBeginPrikaz" Type="BonusHistory" />
       <Association Name="Prikaz_Bonus" Member="Bonus" ThisKey="id" OtherKey="idEndPrikaz" Type="Bonus" />
       <Association Name="Prikaz_Bonus1" Member="Bonus1" ThisKey="id" OtherKey="idIntermediateEndPrikaz" Type="Bonus" />
-      <Association Name="Prikaz_PlanStaff" Member="PlanStaffs" ThisKey="id" OtherKey="idEndPrikaz" Type="PlanStaff" />
       <Association Name="Prikaz_PlanStaffHistory" Member="PlanStaffHistories" ThisKey="id" OtherKey="idBeginPrikaz" Type="PlanStaffHistory" />
       <Association Name="Prikaz_OK_Otpusk" Member="OK_Otpusks" ThisKey="id" OtherKey="idOtpuskPrikaz" Type="OK_Otpusk" />
       <Association Name="Prikaz_FactStaffPrikaz" Member="FactStaffPrikazs" ThisKey="id" OtherKey="idPrikaz" Type="FactStaffPrikaz" />
       <Association Name="Prikaz_DepartmentHistory" Member="DepartmentHistories" ThisKey="id" OtherKey="idBeginPrikaz" Type="DepartmentHistory" />
+      <Association Name="Prikaz_PlanStaff" Member="PlanStaffs" ThisKey="id" OtherKey="idEndPrikaz" Type="PlanStaff" />
       <Association Name="PrikazType_Prikaz" Member="PrikazType" ThisKey="idPrikazType" OtherKey="id" Type="PrikazType" IsForeignKey="true" />
     </Type>
   </Table>
@@ -486,8 +486,8 @@
       <Association Name="OKVED_FactStaff" Member="OKVED" ThisKey="idOKVED" OtherKey="id" Type="OKVED" IsForeignKey="true" />
       <Association Name="Prikaz_FactStaff" Member="Prikaz" ThisKey="idEndPrikaz" OtherKey="id" Type="Prikaz" IsForeignKey="true" />
       <Association Name="Dep_FactStaff" Member="Dep" ThisKey="idDepartment" OtherKey="id" Type="Dep" IsForeignKey="true" />
-      <Association Name="PlanStaff_FactStaff" Member="PlanStaff" ThisKey="idPlanStaff" OtherKey="id" Type="PlanStaff" IsForeignKey="true" />
       <Association Name="Employee_FactStaff" Member="Employee" ThisKey="idEmployee" OtherKey="id" Type="Employee" IsForeignKey="true" />
+      <Association Name="PlanStaff_FactStaff" Member="PlanStaff" ThisKey="idPlanStaff" OtherKey="id" Type="PlanStaff" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Dep" Member="Deps">
@@ -509,9 +509,9 @@
       <Association Name="Dep_DepartmentTimeNorm" Member="DepartmentTimeNorms" ThisKey="id" OtherKey="idDepartment" Type="DepartmentTimeNorm" />
       <Association Name="Dep_DepartmentFund" Member="DepartmentFunds" ThisKey="id" OtherKey="idDepartment" Type="DepartmentFund" />
       <Association Name="Dep_FactStaff" Member="FactStaffs" ThisKey="id" OtherKey="idDepartment" Type="FactStaff" />
-      <Association Name="Dep_PlanStaff" Member="PlanStaffs" ThisKey="id" OtherKey="idDepartment" Type="PlanStaff" />
       <Association Name="Dep_DepartmentHistory" Member="DepartmentHistories" ThisKey="id" OtherKey="idDepartment" Type="DepartmentHistory" />
       <Association Name="Dep_DepartmentHistory1" Member="DepartmentHistories1" ThisKey="id" OtherKey="idManagerDepartment" Type="DepartmentHistory" />
+      <Association Name="Dep_PlanStaff" Member="PlanStaffs" ThisKey="id" OtherKey="idDepartment" Type="PlanStaff" />
       <Association Name="DepartmentType_Dep" Member="DepartmentType" ThisKey="idDepartmentType" OtherKey="id" Type="DepartmentType" IsForeignKey="true" />
       <Association Name="FundingCenter_Dep" Member="FundingCenter" ThisKey="idFundingCenter" OtherKey="id" Type="FundingCenter" IsForeignKey="true" />
       <Association Name="OKVED_Dep" Member="OKVED" ThisKey="idOKVED" OtherKey="id" Type="OKVED" IsForeignKey="true" />
@@ -623,25 +623,6 @@
       <Association Name="Prikaz_Bonus1" Member="Prikaz1" ThisKey="idIntermediateEndPrikaz" OtherKey="id" Type="Prikaz" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.PlanStaff" Member="PlanStaffs">
-    <Type Name="PlanStaff">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="idDepartment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="idPost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="idEndPrikaz" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="IdWorkShedule" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="PlanStaff_PlanStaffSalary" Member="PlanStaffSalaries" ThisKey="id" OtherKey="idPlanStaff" Type="PlanStaffSalary" />
-      <Association Name="PlanStaff_BonusPlanStaff" Member="BonusPlanStaffs" ThisKey="id" OtherKey="idPlanStaff" Type="BonusPlanStaff" />
-      <Association Name="PlanStaff_FactStaff" Member="FactStaffs" ThisKey="id" OtherKey="idPlanStaff" Type="FactStaff" />
-      <Association Name="PlanStaff_Dep" Member="Deps" ThisKey="id" OtherKey="idManagerPlanStaff" Type="Dep" />
-      <Association Name="PlanStaff_PlanStaffHistory" Member="PlanStaffHistories" ThisKey="id" OtherKey="idPlanStaff" Type="PlanStaffHistory" />
-      <Association Name="Dep_PlanStaff" Member="Dep" ThisKey="idDepartment" OtherKey="id" Type="Dep" IsForeignKey="true" />
-      <Association Name="Post_PlanStaff" Member="Post" ThisKey="idPost" OtherKey="id" Type="Post" IsForeignKey="true" />
-      <Association Name="Prikaz_PlanStaff" Member="Prikaz" ThisKey="idEndPrikaz" OtherKey="id" Type="Prikaz" IsForeignKey="true" />
-      <Association Name="WorkShedule_PlanStaff" Member="WorkShedule" ThisKey="IdWorkShedule" OtherKey="id" Type="WorkShedule" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.PlanStaffHistory" Member="PlanStaffHistories">
     <Type Name="PlanStaffHistory">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -651,8 +632,8 @@
       <Column Name="StaffCount" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
       <Column Name="idFinancingSource" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="FinancingSource_PlanStaffHistory" Member="FinancingSource" ThisKey="idFinancingSource" OtherKey="id" Type="FinancingSource" IsForeignKey="true" />
-      <Association Name="PlanStaff_PlanStaffHistory" Member="PlanStaff" ThisKey="idPlanStaff" OtherKey="id" Type="PlanStaff" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="Prikaz_PlanStaffHistory" Member="Prikaz" ThisKey="idBeginPrikaz" OtherKey="id" Type="Prikaz" IsForeignKey="true" />
+      <Association Name="PlanStaff_PlanStaffHistory" Member="PlanStaff" ThisKey="idPlanStaff" OtherKey="id" Type="PlanStaff" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.OK_Otpusk" Member="OK_Otpusks">
@@ -827,6 +808,26 @@
       <Column Name="idEmployee" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="phone" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Association Name="Employee_OK_phone" Member="Employee" ThisKey="idEmployee" OtherKey="id" Type="Employee" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PlanStaff" Member="PlanStaffs">
+    <Type Name="PlanStaff">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idDepartment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idEndPrikaz" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdWorkShedule" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContactsIDFK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PlanStaff_PlanStaffSalary" Member="PlanStaffSalaries" ThisKey="id" OtherKey="idPlanStaff" Type="PlanStaffSalary" />
+      <Association Name="PlanStaff_BonusPlanStaff" Member="BonusPlanStaffs" ThisKey="id" OtherKey="idPlanStaff" Type="BonusPlanStaff" />
+      <Association Name="PlanStaff_FactStaff" Member="FactStaffs" ThisKey="id" OtherKey="idPlanStaff" Type="FactStaff" />
+      <Association Name="PlanStaff_Dep" Member="Deps" ThisKey="id" OtherKey="idManagerPlanStaff" Type="Dep" />
+      <Association Name="PlanStaff_PlanStaffHistory" Member="PlanStaffHistories" ThisKey="id" OtherKey="idPlanStaff" Type="PlanStaffHistory" />
+      <Association Name="Dep_PlanStaff" Member="Dep" ThisKey="idDepartment" OtherKey="id" Type="Dep" IsForeignKey="true" />
+      <Association Name="Post_PlanStaff" Member="Post" ThisKey="idPost" OtherKey="id" Type="Post" IsForeignKey="true" />
+      <Association Name="Prikaz_PlanStaff" Member="Prikaz" ThisKey="idEndPrikaz" OtherKey="id" Type="Prikaz" IsForeignKey="true" />
+      <Association Name="WorkShedule_PlanStaff" Member="WorkShedule" ThisKey="IdWorkShedule" OtherKey="id" Type="WorkShedule" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.TransferFactStaff" Method="TransferFactStaff">

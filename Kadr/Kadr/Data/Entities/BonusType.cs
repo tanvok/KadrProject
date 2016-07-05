@@ -8,7 +8,7 @@ using System.Data.Linq;
 
 namespace Kadr.Data
 {
-    public partial class BonusType : UIX.Views.IDecorable, INull, IComparable, IObjectState
+    public partial class BonusType : UIX.Views.IDecorable, INullable, IComparable, IObjectState
     {
         public override string ToString()
         {
@@ -82,15 +82,7 @@ namespace Kadr.Data
 
         #endregion
 
-        #region Члены INull
-
-        bool INull.IsNull()
-        {
-            return false;
-
-        }
-
-        #endregion
+        
     }
 
     public class NullBonusType : BonusType, INull
@@ -105,7 +97,7 @@ namespace Kadr.Data
 
         #region INull Members
 
-        bool INull.IsNull()
+        bool IsNull()
         {
             return true;
         }

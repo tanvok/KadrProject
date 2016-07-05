@@ -42,5 +42,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=ugtudb.ugtu.net;Initial Catalog=KadrRealTest;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="NullName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">(Не задано)</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

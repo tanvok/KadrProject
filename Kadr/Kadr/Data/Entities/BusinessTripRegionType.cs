@@ -1,45 +1,41 @@
 ﻿using Kadr.Data.Common;
 using System;
-using System.Collections.Generic;
 using System.Data.Linq;
-using System.Linq;
-using System.Text;
 using UIX.Views;
 using UIX.Commands;
 
 namespace Kadr.Data
 {
-    public partial class BusinessTripRegionType : INull, IComparable, IDecorable, IValidatable, IEmployeeExperienceRecord
+    public partial class BusinessTripRegionType : IComparable, IDecorable, IValidatable
     {
-        private ICommandManager commandManager;
-        private DateTime date1;
-        private DateTime date2;
+
         #region Properties
 
         //public int ID { get { return idRegionType; } set { idRegionType = value; } }
 
         #endregion
 
-        public BusinessTripRegionType(DateTime beg, DateTime end, RegionType regiontype)
+        public BusinessTripRegionType(ICommandManager commandManager,
+            BusinessTrip trip, DateTime? beg, DateTime? end, RegionType regionType) : this()
         {
-            DateBegin = beg;
-            DateEnd = end;
-            RegionType = regiontype;
-        }
-
-        public BusinessTripRegionType(ICommandManager commandManager, DateTime beg, DateTime end, RegionType regionType) : this()
-        {
-            commandManager.Execute(new UIX.Commands.GenericPropertyCommand<BusinessTripRegionType, DateTime>(this, "DateBegin", beg, null), null);
-            commandManager.Execute(new UIX.Commands.GenericPropertyCommand<BusinessTripRegionType, DateTime>(this, "DateEnd", end, null), null);
+            commandManager.Execute(new UIX.Commands.GenericPropertyCommand<BusinessTripRegionType, DateTime?>(this, "DateBegin", beg, null), null);
+            commandManager.Execute(new UIX.Commands.GenericPropertyCommand<BusinessTripRegionType, DateTime?>(this, "DateEnd", end, null), null);
             commandManager.Execute(new UIX.Commands.GenericPropertyCommand<BusinessTripRegionType, RegionType>(this, "RegionType", regionType, null), null);
-      
+            commandManager.Execute(new UIX.Commands.GenericPropertyCommand<BusinessTripRegionType, BusinessTrip>(this, "BusinessTrip", trip, null), null);
         }
 
         public override string ToString()
         {
-            if (DateBegin != null)
-                return string.Format("С {0} по {1} в {2}", DateBegin.ToShortDateString(), DateEnd.ToShortDateString(), RegionType.RegionTypeName);
-            else return "Не задано";
+            if (Place != null) return Place;
+
+            if ((DateBegin != null) && (DateEnd != null))
+            {
+                if (RegionType != null)
+                    return $"{RegionType.RegionTypeName} — с {DateBegin.Value.ToShortDateString()} по {DateEnd.Value.ToShortDateString()}";
+                else return $"С {DateBegin.Value.ToShortDateString()} по {DateEnd.Value.ToShortDateString()}";
+            }
+            if (RegionType != null) return RegionType.RegionTypeName;
+            return "Не определено";
         }
 
         #region partial Methods
@@ -57,8 +53,8 @@ namespace Kadr.Data
                 if ((idRegionType == 0) && (RegionType == null)) throw new ArgumentNullException("Регион пребывания");
 
                 if (DateBegin > DateEnd) throw new ArgumentOutOfRangeException("Дата начала пребывания в регионе не может быть позже даты окончания!");
-                if ((BusinessTrip.Event.DateBegin > DateBegin) || (BusinessTrip.Event.DateEnd < DateBegin)) throw new ArgumentOutOfRangeException("Дата начала пребывания выходит за рамки командировки!");
-                if ((BusinessTrip.Event.DateBegin > DateEnd) || (BusinessTrip.Event.DateEnd < DateEnd)) throw new ArgumentOutOfRangeException("Дата начала пребывания выходит за рамки командировки!");
+                //if ((BusinessTrip.Event.DateBegin > DateBegin) || (BusinessTrip.Event.DateEnd < DateBegin)) throw new ArgumentOutOfRangeException("Дата начала пребывания выходит за рамки командировки!");
+                //if ((BusinessTrip.Event.DateBegin > DateEnd) || (BusinessTrip.Event.DateEnd < DateEnd)) throw new ArgumentOutOfRangeException("Дата окончания пребывания выходит за рамки командировки!");
             }
         }
 
@@ -74,15 +70,6 @@ namespace Kadr.Data
 
         #endregion
 
-
-        #region INull Members
-
-        bool INull.IsNull()
-        {
-            return false;
-        }
-
-        #endregion
 
         #region IDecorable Members
 
@@ -100,42 +87,30 @@ namespace Kadr.Data
         }
 
 
-        public DateTime StartOfWork
-        {
-            get { return DateBegin; }
-        }
+        public DateTime StartOfWork => DateBegin.Value;
 
-        public DateTime? EndOfWork
-        {
-            get { return DateEnd; }
-        }
+        public DateTime? EndOfWork => DateEnd.Value;
 
-        public TerritoryConditions Territory
-        {
-            get { return RegionType.GetTerritoryCondition(); }
-        }
+        
 
-        public KindOfExperience Experience
-        {
-            get { return BusinessTrip.Event.FactStaff.Experience; }
-        }
+        
 
-        public Affilations Affilation
+        public DateTime Start
         {
-            get { return Affilations.Organization; }
+            get { return DateBegin.Value; }
+            set { DateBegin = value; }
         }
-
-        public WorkOrganizationWorkType WorkWorkType
+        public DateTime Stop
         {
-            get { return BusinessTrip.Event
-                    .FactStaff.WorkType.GetOrganizationWorkType(); }
+            get { return DateEnd.Value; }
+            set { DateEnd = value; }
         }
+        /// <summary>
+        /// <remarks>Командировки всегда имеют дату завершения, 
+        /// а потому считаются событиями завершёнными</remarks>
+        /// </summary>
+        public bool IsEnded => true;
 
-        public DateTime Start { get { return StartOfWork; }
-            set { }
-        }
-        public DateTime Stop { get { return DateEnd; }
-            set { }
-        }
+        
     }
 }

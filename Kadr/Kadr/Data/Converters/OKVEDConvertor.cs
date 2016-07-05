@@ -1,26 +1,22 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 
 namespace Kadr.Data.Converters
 {
     class OKVEDConvertor : SimpleToStringConvertor<OKVED>
     {
-
-        private ICollection GetCollection(System.ComponentModel.ITypeDescriptorContext context)
+        protected override ICollection GetCollection(ITypeDescriptorContext context)
         {
                 var res = Kadr.Controllers.KadrController.Instance.Model.OKVEDs;
                 if (res == null)
                     return null;
-                List<OKVED> resList = res.ToList();
+                var resList = res.ToList();
                 resList.Add(Kadr.Data.NullOKVED.Instance);
                 return resList;
         }
 
-        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        public override StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
         {
             return new StandardValuesCollection(GetCollection(context));
         }
@@ -30,18 +26,19 @@ namespace Kadr.Data.Converters
         {
             if (value == null)
                 return NullOKVED.Instance;
-            if (value.GetType() == typeof(string))
+            var s = value as string;
+            if (s != null)
             {
 
                 OKVED itemSelected = null;
                 var c = GetCollection(context);
-                foreach (OKVED Item in c)
+                foreach (OKVED item in c)
                 {
-                    string ItemName = Item.ToString();
+                    var itemName = item.ToString();
 
-                    if (ItemName.Equals((string)value))
+                    if (itemName.Equals(s))
                     {
-                        itemSelected = Item;
+                        itemSelected = item;
                     }
                 }
                 return itemSelected;

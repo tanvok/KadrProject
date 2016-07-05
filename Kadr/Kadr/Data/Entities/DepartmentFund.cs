@@ -6,7 +6,7 @@ using Kadr.Data.Common;
 
 namespace Kadr.Data
 {
-    partial class DepartmentFund : INull, UIX.Views.IDecorable, UIX.Views.IValidatable
+    partial class DepartmentFund : INullable, UIX.Views.IDecorable, UIX.Views.IValidatable
     {
         public override string ToString()
         {
@@ -56,10 +56,7 @@ namespace Kadr.Data
 
         #endregion
 
-        bool INull.IsNull()
-        {
-            return false;
-        }
+        
     }
 
     public class NullDepartmentFund : DepartmentFund, INull
@@ -74,7 +71,7 @@ namespace Kadr.Data
 
         #region INull Members
 
-        bool INull.IsNull()
+        bool IsNull()
         {
             return true;
         }

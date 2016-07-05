@@ -1,28 +1,28 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 
 namespace Kadr.Data.Converters
 {
     class ContractConvertor : SimpleToStringConvertor<Contract>
     {
-        private ICollection GetCollection(System.ComponentModel.ITypeDescriptorContext context)
+        protected override ICollection GetCollection(ITypeDescriptorContext context)
         {
             Employee currentEmployee = null;
             Contract currentContract = null;
-            if (context.Instance is FactStaffMainBaseDecorator)
+            var instance = context.Instance as FactStaffMainBaseDecorator;
+            if (instance != null)
             {
-                currentEmployee = (context.Instance as FactStaffMainBaseDecorator).Employee;
-                currentContract = (context.Instance as FactStaffMainBaseDecorator).CurrentContract;
+                currentEmployee = instance.Employee;
+                currentContract = instance.CurrentContract;
             }
 
-            if (context.Instance is FactStaffHistoryMinDecorator)
+            var decorator = context.Instance as FactStaffHistoryMinDecorator;
+            if (decorator != null)
             {
-                currentEmployee = (context.Instance as FactStaffHistoryMinDecorator).FactStaff.Employee;
-                currentContract = (context.Instance as FactStaffHistoryMinDecorator).CurrentContract;
+                currentEmployee = decorator.FactStaff.Employee;
+                currentContract = decorator.CurrentContract;
             }
 
             if (currentEmployee != null)
@@ -31,14 +31,12 @@ namespace Kadr.Data.Converters
                 var res = currentEmployee.FactStaffs.SelectMany(x => x.FactStaffHistories).SelectMany(y => y.Events).Where(x
                         => x.EventKind.ForFactStaff).Where(x => x.Contract != null).Select(z => z.Contract).Where(m => m.idMainContract == null).Where(x => x != currentContract);
 
-                if (res == null)
-                    return null;
-                List<Contract> resList = res.ToList();
+                List<Contract> resList = res?.ToList();
                 return resList;
             }
             else
             {
-                return Kadr.Controllers.KadrController.Instance.Model.Contracts.Where(x => x.MainContract == null).ToArray();
+                return Controllers.KadrController.Instance.Model.Contracts.Where(x => x.MainContract == null).ToArray();
             }
         }
 
@@ -52,18 +50,19 @@ namespace Kadr.Data.Converters
         {
             /*if (value == null)
                 return NullSocialFareTransit.Instance;*/
-            if (value.GetType() == typeof(string))
+            var s = value as string;
+            if (s != null)
             {
 
                 Contract itemSelected = null;
                 var c = GetCollection(context);
-                foreach (Contract Item in c)
+                foreach (Contract item in c)
                 {
-                    string ItemName = Item.ToString();
+                    var itemName = item.ToString();
 
-                    if (ItemName.Equals((string)value))
+                    if (itemName.Equals(s))
                     {
-                        itemSelected = Item;
+                        itemSelected = item;
                     }
                 }
                 return itemSelected;
@@ -71,8 +70,6 @@ namespace Kadr.Data.Converters
             else
                 return base.ConvertFrom(context, culture, value);
         }
-
- 
     }
 }
 

@@ -8,7 +8,7 @@ using System.Data.Linq;
 
 namespace Kadr.Data
 {
-    public partial class Category : INull, IComparable
+    public partial class Category : INullable, IComparable
     {
         public override string ToString()
         {
@@ -42,15 +42,7 @@ namespace Kadr.Data
         #endregion
 
 
-        #region INull Members
-
-        bool INull.IsNull()
-        {
-            return false;
-
-        }
-
-        #endregion
+        
 
         #region Члены IComparable
 
@@ -74,7 +66,7 @@ namespace Kadr.Data
 
         #region INull Members
 
-        bool INull.IsNull()
+        bool IsNull()
         {
             return true;
         }

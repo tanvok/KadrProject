@@ -10,22 +10,15 @@ using Kadr.Data;
 
 namespace Kadr.Data
 {
-    public partial class CategoryVPO : INull
+    public partial class CategoryVPO : INullable
+    
     {
         public override string ToString()
         {
             return CategoryVPOName;
         }
 
-        #region INull Members
-
-        bool INull.IsNull()
-        {
-            return false;
-
-        }
-
-        #endregion
+        
     }
 
     public class NullCategoryVPO : CategoryVPO, INull
@@ -40,7 +33,7 @@ namespace Kadr.Data
 
         #region INull Members
 
-        bool INull.IsNull()
+        bool IsNull()
         {
             return true;
         }

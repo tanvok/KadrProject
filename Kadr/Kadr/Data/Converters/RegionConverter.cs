@@ -1,23 +1,16 @@
-﻿using Kadr.Data;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 
 namespace Kadr.Data.Converters
 {
     class RegionConverter : SimpleToStringConvertor<RegionType>
     {
-        
-        private ICollection GetCollection(System.ComponentModel.ITypeDescriptorContext context)
+        protected override ICollection GetCollection(ITypeDescriptorContext context)
         {
-                var res = Kadr.Controllers.KadrController.Instance.Model.RegionTypes.ToList();
-                if (res == null)
-                    return null;
-                List<RegionType> resList = res.ToList();
-                resList.Add(Kadr.Data.NullRegionType.Instance);
+                var res = Controllers.KadrController.Instance.Model.RegionTypes.ToList();
+            var resList = res.ToList();
+                resList.Add(NullRegionType.Instance);
                 return resList;
         }
 
@@ -31,18 +24,19 @@ namespace Kadr.Data.Converters
         {
             if (value == null)
                 return NullRegionType.Instance;
-            if (value.GetType() == typeof(string))
+            var s = value as string;
+            if (s != null)
             {
 
                 RegionType itemSelected = null;
                 var c = GetCollection(context);
-                foreach (RegionType Item in c)
+                foreach (RegionType item in c)
                 {
-                    string ItemName = Item.ToString();
+                    var itemName = item.ToString();
 
-                    if (ItemName.Equals((string)value))
+                    if (itemName.Equals(s))
                     {
-                        itemSelected = Item;
+                        itemSelected = item;
                     }
                 }
                 return itemSelected;

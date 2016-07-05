@@ -6,7 +6,7 @@ using Kadr.Data.Common;
 
 namespace Kadr.Data
 {
-    public partial class FinancingSource : INull, IComparable
+    public partial class FinancingSource : INullable, IComparable
     {
         public override string ToString()
         {
@@ -41,14 +41,7 @@ namespace Kadr.Data
             return Kadr.Controllers.KadrController.Instance.Model.FinancingSources.Where(finS => finS.FinancingSourceName == FinancingSourceName).First();
         }
 
-        #region INull Members
-
-        bool INull.IsNull()
-        {
-            return false;
-        }
-
-        #endregion
+        
 
         #region Члены IComparable
 
@@ -73,7 +66,7 @@ namespace Kadr.Data
 
         #region INull Members
 
-        bool INull.IsNull()
+        bool IsNull()
         {
             return true;
         }

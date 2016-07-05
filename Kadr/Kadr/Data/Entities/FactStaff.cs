@@ -12,7 +12,7 @@ namespace Kadr.Data
 {
     public enum FactStaffState {Present, Incapable, OnTrip, OnVacation};
 
-    public partial class FactStaff : UIX.Views.IDecorable, UIX.Views.IValidatable, INull, IObjectState, IComparable
+    public partial class FactStaff : UIX.Views.IDecorable, UIX.Views.IValidatable, INullable, IObjectState, IComparable
     {
 
         public override string ToString()
@@ -674,14 +674,6 @@ namespace Kadr.Data
         #endregion
 
 
-        #region INull Members
-
-        bool INull.IsNull()
-        {
-            return false;
-        }
-
-        #endregion
 
 
         #region IObjectState Members
@@ -724,7 +716,7 @@ namespace Kadr.Data
 
         #region INull Members
 
-        bool INull.IsNull()
+        bool IsNull()
         {
             return true;
         }

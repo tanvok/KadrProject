@@ -26,7 +26,7 @@ namespace Kadr.Data
         #endregion
     }
 
-    public class NullBonusSuperType : BonusSuperType, INull
+    public class NullBonusSuperType : BonusSuperType, INullable
     {
 
         private NullBonusSuperType()
@@ -38,10 +38,7 @@ namespace Kadr.Data
 
         #region INull Members
 
-        bool INull.IsNull()
-        {
-            return true;
-        }
+        
 
         public override string ToString()
         {

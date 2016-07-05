@@ -8,7 +8,7 @@ using System.Data.Linq;
 
 namespace Kadr.Data
 {
-    public partial class EmployeeRank : UIX.Views.IDecorable, UIX.Views.IValidatable, INull, IComparable
+    public partial class EmployeeRank : UIX.Views.IDecorable, UIX.Views.IValidatable, INullable, IComparable
     {
         public override string ToString()
         {
@@ -53,10 +53,6 @@ namespace Kadr.Data
         #endregion
 
 
-        bool INull.IsNull()
-        {
-            return false;
-        }
 
         #region IDecorable Members
 
@@ -100,7 +96,7 @@ namespace Kadr.Data
 
         #region INull Members
 
-        bool INull.IsNull()
+        bool IsNull()
         {
             return true;
         }

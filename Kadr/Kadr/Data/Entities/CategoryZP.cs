@@ -10,22 +10,15 @@ using Kadr.Data;
 
 namespace Kadr.Data
 {
-    public partial class CategoryZP: INull
+    public partial class CategoryZP : INullable
+
     {
         public override string ToString()
         {
             return CategoryZPName;
         }
 
-        #region INull Members
-
-        bool INull.IsNull()
-        {
-            return false;
-
-        }
-
-        #endregion
+       
     }
 
     public class NullCategoryZP : CategoryZP, INull
@@ -40,7 +33,7 @@ namespace Kadr.Data
 
         #region INull Members
 
-        bool INull.IsNull()
+        bool IsNull()
         {
             return true;
         }

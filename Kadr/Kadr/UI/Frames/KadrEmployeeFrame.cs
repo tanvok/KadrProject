@@ -10,6 +10,7 @@ using Kadr.Controllers;
 using Kadr.Data;
 using Kadr.Data.Common;
 using Reports.Frames;
+using Kadr.Controllers;
 
 namespace Kadr.UI.Frames
 {
@@ -401,6 +402,15 @@ namespace Kadr.UI.Frames
         {
             if (tcEmplData.SelectedTab == tpContData)
                 LoadContactData();
+        }
+
+        private void tcPostData_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //if (tcPostData.SelectedTab == tpBusTrip)
+              //  BusinessTripsBindingSource.DataSource = KadrController.Instance.Model.BusinessTrips/*.Where(t => t.Event.FactStaff == (FactStaff)factStaffBindingSource.Current)*/.ToList();
+            if (tcPostData.SelectedTab == tpIncapacity)
+                oKInkapacityBindingSource.DataSource = KadrController.Instance.Model.OK_Inkapacities.Where(x => x.Employee == Employee)
+                    .OrderByDescending(x => x.DateBegin);
         }
     }
 

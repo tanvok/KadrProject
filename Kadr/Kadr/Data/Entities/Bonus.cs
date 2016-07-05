@@ -9,7 +9,7 @@ using System.Data.Linq;
 namespace Kadr.Data
 {
      
-    public partial class Bonus : UIX.Views.IDecorable, UIX.Views.IValidatable, INull, IObjectState
+    public partial class Bonus : UIX.Views.IDecorable, UIX.Views.IValidatable, INullable, IObjectState
     {
         public override string ToString()
         {
@@ -344,14 +344,7 @@ namespace Kadr.Data
 
 
 
-        #region Члены INull
-
-        bool INull.IsNull()
-        {
-            return false;
-        }
-
-        #endregion
+       
 
         public ObjectState State()
         {
@@ -384,7 +377,7 @@ namespace Kadr.Data
 
         #region INull Members
 
-        bool INull.IsNull()
+        bool IsNull()
         {
             return true;
         }

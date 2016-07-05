@@ -63,7 +63,7 @@ namespace Kadr.Data
 
         #region Члены INull
 
-        bool INull.IsNull()
+        bool IsNull()
         {
             return false;
         }
@@ -84,7 +84,7 @@ namespace Kadr.Data
 
         #region INull Members
 
-        bool INull.IsNull()
+        bool  IsNull()
         {
             return true;
         }

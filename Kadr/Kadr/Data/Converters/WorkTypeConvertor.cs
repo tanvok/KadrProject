@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 
 namespace Kadr.Data.Converters
 {
     class WorkTypeConvertor : SimpleToStringConvertor<WorkType>
     {
-        private ICollection GetCollection(System.ComponentModel.ITypeDescriptorContext context)
+        protected override ICollection GetCollection(ITypeDescriptorContext context)
         {
             /*Employee currentEmployee = null;
             if (context.Instance is FactStaffMainBaseDecorator)
@@ -35,7 +32,7 @@ namespace Kadr.Data.Converters
             }
             else*/
             {
-                return Kadr.Controllers.KadrController.Instance.Model.WorkTypes.ToArray();
+                return Controllers.KadrController.Instance.Model.WorkTypes.ToArray();
             }
         }
 
@@ -49,18 +46,18 @@ namespace Kadr.Data.Converters
         {
             /*if (value == null)
                 return NullSocialFareTransit.Instance;*/
-            if (value.GetType() == typeof(string))
+            if (value != null && value is string)
             {
 
                 Contract itemSelected = null;
                 var c = GetCollection(context);
-                foreach (Contract Item in c)
+                foreach (Contract item in c)
                 {
-                    string ItemName = Item.ToString();
+                    string itemName = item.ToString();
 
-                    if (ItemName.Equals((string)value))
+                    if (itemName.Equals((string)value))
                     {
-                        itemSelected = Item;
+                        itemSelected = item;
                     }
                 }
                 return itemSelected;

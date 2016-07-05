@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Kadr.Data;
 
 namespace Kadr.Controllers
 {
     class MagicNumberController
     {
+        #region WorkType
         /// <summary>
         /// возвращает вид работы "почасовики"
         /// </summary>
@@ -22,13 +21,45 @@ namespace Kadr.Controllers
         /// <summary>
         /// возвращает основной вид работы
         /// </summary>
-        static public WorkType MainWorkType
+        public static WorkType MainWorkType
         {
             get
             {
                 return Kadr.Controllers.KadrController.Instance.Model.WorkTypes.Where(wt => wt.id == 1).First();
             }
         }
+
+        public static WorkType AlienType
+        {
+            get
+            {
+                return KadrController.Instance.Model.WorkTypes.First(wt => wt.id == 6);
+            }
+        }
+
+        /// <summary>
+        /// возвращает вид работы временная вакансия
+        /// </summary>
+        static public WorkType TemporaryVacancyWorkType
+        {
+            get
+            {
+                return Kadr.Controllers.KadrController.Instance.Model.WorkTypes.Where(wt => wt.id == 15).First();
+            }
+        }
+
+        /// <summary>
+        /// возвращает вид работы для замещения
+        /// </summary>
+        static public WorkType ReplacementWorkType
+        {
+            get
+            {
+                return Kadr.Controllers.KadrController.Instance.Model.WorkTypes.Where(wtp => wtp.IsReplacement).FirstOrDefault();
+            }
+        }
+
+        #endregion
 
         public static Dep UGTUDep
         {
@@ -39,6 +70,9 @@ namespace Kadr.Controllers
         }
 
         #region EventKinds
+        /// <summary>
+        /// Материальная ответственность
+        /// </summary>
         public static EventKind MatResponsibilityKind
         {
             get
@@ -47,6 +81,19 @@ namespace Kadr.Controllers
             }
         }
 
+        /// <summary>
+        /// Прием почасовика по договору
+        /// </summary>
+        public static EventKind FactStaffHourContractCreateEventKind
+        {
+            get
+            {
+                return KadrController.Instance.Model.EventKinds.Single(x => x.id == 14);
+            }
+        }
+        /// <summary>
+        /// Повышение квалификации
+        /// </summary>
         public static EventKind DopEducKind
         {
             get
@@ -55,6 +102,9 @@ namespace Kadr.Controllers
             }
         }
 
+        /// <summary>
+        /// Прием сотрудника
+        /// </summary>
         public static EventKind FactStaffCreateEventKind
         {
             get
@@ -63,7 +113,21 @@ namespace Kadr.Controllers
             }
         }
 
-        public static EventKind FactStaffTransferEventKind
+        /// <summary>
+        /// Перевод на новую должность
+        /// </summary>
+        public static EventKind FactStaffTransferSimpleEventKind
+        {
+            get
+            {
+                return KadrController.Instance.Model.EventKinds.Single(x => x.id == 20);
+            }
+        }
+
+        /// <summary>
+        /// Перевод сотрудника
+        /// </summary>
+        public static EventKind FactStaffTransferMainEventKind
         {
             get
             {
@@ -71,6 +135,20 @@ namespace Kadr.Controllers
             }
         }
 
+        /// <summary>
+        /// перевод с сохранением временной вакансии
+        /// </summary>
+        public static EventKind FactStaffTemporaryTransferEventKind
+        {
+            get
+            {
+                return KadrController.Instance.Model.EventKinds.Single(x => x.id == 22);
+            }
+        }
+
+        /// <summary>
+        /// Прием почасовика
+        /// </summary>
         public static EventKind FactStaffHourCreateEventKind
         {
             get
@@ -79,6 +157,9 @@ namespace Kadr.Controllers
             }
         }
 
+        /// <summary>
+        /// Назначение замещения
+        /// </summary>
         public static EventKind ReplacementBeginEventKind
         {
             get
@@ -87,6 +168,9 @@ namespace Kadr.Controllers
             }
         }
 
+        /// <summary>
+        /// Изменение условий трудового договора
+        /// </summary>
         public static EventKind FactStaffChangeMainEventKind
         {
             get
@@ -95,6 +179,9 @@ namespace Kadr.Controllers
             }
         }
 
+        /// <summary>
+        /// Смена источника финансирования
+        /// </summary>
         public static EventKind FactStaffFinSourceChangeEventKind
         {
             get
@@ -111,6 +198,17 @@ namespace Kadr.Controllers
             }
         }
 
+        public static IEnumerable<EventKind> FactStaffTransferSubEventKinds
+        {
+            get
+            {
+                return KadrController.Instance.Model.EventKinds.Where(x => x.EventKind1 == MagicNumberController.FactStaffTransferMainEventKind).ToArray();
+            }
+        }
+
+        /// <summary>
+        /// Отпуск
+        /// </summary>
         public static EventKind VacationEventKind
         {
             get
@@ -170,6 +268,14 @@ namespace Kadr.Controllers
             }
         }
 
+        public static EventType ChangeTermsEventType
+        {
+            get
+            {
+                return KadrController.Instance.Model.EventTypes.Single(x => x.id == 3);
+            }
+        }
+
         #endregion
 
         #region PrikazType
@@ -183,6 +289,17 @@ namespace Kadr.Controllers
             }
         }
 
+        //Перевод сотрудника
+        public static PrikazType TransferPrikazType
+        {
+            get
+            {
+                return KadrController.Instance.Model.PrikazTypes.SingleOrDefault(x => x.id == 6);
+            }
+        }
+
+
+
         //Увольнение сотрудника
         public static PrikazType FiredPrikazType
         {
@@ -191,7 +308,7 @@ namespace Kadr.Controllers
                 return KadrController.Instance.Model.PrikazTypes.SingleOrDefault(x => x.id == 5);
             }
         }
-        
+
         //Командировка
         public static PrikazType BusinessTripPrikazType
         {
@@ -246,6 +363,15 @@ namespace Kadr.Controllers
             }
         }
 
+        //Смена ФИО
+        public static PrikazType FIOChangePrikazType
+        {
+            get
+            {
+                return KadrController.Instance.Model.PrikazTypes.SingleOrDefault(x => x.id == 23);
+            }
+        }
+
         /// <summary>
         /// Договор
         /// </summary>
@@ -257,16 +383,20 @@ namespace Kadr.Controllers
             }
         }
 
-        #endregion
-
-        static public StandingType DefaultStandingType
+        /// <summary>
+        /// Доп соглашение (изменение договора)
+        /// </summary>
+        public static PrikazType SubContractPrikazType
         {
             get
             {
-                return KadrController.Instance.Model.StandingTypes.Single(x => x.id == 1);
+                return KadrController.Instance.Model.PrikazTypes.SingleOrDefault(x => x.id == 14);
             }
-
         }
+
+        #endregion
+
+
 
         static public RegionType DefaultRegionType
         {
@@ -275,17 +405,13 @@ namespace Kadr.Controllers
                 return KadrController.Instance.Model.RegionTypes.Single(x => x.id == 1);
             }
         }
-
-        public static EventType ChangeTermsEventType { 
+        static public Category DefaultStandingType
+        {
             get
             {
-                return KadrController.Instance.Model.EventTypes.Single(x => x.id == 3);
+                return null; //KadrController.Instance.Model.Categories.Single(x => x.id == 1);
             }
         }
-
-
-
-
 
         #region FinSource
         static public FinancingSource budgetFinancingSource
@@ -314,12 +440,18 @@ namespace Kadr.Controllers
 
         #endregion
 
-        static public OK_Reason TransferReason
+        public static OK_Reason TransferReason
         {
             get
             {
-                return Kadr.Controllers.KadrController.Instance.Model.OK_Reasons.Where(x => x.idreason == 218).First();
+                return KadrController.Instance.Model.OK_Reasons.First(x => x.idreason == 218);
             }
         }
+
+        #region ReportSettings
+        public static int BeginRow => 2;
+
+
+        #endregion
     }
 }

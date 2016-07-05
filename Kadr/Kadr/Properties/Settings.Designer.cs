@@ -73,5 +73,17 @@ namespace Kadr.Properties {
                 return ((string)(this["KadrRealTestConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("(Не задано)")]
+        public string NullName {
+            get {
+                return ((string)(this["NullName"]));
+            }
+            set {
+                this["NullName"] = value;
+            }
+        }
     }
 }

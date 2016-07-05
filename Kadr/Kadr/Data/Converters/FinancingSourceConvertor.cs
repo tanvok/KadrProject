@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 
 namespace Kadr.Data.Converters
 {
@@ -14,69 +11,34 @@ namespace Kadr.Data.Converters
             return true;
         }
 
-        private ICollection GetCollection(System.ComponentModel.ITypeDescriptorContext context)
+        protected override ICollection GetCollection(ITypeDescriptorContext context)
         {
-            return Kadr.Controllers.KadrController.Instance.Model.FinancingSources.Where(fs => fs.id < 3).OrderBy(finSource => finSource.FinancingSourceName).ToArray();
+            IList res = Kadr.Controllers.KadrController.Instance.Model.FinancingSources.Where(fs => fs.id < 3).OrderBy(finSource => finSource.FinancingSourceName).ToList();
+            res.Add(NullFinancingSource.Instance);
+            return res; 
         }
 
-        /*public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
         {
             return new StandardValuesCollection(GetCollection(context));
-        }
-
-
-        public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
-        {
-            if (destinationType.Equals(typeof(string)))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-
-        public override object ConvertTo(ITypeDescriptorContext context,
-       System.Globalization.CultureInfo culture, object value, Type destinationType)
-        {
-            if (destinationType == typeof(string) && value is FinancingSource)
-            {
-                return (value as FinancingSource).ToString();
-            }
-            return base.ConvertTo(context, culture, value, destinationType);
-        }
-
-        public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
-        {
-            if (sourceType.Equals(typeof(string)))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
 
         public override object ConvertFrom(ITypeDescriptorContext context,
         System.Globalization.CultureInfo culture, object value)
         {
-            if (value == null)
-                return Null.Instance;
-            if (value.GetType() == typeof(string))
+            var s = value as string;
+            if (s != null)
             {
 
-                StandingType itemSelected = null;
+                FinancingSource itemSelected = null;
                 var c = GetCollection(context);
-                foreach (StandingType Item in c)
+                foreach (FinancingSource item in c)
                 {
-                    string ItemName = Item.ToString();
+                    var itemName = item.ToString();
 
-                    if (ItemName.Equals((string)value))
+                    if (itemName.Equals(s))
                     {
-                        itemSelected = Item;
+                        itemSelected = item;
                     }
                 }
                 return itemSelected;
@@ -84,12 +46,6 @@ namespace Kadr.Data.Converters
             else
                 return base.ConvertFrom(context, culture, value);
         }
-
-        public override bool GetStandardValuesExclusive(ITypeDescriptorContext context)
-        {
-            return true;
-        }*/
-
     }
 }
 

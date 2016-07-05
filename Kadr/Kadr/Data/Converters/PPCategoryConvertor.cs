@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 
 namespace Kadr.Data.Converters
 {
     class PPCategoryConvertor : SimpleToStringConvertor<SalaryKoeff>
     {
-
-        private ICollection GetCollection(System.ComponentModel.ITypeDescriptorContext context)
+        protected override ICollection GetCollection(ITypeDescriptorContext context)
         {
-                var res = Kadr.Controllers.KadrController.Instance.Model.SalaryKoeffs;
+                var res = Controllers.KadrController.Instance.Model.SalaryKoeffs;
                 if (res == null)
                     return null;
                 List<SalaryKoeff> resList = res.ToList();
@@ -30,18 +27,19 @@ namespace Kadr.Data.Converters
         {
             if (value == null)
                 return NullSalaryKoeff.Instance;
-            if (value.GetType() == typeof(string))
+            var s = value as string;
+            if (s != null)
             {
 
                 SalaryKoeff itemSelected = null;
                 var c = GetCollection(context);
-                foreach (SalaryKoeff Item in c)
+                foreach (SalaryKoeff item in c)
                 {
-                    string ItemName = Item.ToString();
+                    var itemName = item.ToString();
 
-                    if (ItemName.Equals((string)value))
+                    if (itemName.Equals(s))
                     {
-                        itemSelected = Item;
+                        itemSelected = item;
                     }
                 }
                 return itemSelected;

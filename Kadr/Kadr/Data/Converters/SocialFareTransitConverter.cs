@@ -1,29 +1,24 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 
 namespace Kadr.Data.Converters
 {
     class SocialFareTransitConverter : SimpleToStringConvertor<SocialFareTransit>
     {
-
-        private ICollection GetCollection(System.ComponentModel.ITypeDescriptorContext context)
+        protected override ICollection GetCollection(ITypeDescriptorContext context)
         {
             if (context.Instance is OK_OtpuskDecorator)
             {
                 var res = Kadr.Controllers.KadrController.Instance.Model.SocialFareTransits.Where(x => x.Employee == (context.Instance as OK_OtpuskDecorator).Employee);
-                if (res == null)
-                    return null;
                 List<SocialFareTransit> resList = res.ToList().Where(x => !x.IsUsed).ToList();
-                resList.Add(Kadr.Data.NullSocialFareTransit.Instance);
+                resList.Add(NullSocialFareTransit.Instance);
                 return resList;
             }
             else
             {
-                return Kadr.Controllers.KadrController.Instance.Model.SocialFareTransits.ToArray();
+                return Controllers.KadrController.Instance.Model.SocialFareTransits.ToArray();
             }
         }
 
@@ -37,18 +32,19 @@ namespace Kadr.Data.Converters
         {
             if (value == null)
                 return NullSocialFareTransit.Instance;
-            if (value.GetType() == typeof(string))
+            var s = value as string;
+            if (s != null)
             {
 
                 SocialFareTransit itemSelected = null;
                 var c = GetCollection(context);
-                foreach (SocialFareTransit Item in c)
+                foreach (SocialFareTransit item in c)
                 {
-                    string ItemName = Item.ToString();
+                    var itemName = item.ToString();
 
-                    if (ItemName.Equals((string)value))
+                    if (itemName.Equals(s))
                     {
-                        itemSelected = Item;
+                        itemSelected = item;
                     }
                 }
                 return itemSelected;

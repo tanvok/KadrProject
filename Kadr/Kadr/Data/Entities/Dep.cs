@@ -8,7 +8,7 @@ using System.Data.Linq;
 
 namespace Kadr.Data
 {
-    public partial class Dep : UIX.Views.IDecorable, UIX.Views.IValidatable, INull, IObjectState, IComparable
+    public partial class Dep : UIX.Views.IDecorable, UIX.Views.IValidatable, INullable, IObjectState, IComparable
     {
         public static Dep UGTUDep
         {
@@ -383,15 +383,7 @@ namespace Kadr.Data
 
         #endregion
 
-
-        #region INull Members
-
-        bool INull.IsNull()
-        {
-            return false;
-        }
-
-        #endregion
+        
 
         #region IValidatable Members
 
@@ -438,7 +430,7 @@ namespace Kadr.Data
 
         #region INull Members
 
-        bool INull.IsNull()
+        bool IsNull()
         {
             return true;
         }

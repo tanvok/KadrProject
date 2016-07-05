@@ -8,17 +8,13 @@ using System.Data.Linq;
 
 namespace Kadr.Data
 {
-    public partial class EducDocumentType : INull
+    public partial class EducDocumentType : INullable
     {
         public override string ToString()
         {
             return DocTypeName;
         }
         
-        bool INull.IsNull()
-        {
-            return false;
-        }
     }
 
 
@@ -34,7 +30,7 @@ namespace Kadr.Data
 
         #region INull Members
 
-        bool INull.IsNull()
+        bool IsNull()
         {
             return true;
         }

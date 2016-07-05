@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 
 namespace Kadr.Data.Converters
 {
     class OK_ReasonConvertor : SimpleToStringConvertor<OK_Reason>
     {
-
-        private ICollection GetCollection(System.ComponentModel.ITypeDescriptorContext context)
+        protected override ICollection GetCollection(ITypeDescriptorContext context)
         {
-            var res = Kadr.Controllers.KadrController.Instance.Model.OK_Reasons.Where(x => !x.is_old.Value).OrderBy(y=>y.reasonname);
-            if (res == null)
-                return null;
-            List<OK_Reason> resList = res.ToList();
+            var res = Controllers.KadrController.Instance.Model.OK_Reasons.Where(x => !x.is_old.Value).OrderBy(y=>y.reasonname);
+            var resList = res.ToList();
             resList.Add(NullOK_Reason.Instance);
             return resList;
         }
@@ -31,18 +25,19 @@ namespace Kadr.Data.Converters
             if (value == null)
                 return NullOK_Reason.Instance;
 
-            if (value.GetType() == typeof(string))
+            var s = value as string;
+            if (s != null)
             {
 
                 OK_Reason itemSelected = null;
                 var c = GetCollection(context);
-                foreach (OK_Reason Item in c)
+                foreach (OK_Reason item in c)
                 {
-                    string ItemName = Item.ToString();
+                    var itemName = item.ToString();
 
-                    if (ItemName.Equals((string)value))
+                    if (itemName.Equals(s))
                     {
-                        itemSelected = Item;
+                        itemSelected = item;
                     }
                 }
                 return itemSelected;

@@ -406,8 +406,9 @@ namespace Kadr.UI.Frames
 
         private void tcPostData_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (tcPostData.SelectedTab == tpBusTrip)
-              //  BusinessTripsBindingSource.DataSource = KadrController.Instance.Model.BusinessTrips/*.Where(t => t.Event.FactStaff == (FactStaff)factStaffBindingSource.Current)*/.ToList();
+            if (tcPostData.SelectedTab == tpBusTrip)
+                BusinessTripsBindingSource.DataSource =
+                    KadrController.Instance.Model.FactStaffHistories.Where(t => t.FactStaff == (FactStaff)factStaffBindingSource.Current).SelectMany(x => x.Events).Where(x => (x.EventType == MagicNumberController.BeginEventType)).Select(x => x.Event_BusinessTrip).Where(t => t != null).Select(t => t.BusinessTrip).Select(x => x.GetDecorator()).ToList();
             if (tcPostData.SelectedTab == tpIncapacity)
                 oKInkapacityBindingSource.DataSource = KadrController.Instance.Model.OK_Inkapacities.Where(x => x.Employee == Employee)
                     .OrderByDescending(x => x.DateBegin);

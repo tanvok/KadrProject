@@ -7,7 +7,7 @@ using Kadr.Data.Common;
 
 namespace Kadr.Data
 {
-    public partial class PrikazType :  INull, IComparable
+    public partial class PrikazType :  INullable, IComparable
     {
         public override string ToString()
         {
@@ -15,14 +15,7 @@ namespace Kadr.Data
         }
 
 
-        #region Члены INull
-
-        bool IsNull()
-        {
-            return false;
-        }
-
-        #endregion
+        
 
         #region Члены IComparable
 

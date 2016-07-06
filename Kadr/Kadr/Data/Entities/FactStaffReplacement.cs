@@ -9,17 +9,13 @@ using UIX.Views;
 
 namespace Kadr.Data
 {
-    public partial class FactStaffReplacement : INull, UIX.Views.IDecorable, UIX.Views.IValidatable, IComparable
+    public partial class FactStaffReplacement : INullable, UIX.Views.IDecorable, UIX.Views.IValidatable, IComparable
     {
         public override string ToString()
         {
             return "";
         }
-        
-        bool IsNull()
-        {
-            return false;
-        }
+       
 
         public FactStaff ReplacedFactStaff
         {

@@ -7,7 +7,7 @@ using Kadr.Data.Common;
 
 namespace Kadr.Data
 {
-    partial class DepartmentHistory : INull, UIX.Views.IDecorable, UIX.Views.IValidatable
+    partial class DepartmentHistory : INullable, UIX.Views.IDecorable, UIX.Views.IValidatable
     {
 
         public override string ToString()
@@ -103,10 +103,7 @@ namespace Kadr.Data
         }
         #endregion
 
-        bool  IsNull()
-        {
-            return false;
-        }
+        
     }
 
 

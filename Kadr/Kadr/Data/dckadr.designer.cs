@@ -105,9 +105,6 @@ namespace Kadr.Data
     partial void InsertBonusFactStaff(BonusFactStaff instance);
     partial void UpdateBonusFactStaff(BonusFactStaff instance);
     partial void DeleteBonusFactStaff(BonusFactStaff instance);
-    partial void InsertCategory(Category instance);
-    partial void UpdateCategory(Category instance);
-    partial void DeleteCategory(Category instance);
     partial void InsertTimeSheet(TimeSheet instance);
     partial void UpdateTimeSheet(TimeSheet instance);
     partial void DeleteTimeSheet(TimeSheet instance);
@@ -240,6 +237,9 @@ namespace Kadr.Data
     partial void InsertBusinessTripRegionType(BusinessTripRegionType instance);
     partial void UpdateBusinessTripRegionType(BusinessTripRegionType instance);
     partial void DeleteBusinessTripRegionType(BusinessTripRegionType instance);
+    partial void InsertCategory(Category instance);
+    partial void UpdateCategory(Category instance);
+    partial void DeleteCategory(Category instance);
     #endregion
 		
 		public dckadrDataContext() : 
@@ -469,14 +469,6 @@ namespace Kadr.Data
 			get
 			{
 				return this.GetTable<BonusFactStaff>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Category> Categories
-		{
-			get
-			{
-				return this.GetTable<Category>();
 			}
 		}
 		
@@ -845,6 +837,14 @@ namespace Kadr.Data
 			get
 			{
 				return this.GetTable<BusinessTripRegionType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Category> Categories
+		{
+			get
+			{
+				return this.GetTable<Category>();
 			}
 		}
 		
@@ -6097,220 +6097,6 @@ namespace Kadr.Data
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Category")]
-	public partial class Category : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _CategoryName;
-		
-		private string _CategorySmallName;
-		
-		private System.Nullable<int> _OrderBy;
-		
-		private System.Nullable<bool> _IsPPS;
-		
-		private EntitySet<Post> _Posts;
-		
-		private EntitySet<Post> _Posts1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnCategoryNameChanging(string value);
-    partial void OnCategoryNameChanged();
-    partial void OnCategorySmallNameChanging(string value);
-    partial void OnCategorySmallNameChanged();
-    partial void OnOrderByChanging(System.Nullable<int> value);
-    partial void OnOrderByChanged();
-    partial void OnIsPPSChanging(System.Nullable<bool> value);
-    partial void OnIsPPSChanged();
-    #endregion
-		
-		public Category()
-		{
-			this._Posts = new EntitySet<Post>(new Action<Post>(this.attach_Posts), new Action<Post>(this.detach_Posts));
-			this._Posts1 = new EntitySet<Post>(new Action<Post>(this.attach_Posts1), new Action<Post>(this.detach_Posts1));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string CategoryName
-		{
-			get
-			{
-				return this._CategoryName;
-			}
-			set
-			{
-				if ((this._CategoryName != value))
-				{
-					this.OnCategoryNameChanging(value);
-					this.SendPropertyChanging();
-					this._CategoryName = value;
-					this.SendPropertyChanged("CategoryName");
-					this.OnCategoryNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategorySmallName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string CategorySmallName
-		{
-			get
-			{
-				return this._CategorySmallName;
-			}
-			set
-			{
-				if ((this._CategorySmallName != value))
-				{
-					this.OnCategorySmallNameChanging(value);
-					this.SendPropertyChanging();
-					this._CategorySmallName = value;
-					this.SendPropertyChanged("CategorySmallName");
-					this.OnCategorySmallNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderBy", DbType="Int")]
-		public System.Nullable<int> OrderBy
-		{
-			get
-			{
-				return this._OrderBy;
-			}
-			set
-			{
-				if ((this._OrderBy != value))
-				{
-					this.OnOrderByChanging(value);
-					this.SendPropertyChanging();
-					this._OrderBy = value;
-					this.SendPropertyChanged("OrderBy");
-					this.OnOrderByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPPS", DbType="Bit")]
-		public System.Nullable<bool> IsPPS
-		{
-			get
-			{
-				return this._IsPPS;
-			}
-			set
-			{
-				if ((this._IsPPS != value))
-				{
-					this.OnIsPPSChanging(value);
-					this.SendPropertyChanging();
-					this._IsPPS = value;
-					this.SendPropertyChanged("IsPPS");
-					this.OnIsPPSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Post", Storage="_Posts", ThisKey="id", OtherKey="idCategory")]
-		public EntitySet<Post> Posts
-		{
-			get
-			{
-				return this._Posts;
-			}
-			set
-			{
-				this._Posts.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Post1", Storage="_Posts1", ThisKey="id", OtherKey="idNewCategory")]
-		public EntitySet<Post> Posts1
-		{
-			get
-			{
-				return this._Posts1;
-			}
-			set
-			{
-				this._Posts1.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Posts(Post entity)
-		{
-			this.SendPropertyChanging();
-			entity.Category = this;
-		}
-		
-		private void detach_Posts(Post entity)
-		{
-			this.SendPropertyChanging();
-			entity.Category = null;
-		}
-		
-		private void attach_Posts1(Post entity)
-		{
-			this.SendPropertyChanging();
-			entity.Category1 = this;
-		}
-		
-		private void detach_Posts1(Post entity)
-		{
-			this.SendPropertyChanging();
-			entity.Category1 = null;
 		}
 	}
 	
@@ -12410,10 +12196,6 @@ namespace Kadr.Data
 		
 		private EntitySet<PlanStaff> _PlanStaffs;
 		
-		private EntityRef<Category> _Category;
-		
-		private EntityRef<Category> _Category1;
-		
 		private EntityRef<CategoryVPO> _CategoryVPO;
 		
 		private EntityRef<CategoryZP> _CategoryZP;
@@ -12425,6 +12207,10 @@ namespace Kadr.Data
 		private EntityRef<PostGroup> _PostGroup;
 		
 		private EntityRef<GlobalPrikaz> _GlobalPrikaz;
+		
+		private EntityRef<Category> _Category;
+		
+		private EntityRef<Category> _Category1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -12468,14 +12254,14 @@ namespace Kadr.Data
 		{
 			this._BonusPosts = new EntitySet<BonusPost>(new Action<BonusPost>(this.attach_BonusPosts), new Action<BonusPost>(this.detach_BonusPosts));
 			this._PlanStaffs = new EntitySet<PlanStaff>(new Action<PlanStaff>(this.attach_PlanStaffs), new Action<PlanStaff>(this.detach_PlanStaffs));
-			this._Category = default(EntityRef<Category>);
-			this._Category1 = default(EntityRef<Category>);
 			this._CategoryVPO = default(EntityRef<CategoryVPO>);
 			this._CategoryZP = default(EntityRef<CategoryZP>);
 			this._PKCategory = default(EntityRef<PKCategory>);
 			this._PostType = default(EntityRef<PostType>);
 			this._PostGroup = default(EntityRef<PostGroup>);
 			this._GlobalPrikaz = default(EntityRef<GlobalPrikaz>);
+			this._Category = default(EntityRef<Category>);
+			this._Category1 = default(EntityRef<Category>);
 			OnCreated();
 		}
 		
@@ -12857,74 +12643,6 @@ namespace Kadr.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Post", Storage="_Category", ThisKey="idCategory", OtherKey="id", IsForeignKey=true)]
-		public Category Category
-		{
-			get
-			{
-				return this._Category.Entity;
-			}
-			set
-			{
-				Category previousValue = this._Category.Entity;
-				if (((previousValue != value) 
-							|| (this._Category.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Category.Entity = null;
-						previousValue.Posts.Remove(this);
-					}
-					this._Category.Entity = value;
-					if ((value != null))
-					{
-						value.Posts.Add(this);
-						this._idCategory = value.id;
-					}
-					else
-					{
-						this._idCategory = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Category");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Post1", Storage="_Category1", ThisKey="idNewCategory", OtherKey="id", IsForeignKey=true)]
-		public Category Category1
-		{
-			get
-			{
-				return this._Category1.Entity;
-			}
-			set
-			{
-				Category previousValue = this._Category1.Entity;
-				if (((previousValue != value) 
-							|| (this._Category1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Category1.Entity = null;
-						previousValue.Posts1.Remove(this);
-					}
-					this._Category1.Entity = value;
-					if ((value != null))
-					{
-						value.Posts1.Add(this);
-						this._idNewCategory = value.id;
-					}
-					else
-					{
-						this._idNewCategory = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Category1");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CategoryVPO_Post", Storage="_CategoryVPO", ThisKey="idCategoryVPO", OtherKey="id", IsForeignKey=true)]
 		public CategoryVPO CategoryVPO
 		{
@@ -13125,6 +12843,74 @@ namespace Kadr.Data
 						this._idGlobalPrikaz = default(int);
 					}
 					this.SendPropertyChanged("GlobalPrikaz");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Post", Storage="_Category", ThisKey="idCategory", OtherKey="id", IsForeignKey=true)]
+		public Category Category
+		{
+			get
+			{
+				return this._Category.Entity;
+			}
+			set
+			{
+				Category previousValue = this._Category.Entity;
+				if (((previousValue != value) 
+							|| (this._Category.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Category.Entity = null;
+						previousValue.Posts.Remove(this);
+					}
+					this._Category.Entity = value;
+					if ((value != null))
+					{
+						value.Posts.Add(this);
+						this._idCategory = value.id;
+					}
+					else
+					{
+						this._idCategory = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Category");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Post1", Storage="_Category1", ThisKey="idNewCategory", OtherKey="id", IsForeignKey=true)]
+		public Category Category1
+		{
+			get
+			{
+				return this._Category1.Entity;
+			}
+			set
+			{
+				Category previousValue = this._Category1.Entity;
+				if (((previousValue != value) 
+							|| (this._Category1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Category1.Entity = null;
+						previousValue.Posts1.Remove(this);
+					}
+					this._Category1.Entity = value;
+					if ((value != null))
+					{
+						value.Posts1.Add(this);
+						this._idNewCategory = value.id;
+					}
+					else
+					{
+						this._idNewCategory = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Category1");
 				}
 			}
 		}
@@ -20757,6 +20543,340 @@ namespace Kadr.Data
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Category")]
+	public partial class Category : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _CategoryName;
+		
+		private string _CategorySmallName;
+		
+		private System.Nullable<int> _OrderBy;
+		
+		private System.Nullable<bool> _IsPPS;
+		
+		private System.Nullable<bool> _IsNP;
+		
+		private System.Nullable<int> _ManHourWork;
+		
+		private System.Nullable<int> _WomanHourWork;
+		
+		private bool _IsCategory;
+		
+		private System.Nullable<bool> _IsExcusive;
+		
+		private EntitySet<Post> _Posts;
+		
+		private EntitySet<Post> _Posts1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnCategoryNameChanging(string value);
+    partial void OnCategoryNameChanged();
+    partial void OnCategorySmallNameChanging(string value);
+    partial void OnCategorySmallNameChanged();
+    partial void OnOrderByChanging(System.Nullable<int> value);
+    partial void OnOrderByChanged();
+    partial void OnIsPPSChanging(System.Nullable<bool> value);
+    partial void OnIsPPSChanged();
+    partial void OnIsNPChanging(System.Nullable<bool> value);
+    partial void OnIsNPChanged();
+    partial void OnManHourWorkChanging(System.Nullable<int> value);
+    partial void OnManHourWorkChanged();
+    partial void OnWomanHourWorkChanging(System.Nullable<int> value);
+    partial void OnWomanHourWorkChanged();
+    partial void OnIsCategoryChanging(bool value);
+    partial void OnIsCategoryChanged();
+    partial void OnIsExcusiveChanging(System.Nullable<bool> value);
+    partial void OnIsExcusiveChanged();
+    #endregion
+		
+		public Category()
+		{
+			this._Posts = new EntitySet<Post>(new Action<Post>(this.attach_Posts), new Action<Post>(this.detach_Posts));
+			this._Posts1 = new EntitySet<Post>(new Action<Post>(this.attach_Posts1), new Action<Post>(this.detach_Posts1));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CategoryName
+		{
+			get
+			{
+				return this._CategoryName;
+			}
+			set
+			{
+				if ((this._CategoryName != value))
+				{
+					this.OnCategoryNameChanging(value);
+					this.SendPropertyChanging();
+					this._CategoryName = value;
+					this.SendPropertyChanged("CategoryName");
+					this.OnCategoryNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategorySmallName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CategorySmallName
+		{
+			get
+			{
+				return this._CategorySmallName;
+			}
+			set
+			{
+				if ((this._CategorySmallName != value))
+				{
+					this.OnCategorySmallNameChanging(value);
+					this.SendPropertyChanging();
+					this._CategorySmallName = value;
+					this.SendPropertyChanged("CategorySmallName");
+					this.OnCategorySmallNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderBy", DbType="Int")]
+		public System.Nullable<int> OrderBy
+		{
+			get
+			{
+				return this._OrderBy;
+			}
+			set
+			{
+				if ((this._OrderBy != value))
+				{
+					this.OnOrderByChanging(value);
+					this.SendPropertyChanging();
+					this._OrderBy = value;
+					this.SendPropertyChanged("OrderBy");
+					this.OnOrderByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPPS", DbType="Bit")]
+		public System.Nullable<bool> IsPPS
+		{
+			get
+			{
+				return this._IsPPS;
+			}
+			set
+			{
+				if ((this._IsPPS != value))
+				{
+					this.OnIsPPSChanging(value);
+					this.SendPropertyChanging();
+					this._IsPPS = value;
+					this.SendPropertyChanged("IsPPS");
+					this.OnIsPPSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsNP", DbType="Bit")]
+		public System.Nullable<bool> IsNP
+		{
+			get
+			{
+				return this._IsNP;
+			}
+			set
+			{
+				if ((this._IsNP != value))
+				{
+					this.OnIsNPChanging(value);
+					this.SendPropertyChanging();
+					this._IsNP = value;
+					this.SendPropertyChanged("IsNP");
+					this.OnIsNPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ManHourWork", DbType="Int")]
+		public System.Nullable<int> ManHourWork
+		{
+			get
+			{
+				return this._ManHourWork;
+			}
+			set
+			{
+				if ((this._ManHourWork != value))
+				{
+					this.OnManHourWorkChanging(value);
+					this.SendPropertyChanging();
+					this._ManHourWork = value;
+					this.SendPropertyChanged("ManHourWork");
+					this.OnManHourWorkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WomanHourWork", DbType="Int")]
+		public System.Nullable<int> WomanHourWork
+		{
+			get
+			{
+				return this._WomanHourWork;
+			}
+			set
+			{
+				if ((this._WomanHourWork != value))
+				{
+					this.OnWomanHourWorkChanging(value);
+					this.SendPropertyChanging();
+					this._WomanHourWork = value;
+					this.SendPropertyChanged("WomanHourWork");
+					this.OnWomanHourWorkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsCategory", DbType="Bit NOT NULL")]
+		public bool IsCategory
+		{
+			get
+			{
+				return this._IsCategory;
+			}
+			set
+			{
+				if ((this._IsCategory != value))
+				{
+					this.OnIsCategoryChanging(value);
+					this.SendPropertyChanging();
+					this._IsCategory = value;
+					this.SendPropertyChanged("IsCategory");
+					this.OnIsCategoryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsExcusive", DbType="Bit")]
+		public System.Nullable<bool> IsExcusive
+		{
+			get
+			{
+				return this._IsExcusive;
+			}
+			set
+			{
+				if ((this._IsExcusive != value))
+				{
+					this.OnIsExcusiveChanging(value);
+					this.SendPropertyChanging();
+					this._IsExcusive = value;
+					this.SendPropertyChanged("IsExcusive");
+					this.OnIsExcusiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Post", Storage="_Posts", ThisKey="id", OtherKey="idCategory")]
+		public EntitySet<Post> Posts
+		{
+			get
+			{
+				return this._Posts;
+			}
+			set
+			{
+				this._Posts.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Post1", Storage="_Posts1", ThisKey="id", OtherKey="idNewCategory")]
+		public EntitySet<Post> Posts1
+		{
+			get
+			{
+				return this._Posts1;
+			}
+			set
+			{
+				this._Posts1.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Posts(Post entity)
+		{
+			this.SendPropertyChanging();
+			entity.Category = this;
+		}
+		
+		private void detach_Posts(Post entity)
+		{
+			this.SendPropertyChanging();
+			entity.Category = null;
+		}
+		
+		private void attach_Posts1(Post entity)
+		{
+			this.SendPropertyChanging();
+			entity.Category1 = this;
+		}
+		
+		private void detach_Posts1(Post entity)
+		{
+			this.SendPropertyChanging();
+			entity.Category1 = null;
 		}
 	}
 	

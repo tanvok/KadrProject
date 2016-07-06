@@ -9,21 +9,14 @@ using UIX.Views;
 
 namespace Kadr.Data
 {
-    public partial class PostGroup : INull
+    public partial class PostGroup : INullable
     {
         public override string ToString()
         {
             return GroupName;
         }
 
-        #region INull Members
-
-        bool  IsNull()
-        {
-            return false;
-        }
-
-        #endregion
+        
     }
 
 

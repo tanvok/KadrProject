@@ -8,17 +8,14 @@ using System.Data.Linq;
 
 namespace Kadr.Data
 {
-    public partial class FactStaffReplacementReason : INull
+    public partial class FactStaffReplacementReason : INullable
     {
         public override string ToString()
         {
             return ReplacementReasonName;
         }
         
-        bool IsNull()
-        {
-            return false;
-        }
+       
     }
 
 

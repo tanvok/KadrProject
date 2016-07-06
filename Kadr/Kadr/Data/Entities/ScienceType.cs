@@ -8,7 +8,7 @@ using System.Data.Linq;
 
 namespace Kadr.Data
 {
-    public partial class ScienceType : INull
+    public partial class ScienceType : INullable
     {
         public override string ToString()
         {
@@ -17,10 +17,7 @@ namespace Kadr.Data
         }
 
 
-        bool IsNull()
-        {
-            return false;
-        }
+        
     }
 
 

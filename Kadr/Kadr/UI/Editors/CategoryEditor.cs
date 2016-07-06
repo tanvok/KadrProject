@@ -19,7 +19,7 @@ namespace Kadr.UI.Editors
                 dlg.Text = "Категория персонала";
                 dlg.QueryText = "Выберите категорию";
                 dlg.DataSource =
-                    Kadr.Controllers.KadrController.Instance.Model.Categories.OrderBy(cat => cat.CategorySmallName);
+                    Kadr.Controllers.KadrController.Instance.Model.Categories.Where(cat => cat.IsCategory).OrderBy(cat => cat.CategorySmallName);
                 dlg.SelectedValue = (Kadr.Data.Category)value;
 
                 if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)

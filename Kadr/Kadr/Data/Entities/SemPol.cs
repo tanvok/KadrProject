@@ -6,7 +6,7 @@ using Kadr.Data.Common;
 
 namespace Kadr.Data
 {
-    public partial class SemPol : INull, IComparable
+    public partial class SemPol : INullable, IComparable
     {
         public override string ToString()
         {
@@ -15,15 +15,7 @@ namespace Kadr.Data
 
 
 
-        #region INull Members
-
-        bool  IsNull()
-        {
-            return false;
-
-        }
-
-        #endregion
+        
 
         public int CompareTo(object obj)
         {

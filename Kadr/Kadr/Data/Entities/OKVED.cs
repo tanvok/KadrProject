@@ -8,7 +8,7 @@ using System.Data.Linq;
 
 namespace Kadr.Data
 {
-    public partial class OKVED : INull
+    public partial class OKVED : INullable
     {
         public override string ToString()
         {
@@ -32,15 +32,7 @@ namespace Kadr.Data
 
         #endregion
 
-        #region INull Members
-
-        bool IsNull()
-        {
-            return false;
-
-        }
-
-        #endregion
+        
     }
 
     public class NullOKVED : OKVED, INull

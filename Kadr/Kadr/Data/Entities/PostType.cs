@@ -8,17 +8,14 @@ using System.Data.Linq;
 
 namespace Kadr.Data
 {
-    public partial class PostType : INull
+    public partial class PostType : INullable
     {
         public override string ToString()
         {
             return PostTypeName;
         }
 
-        bool IsNull()
-        {
-            return false;
-        }
+        
     }
 
     public class NullPostType : PostType, INull

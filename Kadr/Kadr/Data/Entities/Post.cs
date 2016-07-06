@@ -7,7 +7,7 @@ using System.Data.Linq;
 
 namespace Kadr.Data
 {
-    public partial class Post : INull, UIX.Views.IDecorable, UIX.Views.IValidatable, IComparable, IObjectState
+    public partial class Post : INullable, UIX.Views.IDecorable, UIX.Views.IValidatable, IComparable, IObjectState
     {
         public override string ToString()
         {
@@ -79,14 +79,7 @@ namespace Kadr.Data
 
         #endregion
 
-        #region INull Members
-
-        bool IsNull()
-        {
-            return false;
-        }
-
-        #endregion
+        
 
         #region Члены IDecorable
 

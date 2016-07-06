@@ -106,14 +106,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kadr.exe" size="1556480">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kadr.exe" size="1618944">
       <assemblyIdentity name="Kadr" version="1.0.1.2" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>2DSi0JmxhA/plBZKf7w4TCQ8LtM=</dsig:DigestValue>
+        <dsig:DigestValue>kQGFfw8lIgwV/yXixRZVexqSlsw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -318,13 +318,13 @@
       <dsig:DigestValue>XprA9d3FtMLlsAdHRzAhx5/NAQo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kadr.exe.config" size="1310">
+  <file name="Kadr.exe.config" size="1997">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>dv9mGH7wZS6fa4h/mzGxbDPBtW8=</dsig:DigestValue>
+      <dsig:DigestValue>RTahyn5Pd/JzsJwGPMJmszky6hI=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

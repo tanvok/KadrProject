@@ -9,7 +9,7 @@ using System.Data.Linq;
 
 namespace Kadr.Data
 {
-    public partial class Event : UIX.Views.IValidatable, INull, IObjectState, IComparable
+    public partial class Event : UIX.Views.IValidatable, INullable, IObjectState, IComparable
     {
         #region Properties
 
@@ -93,14 +93,7 @@ namespace Kadr.Data
         #endregion
 
 
-        #region INull Members
-
-        bool IsNull()
-        {
-            return false;
-        }
-
-        #endregion
+        
 
 
         #region IObjectState Members

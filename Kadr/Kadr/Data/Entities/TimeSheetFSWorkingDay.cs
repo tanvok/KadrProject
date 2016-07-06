@@ -8,7 +8,7 @@ using Kadr.Data.Common;
 
 namespace Kadr.Data
 {
-    public partial class TimeSheetFSWorkingDay : UIX.Views.IDecorable, UIX.Views.IValidatable, INull
+    public partial class TimeSheetFSWorkingDay : UIX.Views.IDecorable, UIX.Views.IValidatable, INullable
     {
         public override string ToString()
         {
@@ -64,10 +64,7 @@ namespace Kadr.Data
             OnValidate(ChangeAction.Insert); 
         }
 
-        bool  IsNull()
-        {
-            return false;
-        }
+        
     }
 
 

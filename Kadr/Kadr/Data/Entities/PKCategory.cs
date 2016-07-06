@@ -8,7 +8,7 @@ using System.Data.Linq;
 
 namespace Kadr.Data
 {
-    public partial class PKCategory : UIX.Views.IDecorable, UIX.Views.IValidatable, INull,IComparable
+    public partial class PKCategory : UIX.Views.IDecorable, UIX.Views.IValidatable, INullable,IComparable
     {
         public override string ToString()
         {
@@ -116,14 +116,7 @@ namespace Kadr.Data
 
 
 
-        #region Члены INull
-
-        bool IsNull()
-        {
-            return false;
-        }
-
-        #endregion
+       
 
         #region Члены IComparable
 

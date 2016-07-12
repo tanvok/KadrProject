@@ -50,11 +50,11 @@ namespace Kadr.Data
             }
         }
 
-
+        
         [System.ComponentModel.DisplayName("Название категории персонала")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Название категории персонала, к которой относится должность")]
-        [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.CategryEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<Category>))]
         public Kadr.Data.Category Category
         {
             get
@@ -71,7 +71,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Новая категория персонала")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Название новой категории персонала, к которой относится должность")]
-        [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.CategryEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<Category>))]
         public Kadr.Data.Category NewCategory
         {
             get
@@ -88,7 +88,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Название группы должностей")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Название группы должностей, к которой относится должность")]
-        [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.PostGroupEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<PostGroup>))]
         public Kadr.Data.PostGroup PostGroup
         {
             get
@@ -104,7 +104,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Название категории для ВПО-2")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Название категории для ВПО-2, к которой относится должность")]
-        [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.CategoryVPOEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<CategoryVPO>))]
         public Kadr.Data.CategoryVPO CategoryVPO
         {
             get
@@ -120,7 +120,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Название категории для ЗП-образования")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Название категории для ЗП-образования, к которой относится должность")]
-        [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.CategoryZPEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<CategoryZP>))]
         public Kadr.Data.CategoryZP CategoryZP
         {
             get
@@ -153,7 +153,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Профессиональный уровень")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Профессиональный уровень должности")]
-        [System.ComponentModel.Editor(typeof(PKCategoryEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringWithoutNullConvertor<PKCategory>))]
         public PKCategory PKCategory
         {
             get
@@ -170,7 +170,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Приказ министерства")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Приказ министерства")]
-        [System.ComponentModel.Editor(typeof(GlobalPrikazEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringWithoutNullConvertor<GlobalPrikaz>))]
         public GlobalPrikaz GlobalPrikaz
         {
             get
@@ -186,7 +186,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Вид должности")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Вид должности")]
-        [System.ComponentModel.Editor(typeof(PostTypeEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<PostType>))]
         public PostType PostType
         {
             get

@@ -38,7 +38,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Единица измерения")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Единица измерения надбавки")]
-        [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.BonusMeasureEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<BonusMeasure>))]
         public BonusMeasure BonusMeasure
         {
             get
@@ -54,7 +54,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Тип надбавки")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Тип надбавки")]
-        [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.BonusSuperTypeEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<BonusSuperType>))]
         public BonusSuperType BonusSuperType
         {
             get

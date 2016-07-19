@@ -75,6 +75,8 @@ namespace Kadr.Data
 
         public object GetDecorator()
         {
+            if (FactStaff.IsHourStaff)
+                return new FactStaffHourHistoryDecorator(this);
             if (FactStaff.IsReplacement)
                 return new FactStaffHistoryReplacementDecorator(this);
             return new FactStaffHistoryDecorator(this);

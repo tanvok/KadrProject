@@ -140,7 +140,6 @@ namespace Kadr.UI.Frames
             this.tpEducation = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.degreeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scienceTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -149,21 +148,12 @@ namespace Kadr.UI.Frames
             this.degreeDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diplWhereDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeDegreeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStrip4 = new System.Windows.Forms.ToolStrip();
-            this.AddDegreeBtn = new System.Windows.Forms.ToolStripButton();
-            this.EditDegreeBtn = new System.Windows.Forms.ToolStripButton();
-            this.DelDegreeBtn = new System.Windows.Forms.ToolStripButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.rankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.educDocumentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rankWhereDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeRankBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.AddRankBtn = new System.Windows.Forms.ToolStripButton();
-            this.EditRankBtn = new System.Windows.Forms.ToolStripButton();
-            this.DelRankBtn = new System.Windows.Forms.ToolStripButton();
             this.tpEmplBonusReport = new System.Windows.Forms.TabPage();
             this.btnBonusRepLoad = new System.Windows.Forms.Button();
             this.dtpBonRepPeriodEnd = new System.Windows.Forms.DateTimePicker();
@@ -218,15 +208,11 @@ namespace Kadr.UI.Frames
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDegreeBindingSource)).BeginInit();
-            this.toolStrip4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeRankBindingSource)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.tpEmplBonusReport.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.toolStrip6.SuspendLayout();
@@ -604,7 +590,7 @@ namespace Kadr.UI.Frames
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tcPostData);
             this.splitContainer1.Size = new System.Drawing.Size(796, 527);
-            this.splitContainer1.SplitterDistance = 261;
+            this.splitContainer1.SplitterDistance = 260;
             this.splitContainer1.TabIndex = 2;
             // 
             // dgvEmplPosts
@@ -634,7 +620,7 @@ namespace Kadr.UI.Frames
             this.dgvEmplPosts.ReadOnly = true;
             this.dgvEmplPosts.RowHeadersVisible = false;
             this.dgvEmplPosts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmplPosts.Size = new System.Drawing.Size(796, 261);
+            this.dgvEmplPosts.Size = new System.Drawing.Size(796, 260);
             this.dgvEmplPosts.TabIndex = 0;
             // 
             // Department
@@ -755,7 +741,7 @@ namespace Kadr.UI.Frames
             this.tcPostData.Location = new System.Drawing.Point(0, 0);
             this.tcPostData.Name = "tcPostData";
             this.tcPostData.SelectedIndex = 0;
-            this.tcPostData.Size = new System.Drawing.Size(796, 262);
+            this.tcPostData.Size = new System.Drawing.Size(796, 263);
             this.tcPostData.TabIndex = 0;
             this.tcPostData.SelectedIndexChanged += new System.EventHandler(this.tcPostData_SelectedIndexChanged);
             // 
@@ -765,7 +751,7 @@ namespace Kadr.UI.Frames
             this.tpOtpusk.Location = new System.Drawing.Point(4, 22);
             this.tpOtpusk.Name = "tpOtpusk";
             this.tpOtpusk.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOtpusk.Size = new System.Drawing.Size(788, 236);
+            this.tpOtpusk.Size = new System.Drawing.Size(788, 237);
             this.tpOtpusk.TabIndex = 0;
             this.tpOtpusk.Text = "Oтпуска";
             this.tpOtpusk.UseVisualStyleBackColor = true;
@@ -788,7 +774,7 @@ namespace Kadr.UI.Frames
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(782, 230);
+            this.dataGridView1.Size = new System.Drawing.Size(782, 231);
             this.dataGridView1.TabIndex = 1;
             // 
             // idOtpuskVidDataGridViewTextBoxColumn
@@ -1359,7 +1345,7 @@ namespace Kadr.UI.Frames
             this.tpEducation.Padding = new System.Windows.Forms.Padding(3);
             this.tpEducation.Size = new System.Drawing.Size(895, 342);
             this.tpEducation.TabIndex = 3;
-            this.tpEducation.Text = "Образование";
+            this.tpEducation.Text = "Послевузовское образование";
             this.tpEducation.UseVisualStyleBackColor = true;
             // 
             // splitContainer2
@@ -1382,7 +1368,7 @@ namespace Kadr.UI.Frames
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.tableLayoutPanel3);
+            this.groupBox4.Controls.Add(this.dataGridView2);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
@@ -1390,22 +1376,6 @@ namespace Kadr.UI.Frames
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ученые степени";
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.AutoScroll = true;
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.Controls.Add(this.dataGridView2, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.toolStrip4, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(883, 146);
-            this.tableLayoutPanel3.TabIndex = 3;
             // 
             // dataGridView2
             // 
@@ -1421,13 +1391,13 @@ namespace Kadr.UI.Frames
             this.diplWhereDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.employeeDegreeBindingSource;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 28);
+            this.dataGridView2.Location = new System.Drawing.Point(3, 16);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(877, 227);
+            this.dataGridView2.Size = new System.Drawing.Size(883, 146);
             this.dataGridView2.TabIndex = 8;
             // 
             // degreeDataGridViewTextBoxColumn
@@ -1477,50 +1447,9 @@ namespace Kadr.UI.Frames
             // 
             this.employeeDegreeBindingSource.DataSource = typeof(Kadr.Data.EmployeeDegree);
             // 
-            // toolStrip4
-            // 
-            this.toolStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddDegreeBtn,
-            this.EditDegreeBtn,
-            this.DelDegreeBtn});
-            this.toolStrip4.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip4.Name = "toolStrip4";
-            this.toolStrip4.Size = new System.Drawing.Size(883, 25);
-            this.toolStrip4.TabIndex = 7;
-            this.toolStrip4.Text = "toolStrip4";
-            // 
-            // AddDegreeBtn
-            // 
-            this.AddDegreeBtn.Image = global::Kadr.Properties.Resources.AddTableHS;
-            this.AddDegreeBtn.ImageTransparentColor = System.Drawing.Color.Black;
-            this.AddDegreeBtn.Name = "AddDegreeBtn";
-            this.AddDegreeBtn.Size = new System.Drawing.Size(125, 22);
-            this.AddDegreeBtn.Text = "Добавить степень";
-            this.AddDegreeBtn.Click += new System.EventHandler(this.AddDegreeBtn_Click);
-            // 
-            // EditDegreeBtn
-            // 
-            this.EditDegreeBtn.Image = global::Kadr.Properties.Resources.EditTableHS;
-            this.EditDegreeBtn.ImageTransparentColor = System.Drawing.Color.Black;
-            this.EditDegreeBtn.Name = "EditDegreeBtn";
-            this.EditDegreeBtn.Size = new System.Drawing.Size(107, 22);
-            this.EditDegreeBtn.Text = "Редактировать";
-            this.EditDegreeBtn.ToolTipText = "Редактировать степень";
-            this.EditDegreeBtn.Click += new System.EventHandler(this.EditDegreeBtn_Click);
-            // 
-            // DelDegreeBtn
-            // 
-            this.DelDegreeBtn.Image = global::Kadr.Properties.Resources.DelTableHS;
-            this.DelDegreeBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.DelDegreeBtn.Name = "DelDegreeBtn";
-            this.DelDegreeBtn.Size = new System.Drawing.Size(71, 22);
-            this.DelDegreeBtn.Text = "Удалить";
-            this.DelDegreeBtn.ToolTipText = "Удалить степень";
-            this.DelDegreeBtn.Click += new System.EventHandler(this.DelDegreeBtn_Click);
-            // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.tableLayoutPanel4);
+            this.groupBox5.Controls.Add(this.dataGridView3);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
@@ -1528,22 +1457,6 @@ namespace Kadr.UI.Frames
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Научные звания";
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.AutoScroll = true;
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel4.Controls.Add(this.dataGridView3, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.toolStrip1, 0, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(883, 148);
-            this.tableLayoutPanel4.TabIndex = 2;
             // 
             // dataGridView3
             // 
@@ -1557,13 +1470,13 @@ namespace Kadr.UI.Frames
             this.rankWhereDataGridViewTextBoxColumn});
             this.dataGridView3.DataSource = this.employeeRankBindingSource;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 28);
+            this.dataGridView3.Location = new System.Drawing.Point(3, 16);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(877, 213);
+            this.dataGridView3.Size = new System.Drawing.Size(883, 148);
             this.dataGridView3.TabIndex = 8;
             // 
             // rankDataGridViewTextBoxColumn
@@ -1595,47 +1508,6 @@ namespace Kadr.UI.Frames
             // employeeRankBindingSource
             // 
             this.employeeRankBindingSource.DataSource = typeof(Kadr.Data.EmployeeRank);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddRankBtn,
-            this.EditRankBtn,
-            this.DelRankBtn});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(883, 25);
-            this.toolStrip1.TabIndex = 7;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // AddRankBtn
-            // 
-            this.AddRankBtn.Image = global::Kadr.Properties.Resources.AddTableHS;
-            this.AddRankBtn.ImageTransparentColor = System.Drawing.Color.Black;
-            this.AddRankBtn.Name = "AddRankBtn";
-            this.AddRankBtn.Size = new System.Drawing.Size(119, 22);
-            this.AddRankBtn.Text = "Добавить звание";
-            this.AddRankBtn.Click += new System.EventHandler(this.AddRankBtn_Click);
-            // 
-            // EditRankBtn
-            // 
-            this.EditRankBtn.Image = global::Kadr.Properties.Resources.EditTableHS;
-            this.EditRankBtn.ImageTransparentColor = System.Drawing.Color.Black;
-            this.EditRankBtn.Name = "EditRankBtn";
-            this.EditRankBtn.Size = new System.Drawing.Size(107, 22);
-            this.EditRankBtn.Text = "Редактировать";
-            this.EditRankBtn.ToolTipText = "Редактировать звание";
-            this.EditRankBtn.Click += new System.EventHandler(this.EditRankBtn_Click);
-            // 
-            // DelRankBtn
-            // 
-            this.DelRankBtn.Image = global::Kadr.Properties.Resources.DelTableHS;
-            this.DelRankBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.DelRankBtn.Name = "DelRankBtn";
-            this.DelRankBtn.Size = new System.Drawing.Size(71, 22);
-            this.DelRankBtn.Text = "Удалить";
-            this.DelRankBtn.ToolTipText = "Удалить звание";
-            this.DelRankBtn.Click += new System.EventHandler(this.DelRankBtn_Click);
             // 
             // tpEmplBonusReport
             // 
@@ -1803,19 +1675,11 @@ namespace Kadr.UI.Frames
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDegreeBindingSource)).EndInit();
-            this.toolStrip4.ResumeLayout(false);
-            this.toolStrip4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeRankBindingSource)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.tpEmplBonusReport.ResumeLayout(false);
             this.tpEmplBonusReport.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
@@ -1839,20 +1703,10 @@ namespace Kadr.UI.Frames
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton AddRankBtn;
-        private System.Windows.Forms.ToolStripButton EditRankBtn;
-        private System.Windows.Forms.ToolStripButton DelRankBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ToolStrip toolStrip3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.ToolStrip toolStrip4;
-        private System.Windows.Forms.ToolStripButton AddDegreeBtn;
-        private System.Windows.Forms.ToolStripButton EditDegreeBtn;
-        private System.Windows.Forms.ToolStripButton DelDegreeBtn;
         private System.Windows.Forms.DataGridView dgvAllBonus;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOk;

@@ -41,7 +41,8 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("ФИО сотрудника")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("ФИО сотрудника, назначенного на должность")]
-        [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.EmployeeEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        //[System.ComponentModel.Editor(typeof(Kadr.UI.Editors.EmployeeEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.ReadOnly(true)]
         public Kadr.Data.Employee Employee
         {
             get
@@ -57,6 +58,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Количество ставок")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Занимаемое сотрудником по факту количество ставок")]
+        [System.ComponentModel.ReadOnly(true)]
         public decimal StaffCount
         {
             get
@@ -73,6 +75,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Подподкатегория")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Подподкатегория (определяет коэффициент к окладу сотрудника)")]
+        [System.ComponentModel.ReadOnly(true)]
         public int? SalaryKoeff
         {
             get
@@ -91,6 +94,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Должность в штатном расписании")]
         [System.ComponentModel.Category("Общие")]
         [System.ComponentModel.Description("Должность в штатном расписании")]
+        [System.ComponentModel.ReadOnly(true)]
         public Kadr.Data.PlanStaff PlanStaff
         {
             get
@@ -102,7 +106,8 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Название вида работы")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Название вида работы")]
-        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<WorkType>))]
+        //[System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<WorkType>))]
+        [System.ComponentModel.ReadOnly(true)]
         public Kadr.Data.WorkType WorkType
         {
             get
@@ -150,7 +155,8 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Приказ утверждения")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Приказ назначения сотрудника")]
-        [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.PrikazEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        //[System.ComponentModel.Editor(typeof(Kadr.UI.Editors.PrikazEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.ReadOnly(true)]
         public Kadr.Data.Prikaz PrikazBegin
         {
             get
@@ -166,7 +172,8 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Приказ увольнения")]
         [System.ComponentModel.Category("Параметры увольнения")]
         [System.ComponentModel.Description("Приказ увольнения сотрудника")]
-        [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.PrikazEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        //[System.ComponentModel.Editor(typeof(Kadr.UI.Editors.PrikazEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.ReadOnly(true)]
         public Kadr.Data.Prikaz PrikazEnd
         {
             get
@@ -182,7 +189,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Дата назначения")]
         [System.ComponentModel.Category("Основные параметры")]
         [System.ComponentModel.Description("Дата назначения на должность")]
-        // [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.PostEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.ReadOnly(true)]
         public DateTime DataBegin
         {
             get
@@ -198,7 +205,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Дата увольнения")]
         [System.ComponentModel.Category("Параметры увольнения")]
         [System.ComponentModel.Description("Дата снятия с должности")]
-        // [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.PostEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.ReadOnly(true)]
         public DateTime DataEnd
         {
             get

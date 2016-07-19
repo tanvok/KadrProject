@@ -1,15 +1,15 @@
-﻿using Kadr.Controllers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Kadr.Controllers;
 
 namespace Kadr.Data
 {
-    class FactStaffHistoryDecorator
+    class FactStaffHourHistoryDecorator
     {
         private FactStaffHistory factStaffHistory;
-        public FactStaffHistoryDecorator(FactStaffHistory factStaffHistory)
+        public FactStaffHourHistoryDecorator(FactStaffHistory factStaffHistory)
         {
             this.factStaffHistory = factStaffHistory;
         }
@@ -23,7 +23,6 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Дата изменения")]
         [System.ComponentModel.Category("Основные атрибуты изменения")]
         [System.ComponentModel.Description("Дата изменения")]
-        [System.ComponentModel.ReadOnly(true)]
         public DateTime DateBegin
         {
             get
@@ -40,8 +39,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Приказ изменения")]
         [System.ComponentModel.Category("Основные атрибуты изменения")]
         [System.ComponentModel.Description("Приказ изменения записи в штатном расписании")]
-        //[System.ComponentModel.Editor(typeof(Kadr.UI.Editors.PrikazEditor), typeof(System.Drawing.Design.UITypeEditor))]
-        [System.ComponentModel.ReadOnly(true)]
+        [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.PrikazEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public Prikaz PrikazBegin
         {
             get
@@ -58,8 +56,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Новый вид работы")]
         [System.ComponentModel.Category("Новые значения атрибутов")]
         [System.ComponentModel.Description("Новый вид работы сотрудника")]
-        //[System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<WorkType>))]
-        [System.ComponentModel.ReadOnly(true)]
+        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<WorkType>))]
         public WorkType WorkType
         {
             get
@@ -76,7 +73,6 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Количество ставок")]
         [System.ComponentModel.Category("Новые значения атрибутов")]
         [System.ComponentModel.Description("Новое количество ставок сотрудника")]
-        [System.ComponentModel.ReadOnly(true)]
         public decimal StaffCount
         {
             get
@@ -94,7 +90,36 @@ namespace Kadr.Data
             }
         }
 
+        [System.ComponentModel.DisplayName("Количество ставок по нагрузке")]
+        [System.ComponentModel.Category("Новые значения атрибутов")]
+        [System.ComponentModel.Description("Занимаемое сотрудником по факту количество ставок по нагрузке")]
+        [System.ComponentModel.ReadOnly(true)]
+        public decimal? HourStaffCount
+        {
+            get
+            {
+                return factStaffHistory.HourStaffCount;
+            }
+            set
+            {
+                factStaffHistory.HourStaffCount = value;
+            }
+        }
 
+        [System.ComponentModel.DisplayName("Количество часов")]
+        [System.ComponentModel.Category("Почасовики")]
+        [System.ComponentModel.Description("Количество часов для почасовиков")]
+        public decimal? HourCount
+        {
+            get
+            {
+                return factStaffHistory.HourCount;
+            }
+            set
+            {
+                factStaffHistory.HourCount = value;
+            }
+        }
 
         [System.ComponentModel.DisplayName("Подподкатегория")]
         [System.ComponentModel.Category("Новые значения атрибутов")]
@@ -114,6 +139,20 @@ namespace Kadr.Data
             }
         }
 
+        [System.ComponentModel.DisplayName("Оплата за час")]
+        [System.ComponentModel.Category("Почасовики")]
+        [System.ComponentModel.Description("Оплата за час для почасовиков")]
+        public decimal? HourSalary
+        {
+            get
+            {
+                return factStaffHistory.HourSalary;
+            }
+            set
+            {
+                factStaffHistory.HourSalary = value;
+            }
+        }
 
 
         [System.ComponentModel.DisplayName("Отдел")]

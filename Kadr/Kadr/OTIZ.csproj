@@ -199,6 +199,7 @@
     <Compile Include="Data\Decorators\FactStaffHistoryReplacementDecorator.cs" />
     <Compile Include="Data\Decorators\FactStaffHourContractDecorator.cs" />
     <Compile Include="Data\Decorators\FactStaffHourDecorator.cs" />
+    <Compile Include="Data\Decorators\FactStaffHourHistoryDecorator.cs" />
     <Compile Include="Data\Decorators\FactStaffMonthHourDecorator.cs" />
     <Compile Include="Data\Decorators\FactStaffReplacementDecorator.cs" />
     <Compile Include="Data\Decorators\PKCategoryDecorator.cs" />

@@ -106,14 +106,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kadr.exe" size="1617408">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kadr.exe" size="1616384">
       <assemblyIdentity name="Kadr" version="1.0.1.2" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Y3xTE4m4pXY+1p+tXkgtLEHQBs0=</dsig:DigestValue>
+        <dsig:DigestValue>xrQoXzB9Ye4add6IFBy+JKq+RHw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -24,6 +24,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Дата изменения")]
         [System.ComponentModel.Category("Основные атрибуты изменения")]
         [System.ComponentModel.Description("Дата изменения")]
+        [System.ComponentModel.ReadOnly(true)]
         public DateTime DateBegin
         {
             get
@@ -40,7 +41,8 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Приказ изменения")]
         [System.ComponentModel.Category("Основные атрибуты изменения")]
         [System.ComponentModel.Description("Приказ изменения записи в штатном расписании")]
-        [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.PrikazEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        //[System.ComponentModel.Editor(typeof(Kadr.UI.Editors.PrikazEditor), typeof(System.Drawing.Design.UITypeEditor))]
+        [System.ComponentModel.ReadOnly(true)]
         public Prikaz PrikazBegin
         {
             get
@@ -57,7 +59,8 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Новый вид работы")]
         [System.ComponentModel.Category("Новые значения атрибутов")]
         [System.ComponentModel.Description("Новый вид работы сотрудника")]
-        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<WorkType>))]
+        //[System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<WorkType>))]
+        [System.ComponentModel.ReadOnly(true)]
         public WorkType WorkType
         {
             get
@@ -73,6 +76,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Количество часов")]
         [System.ComponentModel.Category("Почасовики")]
         [System.ComponentModel.Description("Количество часов для почасовиков")]
+        [System.ComponentModel.ReadOnly(true)]
         public decimal? HourCount
         {
             get
@@ -88,6 +92,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Подподкатегория")]
         [System.ComponentModel.Category("Новые значения атрибутов")]
         [System.ComponentModel.Description("Подподкатегория (определяет коэффициент к окладу сотрудника)")]
+        [System.ComponentModel.ReadOnly(true)]
         public int? SalaryKoeff
         {
             get
@@ -105,6 +110,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Оплата за час")]
         [System.ComponentModel.Category("Почасовики")]
         [System.ComponentModel.Description("Оплата за час для почасовиков")]
+        [System.ComponentModel.ReadOnly(true)]
         public decimal? HourSalary
         {
             get
@@ -136,6 +142,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("% совмещения")]
         [System.ComponentModel.Category("Параметры совмещения")]
         [System.ComponentModel.Description("% совмещения сотрудника")]
+        [System.ComponentModel.ReadOnly(true)]
         public decimal StaffCount
         {
             get
@@ -151,7 +158,8 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Причина совмещения")]
         [System.ComponentModel.Category("Параметры совмещения")]
         [System.ComponentModel.Description("Причина замещения сотрудника")]
-        [System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<FactStaffReplacementReason>))]
+        [System.ComponentModel.ReadOnly(true)]
+        //[System.ComponentModel.TypeConverter(typeof(Kadr.Data.Converters.SimpleToStringConvertor<FactStaffReplacementReason>))]
         public Kadr.Data.FactStaffReplacementReason FactStaffReplacementReason
         {
             get
@@ -167,6 +175,7 @@ namespace Kadr.Data
         [System.ComponentModel.DisplayName("Дата окончания совмещения")]
         [System.ComponentModel.Category("Параметры совмещения")]
         [System.ComponentModel.Description("Дата окончания совмещения")]
+        [System.ComponentModel.ReadOnly(true)]
         // [System.ComponentModel.Editor(typeof(Kadr.UI.Editors.PostEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public DateTime ReplacementDataEnd
         {
